@@ -1,38 +1,73 @@
 /* When the user clicks on the button, toggle between hiding and showing the dropdown content */
+// function MenuFunction() {
+//   document.getElementById("MenuDropdown").classList.toggle("show");
+// }
+
+// // Close the dropdown menu if the user clicks outside of it
+// window.onclick = function(event) {
+//   if (!event.target.matches('.menubtn')) {
+//     var dropdowns = document.getElementsByClassName("menu-content");
+//     var i;
+//     for (i = 0; i < dropdowns.length; i++) {
+//       var openDropdown = dropdowns[i];
+//       if (openDropdown.classList.contains('show')) {
+//         openDropdown.classList.remove('show');
+//       }
+//     }
+//   }
+// } 
+
+// function RecipeFunction() {
+//   document.getElementById("RecipeDropdown").classList.toggle("show");
+// }
+
+// // Close the dropdown menu if the user clicks outside of it
+// window.onclick = function(event) {
+//   if (!event.target.matches('.recipebtn')) {
+//     var dropdowns = document.getElementsByClassName("recipe-content");
+//     var i;
+//     for (i = 0; i < dropdowns.length; i++) {
+//       var openDropdown = dropdowns[i];
+//       if (openDropdown.classList.contains('show')) {
+//         openDropdown.classList.remove('show');
+//       }
+//     }
+//   }
+// }
+/* When the user clicks on the button, toggle between hiding and showing the dropdown content */
 function MenuFunction() {
   document.getElementById("MenuDropdown").classList.toggle("show");
 }
-
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.menubtn')) {
-    var dropdowns = document.getElementsByClassName("menu-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-} 
 
 function RecipeFunction() {
   document.getElementById("RecipeDropdown").classList.toggle("show");
 }
 
-// Close the dropdown menu if the user clicks outside of it
+// Close the dropdown menus if the user clicks outside of them
 window.onclick = function(event) {
-  if (!event.target.matches('.recipebtn')) {
-    var dropdowns = document.getElementsByClassName("recipe-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
+
+  // Menu dropdown
+  if (!event.target.matches('.menubtn')) {
+    var dropdowns = document.getElementsByClassName("menu-content");
+    for (var i = 0; i < dropdowns.length; i++) {
       var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
+      if (openDropdown.classList.contains("show")) {
+        openDropdown.classList.remove("show");
       }
     }
   }
+
+  // Recipe dropdown
+  if (!event.target.matches('.recipebtn')) {
+    var dropdowns = document.getElementsByClassName("recipe-content");
+    for (var i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains("show")) {
+        openDropdown.classList.remove("show");
+      }
+    }
+  }
+
 }
 
 
