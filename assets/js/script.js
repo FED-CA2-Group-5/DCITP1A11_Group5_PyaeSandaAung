@@ -39,7 +39,7 @@ window.onclick = function(event) {
 
 
 
-interactivity
+// interactivity
 function toggleInfo(id) {
     const element = document.getElementById(id);
     element.classList.toggle("hidden");
