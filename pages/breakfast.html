@@ -3,17 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Breakfast</title>
-<!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 <link rel="stylesheet" href="../assets/css/styles.css">
-<script src="../assets/js/script.js"></script>
 <style>
-  .hidden { display: none; }
-  h3, h2 { cursor: pointer; color: #b58900; }
-  .completed { color: green; font-weight: bold; margin-top: 10px; }
   ol {
-    list-style: none;
     counter-reset: step-counter;
-    padding-left: 0;
+    padding-left: 6px;
   }
   ol li {
     counter-increment: step-counter;
@@ -47,10 +42,8 @@
 
   <h3 onclick="toggleInfo('eggs-desc')">Description</h3>
   <p id="eggs-desc" class="hidden">
-    Scrambled eggs are soft, fluffy, and easy to prepare. They are a classic
-breakfast dish that can be enjoyed on their own or served with toast,
-bacon, vegetables, or cheese. Cooking them gently over low heat keeps
-them creamy and delicious.
+    Scrambled eggs are a quick and nutritious breakfast made with eggs,
+    butter and seasoning. They are soft, fluffy and perfect with toast.
   </p>
 
   <h3 onclick="toggleInfo('eggs-steps')">How to Make</h3>
@@ -60,7 +53,7 @@ them creamy and delicious.
     <li><input type="checkbox">Pour eggs in and stir gently.</li>
     <li><input type="checkbox">Cook until soft and creamy.</li>
   </ol>
-  <div id="eggs-complete" class="completed hidden">Completed!</div>
+  <div id="eggs-complete" class="hidden text-green-600 font-bold">Completed!</div>
 </article>
 
 <article>
@@ -72,10 +65,8 @@ them creamy and delicious.
 
   <h3 onclick="toggleInfo('toast-desc')">Description</h3>
   <p id="toast-desc" class="hidden">
-    French toast is made by soaking bread in an egg mixture before frying it
-until golden brown. It has a soft centre with a slightly crispy outside
-and is often served with syrup, fruit, whipped cream, or butter for a
-sweet breakfast.
+    French toast is made by dipping bread into an egg mixture before frying
+    until golden brown. It is often served with syrup, fruits or butter.
   </p>
 
   <h3 onclick="toggleInfo('toast-steps')">How to Make</h3>
@@ -85,7 +76,7 @@ sweet breakfast.
     <li><input type="checkbox">Cook on a buttered pan until golden.</li>
     <li><input type="checkbox">Serve with syrup or fruit.</li>
   </ol>
-  <div id="toast-complete" class="completed hidden">Completed!</div>
+  <div id="toast-complete" class="hidden text-green-600 font-bold">Completed!</div>
 </article>
 
 <article>
@@ -97,10 +88,8 @@ sweet breakfast.
 
   <h3 onclick="toggleInfo('waffles-desc')">Description</h3>
   <p id="waffles-desc" class="hidden">
-   Waffles are crispy on the outside and light and fluffy on the inside.
-They are cooked in a waffle maker, giving them their signature grid
-pattern. Waffles are popular for breakfast and taste great with syrup,
-fresh fruit, chocolate, or whipped cream.
+    Waffles are crispy on the outside and fluffy on the inside. They can be
+    served with maple syrup, berries or whipped cream.
   </p>
 
   <h3 onclick="toggleInfo('waffles-steps')">How to Make</h3>
@@ -110,7 +99,7 @@ fresh fruit, chocolate, or whipped cream.
     <li><input type="checkbox">Combine wet and dry ingredients.</li>
     <li><input type="checkbox">Cook in a preheated waffle iron.</li>
   </ol>
-  <div id="waffles-complete" class="completed hidden">Completed!</div>
+  <div id="waffles-complete" class="hidden text-green-600 font-bold">Completed!</div>
 </article>
 
 </main>
@@ -120,7 +109,7 @@ fresh fruit, chocolate, or whipped cream.
   <p>Photo by <a href="https://unsplash.com/@imad8321?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Imad 786</a> on <a href="https://unsplash.com/photos/a-bowl-of-mashed-potatoes-with-parsley-on-top-LA0nKKY-SFo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
 </footer>
 
-
+<script src="../assets/js/script.js"></script>
 
 </body>
 </html>
