@@ -3,8 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <title>Breakfast</title>
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
 <link rel="stylesheet" href="../assets/css/styles.css">
+<style>
+  .hidden { display: none; }
+  h3, h2 { cursor: pointer; color: #b58900; }
+  .completed { color: green; font-weight: bold; margin-top: 10px; }
+  ol {
+    list-style: none;
+    counter-reset: step-counter;
+    padding-left: 0;
+  }
+  ol li {
+    counter-increment: step-counter;
+    margin: 6px 0;
+  }
+  ol li::before {
+    content: counter(step-counter) ". ";
+    font-weight: bold;
+    margin-right: 6px;
+  }
+  ol li input[type="checkbox"] {
+    margin-right: 8px;
+  }
+</style>
 </head>
 
 <body>
@@ -17,16 +39,11 @@
 
 <article>
   <h2>Scrambled Eggs</h2>
-
   <figure>
     <img src="../assets/images/scrambled eggs.jpg" alt="Scrambled Eggs">
     <figcaption>Soft and creamy scrambled eggs.</figcaption>
   </figure>
 
-<figure>
-<img src="../assets/images/scrambled eggs.jpg" alt="Scrambled Eggs">
-<figcaption>Soft and creamy scrambled eggs.</figcaption>
-</figure>
   <h3 onclick="toggleInfo('eggs-desc')">Description</h3>
   <p id="eggs-desc" class="hidden">
     Scrambled eggs are a quick and nutritious breakfast made with eggs,
@@ -34,17 +51,17 @@
   </p>
 
   <h3 onclick="toggleInfo('eggs-steps')">How to Make</h3>
-  <ol id="eggs-steps" class="hidden">
-    <li>Crack eggs into a bowl and whisk.</li>
-    <li>Heat butter in a pan.</li>
-    <li>Pour eggs in and stir gently.</li>
-    <li>Cook until soft and creamy.</li>
+  <ol id="eggs-steps" class="hidden" onchange="checkCompletion('eggs-steps','eggs-complete')">
+    <li><input type="checkbox">Crack eggs into a bowl and whisk.</li>
+    <li><input type="checkbox">Heat butter in a pan.</li>
+    <li><input type="checkbox">Pour eggs in and stir gently.</li>
+    <li><input type="checkbox">Cook until soft and creamy.</li>
   </ol>
+  <div id="eggs-complete" class="completed hidden">Completed!</div>
 </article>
 
 <article>
   <h2>French Toast</h2>
-
   <figure>
     <img src="images/french-toast.jpg" alt="French Toast">
     <figcaption>Golden French toast.</figcaption>
@@ -57,17 +74,17 @@
   </p>
 
   <h3 onclick="toggleInfo('toast-steps')">How to Make</h3>
-  <ol id="toast-steps" class="hidden">
-    <li>Whisk eggs, milk, and cinnamon.</li>
-    <li>Dip bread slices into mixture.</li>
-    <li>Cook on a buttered pan until golden.</li>
-    <li>Serve with syrup or fruit.</li>
+  <ol id="toast-steps" class="hidden" onchange="checkCompletion('toast-steps','toast-complete')">
+    <li><input type="checkbox">Whisk eggs, milk, and cinnamon.</li>
+    <li><input type="checkbox">Dip bread slices into mixture.</li>
+    <li><input type="checkbox">Cook on a buttered pan until golden.</li>
+    <li><input type="checkbox">Serve with syrup or fruit.</li>
   </ol>
+  <div id="toast-complete" class="completed hidden">Completed!</div>
 </article>
 
 <article>
   <h2>Waffles</h2>
-
   <figure>
     <img src="images/waffles.jpg" alt="Waffles">
     <figcaption>Fresh homemade waffles.</figcaption>
@@ -80,12 +97,13 @@
   </p>
 
   <h3 onclick="toggleInfo('waffles-steps')">How to Make</h3>
-  <ol id="waffles-steps" class="hidden">
-    <li>Mix flour, sugar, baking powder, and salt.</li>
-    <li>Whisk eggs, milk, and melted butter.</li>
-    <li>Combine wet and dry ingredients.</li>
-    <li>Cook in a preheated waffle iron.</li>
+  <ol id="waffles-steps" class="hidden" onchange="checkCompletion('waffles-steps','waffles-complete')">
+    <li><input type="checkbox">Mix flour, sugar, baking powder, and salt.</li>
+    <li><input type="checkbox">Whisk eggs, milk, and melted butter.</li>
+    <li><input type="checkbox">Combine wet and dry ingredients.</li>
+    <li><input type="checkbox">Cook in a preheated waffle iron.</li>
   </ol>
+  <div id="waffles-complete" class="completed hidden">Completed!</div>
 </article>
 
 </main>
@@ -96,12 +114,6 @@
 </footer>
 
 
-<script>
-  function toggleInfo(id) {
-    const element = document.getElementById(id);
-    element.classList.toggle("hidden");
-  }
-</script>
 
 </body>
 </html>
