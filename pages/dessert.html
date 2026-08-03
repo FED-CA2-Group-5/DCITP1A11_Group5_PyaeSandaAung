@@ -2,7 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Desserts</title>
+    <title>Dessert Recipes</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="../assets/js/script.js"></script>
+    <style>
+        .hidden { display: none; }
+        h3, h2 { cursor: pointer; color: #b58900; }
+        .completed { color: green; font-weight: bold; margin-top: 10px; }
+        ol {
+            list-style: none;
+            counter-reset: step-counter;
+            padding-left: 0;
+        }
+        ol li {
+            counter-increment: step-counter;
+            margin: 6px 0;
+        }
+        ol li::before {
+            content: counter(step-counter) ". ";
+            font-weight: bold;
+            margin-right: 6px;
+        }
+        ol li input[type="checkbox"] {
+            margin-right: 8px;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,64 +39,75 @@
 <main>
 
 <article>
+    <h2>Chocolate Covered Strawberries</h2>
+    <figure>
+        <img src="images/chocolate-strawberries.jpg" alt="Chocolate Covered Strawberries">
+        <figcaption>Chocolate Covered Strawberries</figcaption>
+    </figure>
 
-<h2>Chocolate Covered Strawberries</h2>
+    <h3 onclick="toggleInfo('strawberries-desc')">Description</h3>
+    <p id="strawberries-desc" class="hidden">
+        Fresh strawberries dipped in melted chocolate create a simple yet elegant dessert that is perfect for any occasion.
+    </p>
 
-<figure>
-    <img src="images/chocolate-strawberries.jpg" alt="Chocolate Covered Strawberries">
-    <figcaption>Chocolate Covered Strawberries</figcaption>
-</figure>
-
-<p>
-Fresh strawberries dipped in melted chocolate create a simple yet elegant dessert that is perfect for any occasion.
-</p>
-<li><input type="checkbox">Wash and dry the strawberries thoroughly.</li>
-<li><input type="checkbox">Melt the chocolate until smooth.</li>
-<li><input type="checkbox">Dip each strawberry into the melted chocolate.</li>
-<li><input type="checkbox">Place the strawberries on baking paper.</li>
-<li><input type="checkbox">Allow the chocolate to set completely.</li>
-<li><input type="checkbox">Serve immediately or chill before serving.</li>
+    <h3 onclick="toggleInfo('strawberries-steps')">How to Make</h3>
+    <ol id="strawberries-steps" class="hidden" onchange="checkCompletion('strawberries-steps','strawberries-complete')">
+        <li><input type="checkbox">Wash and dry the strawberries thoroughly.</li>
+        <li><input type="checkbox">Melt the chocolate until smooth.</li>
+        <li><input type="checkbox">Dip each strawberry into the melted chocolate.</li>
+        <li><input type="checkbox">Place the strawberries on baking paper.</li>
+        <li><input type="checkbox">Allow the chocolate to set completely.</li>
+        <li><input type="checkbox">Serve immediately or chill before serving.</li>
+    </ol>
+    <div id="strawberries-complete" class="completed hidden">Completed!</div>
 </article>
 
 <article>
+    <h2>Butter Cookies</h2>
+    <figure>
+        <img src="images/butter-cookies.jpg" alt="Butter Cookies">
+        <figcaption>Butter Cookies</figcaption>
+    </figure>
 
-<h2>Butter Cookies</h2>
+    <h3 onclick="toggleInfo('cookies-desc')">Description</h3>
+    <p id="cookies-desc" class="hidden">
+        Butter cookies are crisp, buttery and lightly sweet. They are easy to bake and perfect for sharing with family and friends.
+    </p>
 
-<figure>
-    <img src="images/butter-cookies.jpg" alt="Butter Cookies">
-    <figcaption>Butter Cookies</figcaption>
-</figure>
-
-<p>
-Butter cookies are crisp, buttery and lightly sweet. They are easy to bake and perfect for sharing with family and friends.
-</p>
-<li><input type="checkbox">Cream the butter and sugar until light and fluffy.</li>
-<li><input type="checkbox">Mix in the egg and vanilla extract.</li>
-<li><input type="checkbox">Add the flour and mix into a soft dough.</li>
-<li><input type="checkbox">Pipe or shape the dough onto a baking tray.</li>
-<li><input type="checkbox">Bake until the edges are lightly golden.</li>
-<li><input type="checkbox">Cool the cookies before serving.</li>
+    <h3 onclick="toggleInfo('cookies-steps')">How to Make</h3>
+    <ol id="cookies-steps" class="hidden" onchange="checkCompletion('cookies-steps','cookies-complete')">
+        <li><input type="checkbox">Cream the butter and sugar until light and fluffy.</li>
+        <li><input type="checkbox">Mix in the egg and vanilla extract.</li>
+        <li><input type="checkbox">Add the flour and mix into a soft dough.</li>
+        <li><input type="checkbox">Pipe or shape the dough onto a baking tray.</li>
+        <li><input type="checkbox">Bake until the edges are lightly golden.</li>
+        <li><input type="checkbox">Cool the cookies before serving.</li>
+    </ol>
+    <div id="cookies-complete" class="completed hidden">Completed!</div>
 </article>
 
 <article>
+    <h2>Chocolate Mug Cake</h2>
+    <figure>
+        <img src="images/mug-cake.jpg" alt="Chocolate Mug Cake">
+        <figcaption>Chocolate Mug Cake</figcaption>
+    </figure>
 
-<h2>Chocolate Mug Cake</h2>
+    <h3 onclick="toggleInfo('mugcake-desc')">Description</h3>
+    <p id="mugcake-desc" class="hidden">
+        Chocolate mug cake is a rich dessert made in the microwave in just a few minutes. It is perfect when you want a quick chocolate treat.
+    </p>
 
-<figure>
-    <img src="images/mug-cake.jpg" alt="Chocolate Mug Cake">
-    <figcaption>Chocolate Mug Cake</figcaption>
-</figure>
-
-<p>
-Chocolate mug cake is a rich dessert made in the microwave in just a few minutes. It is perfect when you want a quick chocolate treat.
-</p>
-<li><input type="checkbox">Mix the dry ingredients in a microwave-safe mug.</li>
-<li><input type="checkbox">Add the milk, oil, and vanilla extract.</li>
-<li><input type="checkbox">Stir until the batter is smooth.</li>
-<li><input type="checkbox">Microwave for about 1 to 2 minutes until cooked.</li>
-<li><input type="checkbox">Let the mug cake cool slightly.</li>
-<li><input type="checkbox">Serve with whipped cream or ice cream if desired.</li>
-
+    <h3 onclick="toggleInfo('mugcake-steps')">How to Make</h3>
+    <ol id="mugcake-steps" class="hidden" onchange="checkCompletion('mugcake-steps','mugcake-complete')">
+        <li><input type="checkbox">Mix the dry ingredients in a microwave-safe mug.</li>
+        <li><input type="checkbox">Add the milk, oil, and vanilla extract.</li>
+        <li><input type="checkbox">Stir until the batter is smooth.</li>
+        <li><input type="checkbox">Microwave for about 1 to 2 minutes until cooked.</li>
+        <li><input type="checkbox">Let the mug cake cool slightly.</li>
+        <li><input type="checkbox">Serve with whipped cream or ice cream if desired.</li>
+    </ol>
+    <div id="mugcake-complete" class="completed hidden">Completed!</div>
 </article>
 
 </main>
@@ -79,6 +115,8 @@ Chocolate mug cake is a rich dessert made in the microwave in just a few minutes
 <footer>
 <p> Simply Savory</p>
 </footer>
+
+
 
 </body>
 </html>
