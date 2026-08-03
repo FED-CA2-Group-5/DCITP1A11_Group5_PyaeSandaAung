@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simply Savory</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <!--
+    Group: 5
+    Members: Pyae Sanda Aund - 2627599
+             Choo Min Yu - 2618618
+             Teh Yu Han - 2605126
+    -->
+</head>
+
+<body class="bg-amber-100">
+<!--  HUIIIIIIIIIIIIIIIIIIIIIIIIi-->
+<header class="flex bg-red-500 text-white">
+    <h1>Simply Savory</h1>
+    <nav class="flex ml-auto">
+        <section class="dropdown">
+            <button onclick="MenuFunction()" class="menubtn hover:bg-red-700 focus:bg-red-800 p-3 w-40">Menu</button>
+            <ul id="MenuDropdown" class="menu-content bg-white hidden absolute text-center shadow-xl w-40">
+                <a href="index.html" class="block text-black px-3 py-3 hover:bg-gray-300">Home</a>
+                <a href="./pages/about.html" class="block text-black px-3 py-3 hover:bg-gray-300">About Us</a>
+                <a href="./pages/contact.html" class="block text-black px-3 py-3 hover:bg-gray-300">Contact Us</a>
+            </ul>
+        </section>
+        <section class="dropdown">
+            <button onclick="RecipeFunction()" class="recipebtn hover:bg-red-700 focus:bg-red-800 p-3 w-40">Recipes</button>
+            <ul id="RecipeDropdown" class="recipe-content bg-white hidden absolute text-center shadow-xl">
+                <a href="./pages/breakfast.html" class="block text-black px-3 py-3 hover:bg-gray-300">Breakfast</a>
+                <a href="./pages/lunch.html" class="block text-black px-3 py-3 hover:bg-gray-300">Lunch</a>
+                <a href="./pages/dinner.html" class="block text-black px-3 py-3 hover:bg-gray-300">Dinner</a>
+                <a href="./pages/dessert.html" class="block text-black px-3 py-3 hover:bg-gray-300">Dessert</a>
+                <a href="./pages/snacks.html" class="block text-black px-3 py-3 hover:bg-gray-300">Snacks</a>
+                <a href="./pages/mealplan.html" class="block text-black px-3 py-3 hover:bg-gray-300">Meal Planning Tips</a>
+            </ul>
+        </section>
+    </nav>
+</header>
+<main class="flex gap-6">
+<aside class="w-80 text-center min-h-screen bg-white p-3">
+    <h2 class="text-3xl">Placeholder</h2>
+    <p>Text area for webpage</p>
+</aside>
+
+<article class="m-3">
+    <section class="bg-white p-3">
+        <h2 class="text-3xl">Welcome to Simply Savory</h2>
+
+        <p>
+            Simply Savory is your go-to recipe website for quick, easy and delicious meals.
+            Whether you're making breakfast, lunch, dinner, desserts or snacks, we have
+            recipes that are simple to follow and perfect for young adults.
+        </p>
+
+        <figure>
+            <img src="" alt="Delicious food">
+            <figcaption>Easy homemade meals for everyone.</figcaption>
+        </figure>
+    </section>
+
+    <section class="bg-white p-3">
+        <h2 class="text-3xl">Recipe of the Week</h2>
+
+        <article>
+            <h3></h3>
+
+            <p>
+            
+            </p>
+
+            <a>Read More</a>
+        </article>
+    </section>
+
+    <section class="bg-white p-3">
+        <h2 class="text-3xl">Why Choose Simply Savory?</h2>
+
+        <ul>
+            <li>Easy recipes</li>
+            <li>Affordable ingredients</li>
+            <li>Step-by-step instructions</li>
+            <li>Perfect for beginners</li>
+        </ul>
+    </section>
+</article>
+
+</main>
+
+<footer class="flex bg-red-700 text-white">
+   <p>Footer</p>
+</footer>
+<script src="./assets/js/script.js"></script>
+</body>
+</html>
