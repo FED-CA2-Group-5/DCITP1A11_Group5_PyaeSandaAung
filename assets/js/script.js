@@ -34,29 +34,11 @@ window.onclick = function(event) {
     }
   }
 }
-/* When the user clicks on the button, toggle between hiding and showing the dropdown content */
-// When the user clicks on the Menu button
+
+//
 
 
-
-// interactivity
-function toggleInfo(id) {
-    const element = document.getElementById(id);
-    element.classList.toggle("hidden");
-  }
-
-  function checkCompletion(listId, completeId) {
-    const list = document.getElementById(listId);
-    const checkboxes = list.querySelectorAll("input[type='checkbox']");
-    const allChecked = Array.from(checkboxes).every(cb => cb.checked);
-    const completeMsg = document.getElementById(completeId);
-    if (allChecked) {
-      completeMsg.classList.remove("hidden");
-    } else {
-      completeMsg.classList.add("hidden");
-    }
-  }
-
+// form
 document.addEventListener('DOMContentLoaded', function(){
     document.getElementById("(form)")
             .addEventListener("submit", submitform);
@@ -75,6 +57,27 @@ document.addEventListener('DOMContentLoaded', function(){
     })
 
 })
+
+
+
+
+//interactivity
+ function toggleInfo(id) {
+        const element = document.getElementById(id);
+        element.classList.toggle("hidden");
+    }
+
+    function checkCompletion(listId, completeId) {
+        const list = document.getElementById(listId);
+        const checkboxes = list.querySelectorAll("input[type='checkbox']");
+        const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+        const completeMsg = document.getElementById(completeId);
+        if (allChecked) {
+            completeMsg.classList.remove("hidden");
+        } else {
+            completeMsg.classList.add("hidden");
+        }
+    }
 
 
 
