@@ -2,7 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Snacks</title>
+    <title>Healthy Snack Recipes</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="../assets/js/script.js"></script>
+    <style>
+        .hidden { display: none; }
+        h3, h2 { cursor: pointer; color: #b58900; }
+        .completed { color: green; font-weight: bold; margin-top: 10px; }
+        ol {
+            list-style: none;
+            counter-reset: step-counter;
+            padding-left: 0;
+        }
+        ol li {
+            counter-increment: step-counter;
+            margin: 6px 0;
+        }
+        ol li::before {
+            content: counter(step-counter) ". ";
+            font-weight: bold;
+            margin-right: 6px;
+        }
+        ol li input[type="checkbox"] {
+            margin-right: 8px;
+        }
+        ul {
+            margin: 6px 0;
+            padding-left: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,72 +42,120 @@
 <main>
 
 <article>
+    <h2>Honey Oat Granola Bars</h2>
+    <figure>
+        <img src="images/granola-bars.jpg" alt="Granola Bars">
+        <figcaption>Honey Oat Granola Bars</figcaption>
+    </figure>
 
-<h2>Honey Oat Granola Bars</h2>
+    <h3 onclick="toggleInfo('granola-desc')">Description</h3>
+    <p id="granola-desc" class="hidden">
+        Honey Oat Granola Bars are chewy, wholesome snacksthat balance natural sweetness 
+        with hearty texture. They are made by combining rolled oats, honey, and other mix-ins, 
+        then pressing the mixture into bars that set into a portable treat. 
+        While simple in concept, they embody both nourishment and indulgence.
+        They provide sustained energy, making them perfect for busy mornings, school lunches, 
+        or post-workout fuel. Their natural sweetness and crunchy texture make them a healthier 
+        alternative to store-bought bars.
 
-<figure>
-    <img src="images/granola-bars.jpg" alt="Granola Bars">
-    <figcaption>Honey Oat Granola Bars</figcaption>
-</figure>
 
-<p>
-These homemade granola bars are made with oats, honey and nuts. They are healthy, filling and great for busy days.
-</p>
-<li><input type="checkbox">Mix the oats, honey, and other ingredients in a bowl.</li>
-<li><input type="checkbox">Press the mixture evenly into a lined baking pan.</li>
-<li><input type="checkbox">Bake until lightly golden.</li>
-<li><input type="checkbox">Allow the granola to cool completely.</li>
-<li><input type="checkbox">Cut into bars or squares.</li>
-<li><input type="checkbox">Store in an airtight container and enjoy.</li>
+       
+    </p>
 
+    <h3 onclick="toggleInfo('granola-ingredients')">Ingredients</h3>
+    <ul id="granola-ingredients" class="hidden">
+        <li>2 cups rolled oats</li>
+        <li>1/2 cup honey</li>
+        <li>1/2 cup chopped nuts (almonds or walnuts)</li>
+        <li>1/4 cup dried fruit (raisins or cranberries)</li>
+        <li>1/4 cup brown sugar</li>
+        <li>1/4 cup butter or coconut oil</li>
+        <li>1 tsp vanilla extract</li>
+        <li>Pinch of salt</li>
+    </ul>
+
+    <h3 onclick="toggleInfo('granola-steps')">Instructions</h3>
+    <ol id="granola-steps" class="hidden" onchange="checkCompletion('granola-steps','granola-complete')">
+        <li><input type="checkbox">Mix the oats, honey, and other ingredients in a bowl.</li>
+        <li><input type="checkbox">Press the mixture evenly into a lined baking pan.</li>
+        <li><input type="checkbox">Bake until lightly golden.</li>
+        <li><input type="checkbox">Allow the granola to cool completely.</li>
+        <li><input type="checkbox">Cut into bars or squares.</li>
+        <li><input type="checkbox">Store in an airtight container and enjoy.</li>
+    </ol>
+    <div id="granola-complete" class="completed hidden">Completed!</div>
 </article>
 
 <article>
+    <h2>Air Fryer Sweet Potato Fries</h2>
+    <figure>
+        <img src="images/sweet-potato-fries.jpg" alt="Sweet Potato Fries">
+        <figcaption>Air Fryer Sweet Potato Fries</figcaption>
+    </figure>
 
-<h2>Air Fryer Sweet Potato Fries</h2>
+    <h3 onclick="toggleInfo('fries-desc')">Description</h3>
+    <p id="fries-desc" class="hidden">
+        Air Fryer Sweet Potato Fries are a healthier twist on classic fries. Crispy on the outside and tender inside, they are packed with vitamins and fiber. Cooking them in an air fryer reduces oil usage, making them guilt-free yet delicious. They pair well with dips like garlic aioli or ketchup.
+    </p>
 
-<figure>
-    <img src="images/sweet-potato-fries.jpg" alt="Sweet Potato Fries">
-    <figcaption>Air Fryer Sweet Potato Fries</figcaption>
-</figure>
+    <h3 onclick="toggleInfo('fries-ingredients')">Ingredients</h3>
+    <ul id="fries-ingredients" class="hidden">
+        <li>2 medium sweet potatoes</li>
+        <li>2 tbsp olive oil</li>
+        <li>1 tsp paprika</li>
+        <li>1/2 tsp garlic powder</li>
+        <li>Salt and pepper to taste</li>
+    </ul>
 
-<p>
-Sweet potato fries are crispy on the outside and soft inside. Cooking them in an air fryer makes them healthier and delicious.
-</p>
-<li><input type="checkbox">Peel and cut the sweet potatoes into thin strips.</li>
-<li><input type="checkbox">Toss the fries with oil and seasonings.</li>
-<li><input type="checkbox">Preheat the air fryer if needed.</li>
-<li><input type="checkbox">Arrange the fries in a single layer in the basket.</li>
-<li><input type="checkbox">Air-fry until golden and crispy, shaking the basket halfway through.</li>
-<li><input type="checkbox">Serve hot with your favourite dipping sauce.</li>
-
+    <h3 onclick="toggleInfo('fries-steps')">Instructions</h3>
+    <ol id="fries-steps" class="hidden" onchange="checkCompletion('fries-steps','fries-complete')">
+        <li><input type="checkbox">Peel and cut the sweet potatoes into thin strips.</li>
+        <li><input type="checkbox">Toss the fries with oil and seasonings.</li>
+        <li><input type="checkbox">Preheat the air fryer if needed.</li>
+        <li><input type="checkbox">Arrange the fries in a single layer in the basket.</li>
+        <li><input type="checkbox">Air-fry until golden and crispy, shaking the basket halfway through.</li>
+        <li><input type="checkbox">Serve hot with your favourite dipping sauce.</li>
+    </ol>
+    <div id="fries-complete" class="completed hidden">Completed!</div>
 </article>
 
 <article>
+    <h2>Lime Honey Fruit Salad</h2>
+    <figure>
+        <img src="images/fruit-salad.jpg" alt="Fruit Salad">
+        <figcaption>Lime Honey Fruit Salad</figcaption>
+    </figure>
 
-<h2>Lime Honey Fruit Salad</h2>
+    <h3 onclick="toggleInfo('salad-desc')">Description</h3>
+    <p id="salad-desc" class="hidden">
+        Lime Honey Fruit Salad is a refreshing mix of seasonal fruits tossed in a zesty honey-lime dressing. The tangy citrus enhances the natural sweetness of the fruit, while honey adds a smooth finish. It’s light, hydrating, and perfect for summer days, picnics, or as a healthy dessert.
+    </p>
 
-<figure>
-    <img src="images/fruit-salad.jpg" alt="Fruit Salad">
-    <figcaption>Lime Honey Fruit Salad</figcaption>
-</figure>
+    <h3 onclick="toggleInfo('salad-ingredients')">Ingredients</h3>
+    <ul id="salad-ingredients" class="hidden">
+        <li>2 cups mixed fresh fruits (melon, berries, grapes, kiwi)</li>
+        <li>2 tbsp honey</li>
+        <li>1 tbsp lime juice</li>
+        <li>1 tsp lime zest</li>
+        <li>Optional: fresh mint leaves for garnish</li>
+    </ul>
 
-<p>
-Fresh fruits mixed with a sweet honey and lime dressing create a refreshing and nutritious snack.
-</p>
-<li><input type="checkbox">Wash and prepare the fresh fruits.</li>
-<li><input type="checkbox">Cut the fruits into bite-sized pieces.</li>
-<li><input type="checkbox">Whisk together the honey and lime juice.</li>
-<li><input type="checkbox">Pour the dressing over the fruit.</li>
-<li><input type="checkbox">Gently toss until the fruit is evenly coated.</li>
-<li><input type="checkbox">Chill before serving for the best flavour.</li>
-
+    <h3 onclick="toggleInfo('salad-steps')">Instructions</h3>
+    <ol id="salad-steps" class="hidden" onchange="checkCompletion('salad-steps','salad-complete')">
+        <li><input type="checkbox">Wash and prepare the fresh fruits.</li>
+        <li><input type="checkbox">Cut the fruits into bite-sized pieces.</li>
+        <li><input type="checkbox">Whisk together the honey and lime juice.</li>
+        <li><input type="checkbox">Pour the dressing over the fruit.</li>
+        <li><input type="checkbox">Gently toss until the fruit is evenly coated.</li>
+        <li><input type="checkbox">Chill before serving for the best flavour.</li>
+    </ol>
+    <div id="salad-complete" class="completed hidden">Completed!</div>
 </article>
 
 </main>
 
 <footer>
-
+<p>Simply Savory</p>
 </footer>
 
 </body>
