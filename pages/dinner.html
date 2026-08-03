@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Lunch Recipes</title>
+    <title>Dinner Recipes</title>
     <link rel="stylesheet" href="./assets/css/styles.css">
     <script src="../assets/js/script.js"></script>
     <style>
@@ -36,125 +36,126 @@
 <body>
 
 <header>
-    <h1>Lunch Recipes</h1>
+    <h1>Dinner Recipes</h1>
 </header>
 
 <main>
 
 <article>
-    <h2>Chicken Caesar Wrap</h2>
+    <h2>Chicken Parmesan</h2>
     <figure>
-        <img src="images/chicken-caesar-wrap.jpg" alt="Chicken Caesar Wrap">
-        <figcaption>Chicken Caesar Wrap</figcaption>
+        <img src="images/chicken-parmesan.jpg" alt="Chicken Parmesan">
+        <figcaption>Chicken Parmesan</figcaption>
     </figure>
 
-    <h3 onclick="toggleInfo('wrap-desc')">Description</h3>
-    <p id="wrap-desc" class="hidden">
-        A Chicken Caesar Wrap is a quick and satisfying meal made with tender chicken, crisp lettuce, Parmesan cheese, and creamy Caesar dressing, all wrapped inside a soft tortilla. The combination of juicy chicken, crunchy greens, and tangy dressing creates a balanced flavor profile. Perfect for picnics, school lunches, or a light dinner.
+    <h3 onclick="toggleInfo('parmesan-desc')">Description</h3>
+    <p id="parmesan-desc" class="hidden">
+        Chicken Parmesan is a beloved Italian-American dish that combines crispy breaded chicken cutlets with rich tomato sauce and gooey melted cheese. The golden crust provides a satisfying crunch, while the mozzarella and Parmesan add indulgent creaminess. Served over pasta or alongside salad, it’s a hearty, comforting dish perfect for family dinners or special occasions.
     </p>
 
-    <h3 onclick="toggleInfo('wrap-ingredients')">Ingredients</h3>
-    <ul id="wrap-ingredients" class="hidden">
-        <li>1 large tortilla wrap</li>
-        <li>1 cup grilled chicken breast, sliced</li>
-        <li>1 cup romaine lettuce, chopped</li>
-        <li>2 tbsp Caesar dressing</li>
-        <li>2 tbsp grated Parmesan cheese</li>
-        <li>Optional: cherry tomatoes or cucumber slices</li>
+    <h3 onclick="toggleInfo('parmesan-ingredients')">Ingredients</h3>
+    <ul id="parmesan-ingredients" class="hidden">
+        <li>2 boneless chicken breasts</li>
+        <li>1/2 cup all-purpose flour</li>
+        <li>2 eggs, beaten</li>
+        <li>1 cup breadcrumbs</li>
+        <li>1 cup tomato sauce</li>
+        <li>1/2 cup shredded mozzarella cheese</li>
+        <li>1/4 cup grated Parmesan cheese</li>
+        <li>2 tbsp olive oil</li>
+        <li>Salt and pepper to taste</li>
     </ul>
 
-    <h3 onclick="toggleInfo('wrap-steps')">Instructions</h3>
-    <ol id="wrap-steps" class="hidden" onchange="checkCompletion('wrap-steps','wrap-complete')">
-        <li><input type="checkbox">Cook the chicken until fully done, then slice it into thin strips.</li>
-        <li><input type="checkbox">Wash and dry the lettuce before cutting it into bite-sized pieces.</li>
-        <li><input type="checkbox">Combine chicken, lettuce, Parmesan, and Caesar dressing.</li>
-        <li><input type="checkbox">Mix everything until evenly coated.</li>
-        <li><input type="checkbox">Lay a tortilla flat on a clean surface.</li>
-        <li><input type="checkbox">Place the chicken mixture in the centre.</li>
-        <li><input type="checkbox">Fold in the sides and roll tightly.</li>
-        <li><input type="checkbox">Slice the wrap in half if desired.</li>
-        <li><input type="checkbox">Serve immediately or wrap for later.</li>
+    <h3 onclick="toggleInfo('parmesan-steps')">How to Make</h3>
+    <ol id="parmesan-steps" class="hidden" onchange="checkCompletion('parmesan-steps','parmesan-complete')">
+        <li><input type="checkbox">Season and coat the chicken with flour, egg, and breadcrumbs.</li>
+        <li><input type="checkbox">Pan-fry the chicken until golden brown.</li>
+        <li><input type="checkbox">Place the chicken in a baking dish.</li>
+        <li><input type="checkbox">Top with tomato sauce, mozzarella, and Parmesan cheese.</li>
+        <li><input type="checkbox">Bake until the cheese is melted and the chicken is fully cooked.</li>
+        <li><input type="checkbox">Serve hot with pasta or a side salad.</li>
     </ol>
-    <div id="wrap-complete" class="completed hidden">Completed!</div>
+    <div id="parmesan-complete" class="completed hidden">Completed!</div>
 </article>
 
 <article>
-    <h2>Chicken and Sweet Corn Soup with Noodles</h2>
+    <h2>Chicken Noodle Soup</h2>
     <figure>
-        <img src="images/chicken-corn-soup.jpg" alt="Chicken and Sweet Corn Soup">
-        <figcaption>Chicken and Sweet Corn Soup with Noodles</figcaption>
+        <img src="images/chicken-noodle-soup.jpg" alt="Chicken Noodle Soup">
+        <figcaption>Chicken Noodle Soup</figcaption>
     </figure>
 
     <h3 onclick="toggleInfo('soup-desc')">Description</h3>
     <p id="soup-desc" class="hidden">
-        This soup is a comforting blend of tender chicken, sweet corn, silky egg ribbons, and soft noodles simmered in a flavorful broth. The sweetness of corn balances the savory depth of chicken stock, while noodles make it hearty enough for a full meal. It’s perfect for cold days or when you need something soothing and nourishing.
+        Chicken Noodle Soup is the ultimate comfort food, made with tender chicken, vegetables, noodles, and a flavorful broth. Its warmth and nourishment make it ideal for chilly evenings or when you’re feeling under the weather. The savory broth, soft noodles, and fresh herbs create a soothing, satisfying meal that feels like a hug in a bowl.
     </p>
 
     <h3 onclick="toggleInfo('soup-ingredients')">Ingredients</h3>
     <ul id="soup-ingredients" class="hidden">
         <li>4 cups chicken stock</li>
-        <li>1 cup cooked chicken breast, shredded</li>
-        <li>1 cup sweet corn kernels</li>
-        <li>2 eggs, lightly beaten</li>
-        <li>100g egg noodles</li>
-        <li>1 tbsp soy sauce</li>
+        <li>1 cup cooked chicken, shredded</li>
+        <li>1 cup egg noodles</li>
+        <li>1 onion, diced</li>
+        <li>2 carrots, sliced</li>
+        <li>2 celery stalks, chopped</li>
+        <li>2 garlic cloves, minced</li>
+        <li>1 tbsp olive oil</li>
         <li>Salt and pepper to taste</li>
-        <li>Spring onions for garnish</li>
+        <li>Fresh parsley for garnish</li>
     </ul>
 
-    <h3 onclick="toggleInfo('soup-steps')">Instructions</h3>
+    <h3 onclick="toggleInfo('soup-steps')">How to Make</h3>
     <ol id="soup-steps" class="hidden" onchange="checkCompletion('soup-steps','soup-complete')">
-        <li><input type="checkbox">Bring chicken stock to a gentle boil.</li>
-        <li><input type="checkbox">Add chicken pieces and cook fully.</li>
-        <li><input type="checkbox">Shred chicken and return to pot.</li>
-        <li><input type="checkbox">Add sweet corn and simmer.</li>
-        <li><input type="checkbox">Stir in beaten eggs slowly.</li>
+        <li><input type="checkbox">Cook the onions, carrots, celery, and garlic in olive oil.</li>
+        <li><input type="checkbox">Pour in the chicken stock and bring to a boil.</li>
+        <li><input type="checkbox">Add chicken and simmer.</li>
         <li><input type="checkbox">Add noodles and cook until tender.</li>
-        <li><input type="checkbox">Season with salt, pepper, soy sauce.</li>
-        <li><input type="checkbox">Adjust seasoning before serving.</li>
-        <li><input type="checkbox">Garnish with spring onions.</li>
+        <li><input type="checkbox">Season with salt, pepper, and herbs.</li>
+        <li><input type="checkbox">Garnish with parsley and serve hot.</li>
     </ol>
     <div id="soup-complete" class="completed hidden">Completed!</div>
 </article>
 
 <article>
-    <h2>Carbonara</h2>
+    <h2>Taiwanese Three Cup Chicken</h2>
     <figure>
-        <img src="images/carbonara.jpg" alt="Carbonara">
-        <figcaption>Creamy Carbonara</figcaption>
+        <img src="images/three-cup-chicken.jpg" alt="Taiwanese Three Cup Chicken">
+        <figcaption>Taiwanese Three Cup Chicken</figcaption>
     </figure>
 
-    <h3 onclick="toggleInfo('carbonara-desc')">Description</h3>
-    <p id="carbonara-desc" class="hidden">
-        Carbonara is a classic Roman pasta dish made with spaghetti, eggs, Parmesan cheese, black pepper, and crispy pancetta or bacon. The heat of the pasta creates a rich, creamy sauce without cream. Its charm lies in the balance of flavors: salty pancetta, sharp Parmesan, and the gentle heat of black pepper. It’s indulgent yet simple, making it a timeless comfort food.
+    <h3 onclick="toggleInfo('threecup-desc')">Description</h3>
+    <p id="threecup-desc" class="hidden">
+        Taiwanese Three Cup Chicken is a traditional dish named after its equal parts of soy sauce, sesame oil, and rice wine. The chicken is simmered with garlic, ginger, and fresh basil, creating a rich, savory, and slightly sweet flavor. Aromatic and deeply satisfying, it’s a staple of Taiwanese home cooking and pairs perfectly with steamed rice for a comforting dinner.
     </p>
 
-    <h3 onclick="toggleInfo('carbonara-ingredients')">Ingredients</h3>
-    <ul id="carbonara-ingredients" class="hidden">
-        <li>200g spaghetti</li>
-        <li>100g pancetta or bacon, diced</li>
-        <li>2 large eggs</li>
-        <li>1/2 cup grated Parmesan cheese</li>
-        <li>1/2 tsp freshly ground black pepper</li>
-        <li>Salt to taste</li>
+    <h3 onclick="toggleInfo('threecup-ingredients')">Ingredients</h3>
+    <ul id="threecup-ingredients" class="hidden">
+        <li>500g chicken thighs, cut into pieces</li>
+        <li>1/3 cup soy sauce</li>
+        <li>1/3 cup sesame oil</li>
+        <li>1/3 cup rice wine</li>
+        <li>4 garlic cloves, sliced</li>
+        <li>1 thumb-sized piece of ginger, sliced</li>
+        <li>1 cup fresh basil leaves</li>
+        <li>1 tbsp sugar</li>
     </ul>
 
-    <h3 onclick="toggleInfo('carbonara-steps')">Instructions</h3>
-    <ol id="carbonara-steps" class="hidden" onchange="checkCompletion('carbonara-steps','carbonara-complete')">
-        <li><input type="checkbox">Cook pasta until al dente.</li>
-        <li><input type="checkbox">Fry pancetta or bacon until crispy.</li>
-        <li><input type="checkbox">Whisk eggs, Parmesan, and pepper in a bowl.</li>
-        <li><input type="checkbox">Reserve pasta water before draining.</li>
-        <li><input type="checkbox">Add pasta to bacon pan.</li>
-        <li><input type="checkbox">Remove pan from heat, add egg mixture.</li>
-        <li><input type="checkbox">Toss pasta quickly for creamy sauce.</li>
-        <li><input type="checkbox">Add pasta water if needed.</li>
-        <li><input type="checkbox">Serve with extra Parmesan and pepper.</li>
+    <h3 onclick="toggleInfo('threecup-steps')">How to Make</h3>
+    <ol id="threecup-steps" class="hidden" onchange="checkCompletion('threecup-steps','threecup-complete')">
+        <li><input type="checkbox">Cook the ginger and garlic until fragrant.</li>
+        <li><input type="checkbox">Add the chicken and stir-fry until browned.</li>
+        <li><input type="checkbox">Add the soy sauce, sesame oil, rice wine, and sugar.</li>
+        <li><input type="checkbox">Simmer until the sauce thickens.</li>
+        <li><input type="checkbox">Stir in the fresh basil leaves.</li>
+        <li><input type="checkbox">Serve with steamed rice.</li>
     </ol>
-    <div id="carbonara-complete" class="completed hidden">Completed!</div>
+    <div id="threecup-complete" class="completed hidden">Completed!</div>
 </article>
 
 </main>
 
+<footer>
+<p>2026 Simply Savory</p>
+</footer>
+
 </body>
-</html>
