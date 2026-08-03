@@ -3,6 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Dinner Recipes</title>
+    <script src="../assets/js/script.js"></script>
+    <!-- <style>
+        .hidden { display: none; }
+        h3, h2 { cursor: pointer; color: #b58900; }
+        .completed { color: green; font-weight: bold; margin-top: 10px; }
+        ol {
+            list-style: none;
+            counter-reset: step-counter;
+            padding-left: 0;
+        }
+        ol li {
+            counter-increment: step-counter;
+            margin: 6px 0;
+        }
+        ol li::before {
+            content: counter(step-counter) ". ";
+            font-weight: bold;
+            margin-right: 6px;
+        }
+        ol li input[type="checkbox"] {
+            margin-right: 8px;
+        }
+    </style> -->
 </head>
 
 <body>
@@ -14,73 +37,84 @@
 <main>
 
 <article>
+    <h2>Chicken Parmesan</h2>
+    <figure>
+        <img src="images/chicken-parmesan.jpg" alt="Chicken Parmesan">
+        <figcaption>Chicken Parmesan</figcaption>
+    </figure>
 
-<h2>Chicken Parmesan</h2>
+    <h3 onclick="toggleInfo('parmesan-desc')">Description</h3>
+    <p id="parmesan-desc" class="hidden">
+        Chicken Parmesan is a popular Italian-American dish featuring crispy
+        breaded chicken topped with rich tomato sauce and melted mozzarella and
+        Parmesan cheese. It is a hearty and comforting meal that is commonly
+        served with pasta or fresh salad.
+    </p>
 
-<figure>
-    <img src="images/chicken-parmesan.jpg" alt="Chicken Parmesan">
-    <figcaption>Chicken Parmesan</figcaption>
-</figure>
-
-<p>
-Chicken Parmesan is a popular Italian-American dish featuring crispy
-breaded chicken topped with rich tomato sauce and melted mozzarella and
-Parmesan cheese. It is a hearty and comforting meal that is commonly
-served with pasta or fresh salad.
-</p>
-<li><input type="checkbox">Season and coat the chicken with flour, egg, and breadcrumbs.</li>
-<li><input type="checkbox">Pan-fry the chicken until golden brown.</li>
-<li><input type="checkbox">Place the chicken in a baking dish.</li>
-<li><input type="checkbox">Top with tomato sauce, mozzarella, and Parmesan cheese.</li>
-<li><input type="checkbox">Bake until the cheese is melted and the chicken is fully cooked.</li>
-<li><input type="checkbox">Serve hot with pasta or a side salad.</li>
-
+    <h3 onclick="toggleInfo('parmesan-steps')">How to Make</h3>
+    <ol id="parmesan-steps" class="hidden" onchange="checkCompletion('parmesan-steps','parmesan-complete')">
+        <li><input type="checkbox">Season and coat the chicken with flour, egg, and breadcrumbs.</li>
+        <li><input type="checkbox">Pan-fry the chicken until golden brown.</li>
+        <li><input type="checkbox">Place the chicken in a baking dish.</li>
+        <li><input type="checkbox">Top with tomato sauce, mozzarella, and Parmesan cheese.</li>
+        <li><input type="checkbox">Bake until the cheese is melted and the chicken is fully cooked.</li>
+        <li><input type="checkbox">Serve hot with pasta or a side salad.</li>
+    </ol>
+    <div id="parmesan-complete" class="completed hidden">Completed!</div>
 </article>
 
 <article>
+    <h2>Chicken Noodle Soup</h2>
+    <figure>
+        <img src="images/chicken-noodle-soup.jpg" alt="Chicken Noodle Soup">
+        <figcaption>Chicken Noodle Soup</figcaption>
+    </figure>
 
-<h2>Chicken Noodle Soup</h2>
+    <h3 onclick="toggleInfo('soup-desc')">Description</h3>
+    <p id="soup-desc" class="hidden">
+        Chicken Noodle Soup is a comforting dish made with tender chicken,
+        vegetables, noodles, and a flavourful chicken broth. It is warm,
+        nourishing, and perfect for chilly days or whenever you need a simple,
+        satisfying meal.
+    </p>
 
-<figure>
-    <img src="images/chicken-noodle-soup.jpg" alt="Chicken Noodle Soup">
-    <figcaption>Chicken Noodle Soup</figcaption>
-</figure>
-
-<p>
-Chicken Noodle Soup is a comforting dish made with tender chicken,
-vegetables, noodles, and a flavourful chicken broth. It is warm,
-nourishing, and perfect for chilly days or whenever you need a simple,
-satisfying meal.
-</p>
-<li><input type="checkbox">Cook the onions, carrots, celery, and garlic.</li>
-<li><input type="checkbox">Pour in the chicken stock and bring to a boil.</li>
-<li><input type="checkbox">Cook and shred the chicken.</li>
-<li><input type="checkbox">Add the noodles and cook until tender.</li>
-<li><input type="checkbox">Season with salt, pepper, and herbs.</li>
-<li><input type="checkbox">Garnish with parsley and serve hot.</li>
+    <h3 onclick="toggleInfo('soup-steps')">How to Make</h3>
+    <ol id="soup-steps" class="hidden" onchange="checkCompletion('soup-steps','soup-complete')">
+        <li><input type="checkbox">Cook the onions, carrots, celery, and garlic.</li>
+        <li><input type="checkbox">Pour in the chicken stock and bring to a boil.</li>
+        <li><input type="checkbox">Cook and shred the chicken.</li>
+        <li><input type="checkbox">Add the noodles and cook until tender.</li>
+        <li><input type="checkbox">Season with salt, pepper, and herbs.</li>
+        <li><input type="checkbox">Garnish with parsley and serve hot.</li>
+    </ol>
+    <div id="soup-complete" class="completed hidden">Completed!</div>
 </article>
 
 <article>
+    <h2>Taiwanese Three Cup Chicken</h2>
+    <figure>
+        <img src="images/three-cup-chicken.jpg" alt="Taiwanese Three Cup Chicken">
+        <figcaption>Taiwanese Three Cup Chicken</figcaption>
+    </figure>
 
-<h2>Taiwanese Three Cup Chicken</h2>
+    <h3 onclick="toggleInfo('threecup-desc')">Description</h3>
+    <p id="threecup-desc" class="hidden">
+        Taiwanese Three Cup Chicken is a traditional dish made with chicken,
+        soy sauce, sesame oil, rice wine, garlic, ginger, and fresh basil. It
+        has a rich, savoury, and slightly sweet flavour, making it a popular
+        meal that pairs perfectly with steamed rice.
+    </p>
 
-<figure>
-    <img src="images/three-cup-chicken.jpg" alt="Taiwanese Three Cup Chicken">
-    <figcaption>Taiwanese Three Cup Chicken</figcaption>
-</figure>
-
-<p>
-Taiwanese Three Cup Chicken is a traditional dish made with chicken,
-soy sauce, sesame oil, rice wine, garlic, ginger, and fresh basil. It
-has a rich, savoury, and slightly sweet flavour, making it a popular
-meal that pairs perfectly with steamed rice.
-</p>
-<li><input type="checkbox">Cook the ginger and garlic until fragrant.</li>
-<li><input type="checkbox">Add the chicken and stir-fry until browned.</li>
-<li><input type="checkbox">Add the soy sauce, sesame oil, and rice wine.</li>
-<li><input type="checkbox">Simmer until the sauce thickens.</li>
-<li><input type="checkbox">Stir in the fresh basil leaves.</li>
-<li><input type="checkbox">Serve with steamed rice.</li>
+    <h3 onclick="toggleInfo('threecup-steps')">How to Make</h3>
+    <ol id="threecup-steps" class="hidden" onchange="checkCompletion('threecup-steps','threecup-complete')">
+        <li><input type="checkbox">Cook the ginger and garlic until fragrant.</li>
+        <li><input type="checkbox">Add the chicken and stir-fry until browned.</li>
+        <li><input type="checkbox">Add the soy sauce, sesame oil, and rice wine.</li>
+        <li><input type="checkbox">Simmer until the sauce thickens.</li>
+        <li><input type="checkbox">Stir in the fresh basil leaves.</li>
+        <li><input type="checkbox">Serve with steamed rice.</li>
+    </ol>
+    <div id="threecup-complete" class="completed hidden">Completed!</div>
 </article>
 
 </main>
@@ -88,6 +122,7 @@ meal that pairs perfectly with steamed rice.
 <footer>
 <p>2026 Simply Savory</p>
 </footer>
+
 
 </body>
 </html>
