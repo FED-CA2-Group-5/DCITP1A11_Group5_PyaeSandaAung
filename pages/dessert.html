@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Dessert Recipes</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="./assets/css/styles.css">
     <script src="../assets/js/script.js"></script>
     <style>
@@ -27,6 +26,10 @@
         ol li input[type="checkbox"] {
             margin-right: 8px;
         }
+        ul {
+            margin: 6px 0;
+            padding-left: 20px;
+        }
     </style>
 </head>
 
@@ -47,10 +50,18 @@
 
     <h3 onclick="toggleInfo('strawberries-desc')">Description</h3>
     <p id="strawberries-desc" class="hidden">
-        Fresh strawberries dipped in melted chocolate create a simple yet elegant dessert that is perfect for any occasion.
+        Chocolate Covered Strawberries are a simple yet elegant dessert that combines the natural sweetness of fresh strawberries with the indulgence of smooth, melted chocolate. They are often served at parties, weddings, or romantic occasions, symbolizing luxury and celebration. The crisp chocolate shell contrasts beautifully with the juicy fruit inside, making them irresistible.
     </p>
 
-    <h3 onclick="toggleInfo('strawberries-steps')">How to Make</h3>
+    <h3 onclick="toggleInfo('strawberries-ingredients')">Ingredients</h3>
+    <ul id="strawberries-ingredients" class="hidden">
+        <li>1 pint fresh strawberries</li>
+        <li>1 cup semi-sweet chocolate chips</li>
+        <li>1 tbsp vegetable oil (optional, for smoother chocolate)</li>
+        <li>Optional toppings: crushed nuts, sprinkles, or white chocolate drizzle</li>
+    </ul>
+
+    <h3 onclick="toggleInfo('strawberries-steps')">Instructions</h3>
     <ol id="strawberries-steps" class="hidden" onchange="checkCompletion('strawberries-steps','strawberries-complete')">
         <li><input type="checkbox">Wash and dry the strawberries thoroughly.</li>
         <li><input type="checkbox">Melt the chocolate until smooth.</li>
@@ -71,10 +82,20 @@
 
     <h3 onclick="toggleInfo('cookies-desc')">Description</h3>
     <p id="cookies-desc" class="hidden">
-        Butter cookies are crisp, buttery and lightly sweet. They are easy to bake and perfect for sharing with family and friends.
+        Butter Cookies are a classic treat known for their crisp texture, rich buttery flavor, and delicate sweetness. They are often enjoyed during holidays or served with tea and coffee. Their simple ingredients make them easy to prepare, yet they deliver a nostalgic taste that appeals to all ages. Perfect for gifting or sharing with loved ones.
     </p>
 
-    <h3 onclick="toggleInfo('cookies-steps')">How to Make</h3>
+    <h3 onclick="toggleInfo('cookies-ingredients')">Ingredients</h3>
+    <ul id="cookies-ingredients" class="hidden">
+        <li>1 cup unsalted butter, softened</li>
+        <li>3/4 cup granulated sugar</li>
+        <li>1 large egg</li>
+        <li>1 tsp vanilla extract</li>
+        <li>2 1/4 cups all-purpose flour</li>
+        <li>Pinch of salt</li>
+    </ul>
+
+    <h3 onclick="toggleInfo('cookies-steps')">Instructions</h3>
     <ol id="cookies-steps" class="hidden" onchange="checkCompletion('cookies-steps','cookies-complete')">
         <li><input type="checkbox">Cream the butter and sugar until light and fluffy.</li>
         <li><input type="checkbox">Mix in the egg and vanilla extract.</li>
@@ -95,10 +116,22 @@
 
     <h3 onclick="toggleInfo('mugcake-desc')">Description</h3>
     <p id="mugcake-desc" class="hidden">
-        Chocolate mug cake is a rich dessert made in the microwave in just a few minutes. It is perfect when you want a quick chocolate treat.
+        Chocolate Mug Cake is a quick and indulgent dessert made in the microwave in just a few minutes. It’s rich, moist, and perfect when you crave chocolate but don’t want to bake a whole cake. Popular among students and busy professionals, it’s customizable with add-ins like chocolate chips or nuts and can be topped with whipped cream or ice cream for extra decadence.
     </p>
 
-    <h3 onclick="toggleInfo('mugcake-steps')">How to Make</h3>
+    <h3 onclick="toggleInfo('mugcake-ingredients')">Ingredients</h3>
+    <ul id="mugcake-ingredients" class="hidden">
+        <li>4 tbsp all-purpose flour</li>
+        <li>2 tbsp cocoa powder</li>
+        <li>2 tbsp granulated sugar</li>
+        <li>1/4 tsp baking powder</li>
+        <li>3 tbsp milk</li>
+        <li>2 tbsp vegetable oil</li>
+        <li>1/4 tsp vanilla extract</li>
+        <li>Optional: chocolate chips or nuts</li>
+    </ul>
+
+    <h3 onclick="toggleInfo('mugcake-steps')">Instructions</h3>
     <ol id="mugcake-steps" class="hidden" onchange="checkCompletion('mugcake-steps','mugcake-complete')">
         <li><input type="checkbox">Mix the dry ingredients in a microwave-safe mug.</li>
         <li><input type="checkbox">Add the milk, oil, and vanilla extract.</li>
@@ -115,8 +148,6 @@
 <footer>
 <p> Simply Savory</p>
 </footer>
-
-
 
 </body>
 </html>
