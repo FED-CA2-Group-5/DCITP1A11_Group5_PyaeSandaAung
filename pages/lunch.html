@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Lunch Recipes</title>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./assets/css/styles.css">
     <script src="../assets/js/script.js"></script>
     <style>
         .hidden { display: none; }
@@ -46,12 +47,11 @@
 
     <h3 onclick="toggleInfo('wrap-desc')">Description</h3>
     <p id="wrap-desc" class="hidden">
-        <p>
-A Chicken Caesar Wrap is a quick and satisfying meal made with tender
-chicken, crisp lettuce, Parmesan cheese, and creamy Caesar dressing,
-all wrapped inside a soft tortilla. It is perfect for lunch, dinner,
-or a convenient meal on busy days.
-</p>
+        A Chicken Caesar Wrap is a quick and satisfying meal made with tender
+        chicken, crisp lettuce, Parmesan cheese, and creamy Caesar dressing,
+        all wrapped inside a soft tortilla. It is perfect for lunch, dinner,
+        or a convenient meal on busy days.
+    </p>
 
     <h3 onclick="toggleInfo('wrap-steps')">How to Make</h3>
     <ol id="wrap-steps" class="hidden" onchange="checkCompletion('wrap-steps','wrap-complete')">
@@ -77,12 +77,10 @@ or a convenient meal on busy days.
 
     <h3 onclick="toggleInfo('soup-desc')">Description</h3>
     <p id="soup-desc" class="hidden">
-        <p>
-Chicken and Sweet Corn Soup with Noodles is a warm and comforting dish
-made with tender chicken, sweet corn, silky egg ribbons, and soft
-noodles in a flavourful broth. It is filling, easy to prepare, and
-perfect for a cosy lunch or dinner.
-</p>.
+        Chicken and Sweet Corn Soup with Noodles is a warm and comforting dish
+        made with tender chicken, sweet corn, silky egg ribbons, and soft
+        noodles in a flavourful broth. It is filling, easy to prepare, and
+        perfect for a cosy lunch or dinner.
     </p>
 
     <h3 onclick="toggleInfo('soup-steps')">How to Make</h3>
@@ -109,10 +107,10 @@ perfect for a cosy lunch or dinner.
 
     <h3 onclick="toggleInfo('carbonara-desc')">Description</h3>
     <p id="carbonara-desc" class="hidden">
-       Carbonara is a classic Italian pasta dish made with pasta, eggs,
-Parmesan cheese, black pepper, and crispy bacon or pancetta. The hot
-pasta creates a rich and creamy sauce without using cream, making it a
-simple yet delicious comfort meal.
+        Carbonara is a classic Italian pasta dish made with pasta, eggs,
+        Parmesan cheese, black pepper, and crispy bacon or pancetta. The hot
+        pasta creates a rich and creamy sauce without using cream, making it a
+        simple yet delicious comfort meal.
     </p>
 
     <h3 onclick="toggleInfo('carbonara-steps')">How to Make</h3>
@@ -132,25 +130,7 @@ simple yet delicious comfort meal.
 
 </main>
 
-<!-- <script>
-    function toggleInfo(id) {
-        const element = document.getElementById(id);
-        element.classList.toggle("hidden");
-    }
-
-    function checkCompletion(listId, completeId) {
-        const list = document.getElementById(listId);
-        const checkboxes = list.querySelectorAll("input[type='checkbox']");
-        const allChecked = Array.from(checkboxes).every(cb => cb.checked);
-        const completeMsg = document.getElementById(completeId);
-        if (allChecked) {
-            completeMsg.classList.remove("hidden");
-        } else {
-            completeMsg.classList.add("hidden");
-        }
-    }
-</script> -->
-
 </body>
 </html>
+
 
