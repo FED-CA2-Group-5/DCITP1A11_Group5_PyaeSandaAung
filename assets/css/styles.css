@@ -3,7 +3,8 @@
 /* Show the dropdown menu*/
 .show {display:block;}
 
-
+.hidden { display: none; }
+h2, h3 { cursor: pointer; color: #b58900; } /* pale yellow accent */
 
 
 
