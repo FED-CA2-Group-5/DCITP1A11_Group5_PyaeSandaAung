@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Lunch Recipes</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="./assets/css/styles.css">
     <script src="../assets/js/script.js"></script>
     <style>
@@ -27,6 +26,10 @@
         ol li input[type="checkbox"] {
             margin-right: 8px;
         }
+        ul {
+            margin: 6px 0;
+            padding-left: 20px;
+        }
     </style>
 </head>
 
@@ -47,11 +50,25 @@
 
     <h3 onclick="toggleInfo('wrap-desc')">Description</h3>
     <p id="wrap-desc" class="hidden">
-        A Chicken Caesar Wrap is a quick and satisfying meal made with tender
+         A Chicken Caesar Wrap is a quick and satisfying meal made with tender
         chicken, crisp lettuce, Parmesan cheese, and creamy Caesar dressing,
-        all wrapped inside a soft tortilla. It is perfect for lunch, dinner,
-        or a convenient meal on busy days.
+        all wrapped inside a soft tortilla. Beyond its convenience, this wrap
+        balances textures and flavors: juicy chicken pairs with crunchy greens,
+        while the salty bite of Parmesan and tangy dressing create a rich,
+        savory profile. The tortilla keeps everything neatly contained, making
+        it perfect for on-the-go lunches, picnics, or a light dinner. Its
+        versatility allows for variations such as grilled chicken, whole-wheat
+        tortillas, or added vegetables for extra nutrition. It is perfect for a quick and easy meal.
     </p>
+
+    <h3 onclick="toggleInfo('wrap-ingredients')">Ingredients</h3>
+    <ul id="wrap-ingredients" class="hidden">
+        <li>1 tortilla wrap</li>
+        <li>1 cup grilled chicken, sliced</li>
+        <li>1 cup romaine lettuce</li>
+        <li>2 tbsp Caesar dressing</li>
+        <li>2 tbsp grated Parmesan cheese</li>
+    </ul>
 
     <h3 onclick="toggleInfo('wrap-steps')">How to Make</h3>
     <ol id="wrap-steps" class="hidden" onchange="checkCompletion('wrap-steps','wrap-complete')">
@@ -79,9 +96,27 @@
     <p id="soup-desc" class="hidden">
         Chicken and Sweet Corn Soup with Noodles is a warm and comforting dish
         made with tender chicken, sweet corn, silky egg ribbons, and soft
-        noodles in a flavourful broth. It is filling, easy to prepare, and
-        perfect for a cosy lunch or dinner.
+        noodles in a flavourful broth. The sweetness of corn balances the
+        savory depth of chicken stock, while the egg ribbons add a delicate,
+        velvety texture. Noodles make the soup hearty and filling, turning it
+        into a complete meal rather than just a starter. This dish is often
+        enjoyed during cooler weather or when seeking comfort food, as its
+        gentle flavors and soothing warmth provide both nourishment and
+        satisfaction. It is filling, easy to prepare, and
+        perfect for a cozy meal.
     </p>
+
+    <h3 onclick="toggleInfo('soup-ingredients')">Ingredients</h3>
+    <ul id="soup-ingredients" class="hidden">
+        <li>4 cups chicken stock</li>
+        <li>1 cup cooked chicken, shredded</li>
+        <li>1 cup sweet corn kernels</li>
+        <li>2 eggs, beaten</li>
+        <li>100g noodles</li>
+        <li>Salt and pepper to taste</li>
+        <li>1 tbsp soy sauce (optional)</li>
+        <li>Spring onions for garnish</li>
+    </ul>
 
     <h3 onclick="toggleInfo('soup-steps')">How to Make</h3>
     <ol id="soup-steps" class="hidden" onchange="checkCompletion('soup-steps','soup-complete')">
@@ -110,8 +145,24 @@
         Carbonara is a classic Italian pasta dish made with pasta, eggs,
         Parmesan cheese, black pepper, and crispy bacon or pancetta. The hot
         pasta creates a rich and creamy sauce without using cream, making it a
-        simple yet delicious comfort meal.
+        simple yet delicious comfort meal. Its charm lies in the balance of
+        flavors: the saltiness of pancetta, the sharpness of Parmesan, and the
+        gentle heat of black pepper meld into a silky sauce that clings to each
+        strand of pasta. Originating from Rome, carbonara embodies rustic
+        Italian cooking — minimal ingredients, maximum flavor. When prepared
+        correctly, it delivers a luxurious mouthfeel and a depth of taste that
+        feels indulgent yet homely, making it a timeless favorite worldwide.
     </p>
+
+    <h3 onclick="toggleInfo('carbonara-ingredients')">Ingredients</h3>
+    <ul id="carbonara-ingredients" class="hidden">
+        <li>200g spaghetti</li>
+        <li>100g pancetta or bacon</li>
+        <li>2 large eggs</li>
+        <li>1/2 cup grated Parmesan cheese</li>
+        <li>1/2 tsp black pepper</li>
+        <li>Salt to taste</li>
+    </ul>
 
     <h3 onclick="toggleInfo('carbonara-steps')">How to Make</h3>
     <ol id="carbonara-steps" class="hidden" onchange="checkCompletion('carbonara-steps','carbonara-complete')">
