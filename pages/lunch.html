@@ -3,10 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Lunch Recipes</title>
-    <style>
+    <!-- <style>
         .hidden { display: none; }
-        h3, h2 { cursor: pointer; color: #b58900; } /* pale yellow accent */
-    </style>
+        h3, h2 { cursor: pointer; color: #b58900; }
+        .completed { color: green; font-weight: bold; margin-top: 10px; }
+        ol {
+            list-style: none;
+            counter-reset: step-counter;
+            padding-left: 0;
+        }
+        ol li {
+            counter-increment: step-counter;
+            margin: 6px 0;
+        }
+        ol li::before {
+            content: counter(step-counter) ". ";
+            font-weight: bold;
+            margin-right: 6px;
+        }
+        ol li input[type="checkbox"] {
+            margin-right: 8px;
+        }
+    </style> -->
 </head>
 
 <body>
@@ -19,7 +37,6 @@
 
 <article>
     <h2>Chicken Caesar Wrap</h2>
-
     <figure>
         <img src="images/chicken-caesar-wrap.jpg" alt="Chicken Caesar Wrap">
         <figcaption>Chicken Caesar Wrap</figcaption>
@@ -31,22 +48,22 @@
     </p>
 
     <h3 onclick="toggleInfo('wrap-steps')">How to Make</h3>
-    <ol id="wrap-steps" class="hidden">
-        <li>Cook the chicken until fully done, then slice it into thin strips.</li>
-        <li>Wash and dry the lettuce before cutting it into bite-sized pieces.</li>
-        <li>In a bowl, combine the chicken, lettuce, grated Parmesan cheese, and Caesar dressing.</li>
-        <li>Mix everything until the ingredients are evenly coated.</li>
-        <li>Lay a tortilla flat on a clean surface.</li>
-        <li>Place the chicken mixture in the centre of the tortilla.</li>
-        <li>Fold in the sides and roll the tortilla tightly into a wrap.</li>
-        <li>Slice the wrap in half if desired.</li>
-        <li>Serve immediately or wrap it for an easy meal on the go.</li>
+    <ol id="wrap-steps" class="hidden" onchange="checkCompletion('wrap-steps','wrap-complete')">
+        <li><input type="checkbox">Cook the chicken until fully done, then slice it into thin strips.</li>
+        <li><input type="checkbox">Wash and dry the lettuce before cutting it into bite-sized pieces.</li>
+        <li><input type="checkbox">Combine chicken, lettuce, Parmesan, and Caesar dressing.</li>
+        <li><input type="checkbox">Mix everything until evenly coated.</li>
+        <li><input type="checkbox">Lay a tortilla flat on a clean surface.</li>
+        <li><input type="checkbox">Place the chicken mixture in the centre.</li>
+        <li><input type="checkbox">Fold in the sides and roll tightly.</li>
+        <li><input type="checkbox">Slice the wrap in half if desired.</li>
+        <li><input type="checkbox">Serve immediately or wrap for later.</li>
     </ol>
+    <div id="wrap-complete" class="completed hidden">Completed!</div>
 </article>
 
 <article>
     <h2>Chicken and Sweet Corn Soup with Noodles</h2>
-
     <figure>
         <img src="images/chicken-corn-soup.jpg" alt="Chicken and Sweet Corn Soup">
         <figcaption>Chicken and Sweet Corn Soup with Noodles</figcaption>
@@ -58,22 +75,22 @@
     </p>
 
     <h3 onclick="toggleInfo('soup-steps')">How to Make</h3>
-    <ol id="soup-steps" class="hidden">
-        <li>Bring chicken stock to a gentle boil in a large pot.</li>
-        <li>Add the chicken pieces and cook until they are fully cooked through.</li>
-        <li>Remove the chicken, shred it into smaller pieces, and return it to the pot.</li>
-        <li>Add the sweet corn and allow it to simmer for a few minutes.</li>
-        <li>Stir in beaten eggs slowly while gently mixing the soup to create egg ribbons.</li>
-        <li>Add the noodles and cook until they become tender.</li>
-        <li>Season the soup with salt, pepper, and soy sauce if desired.</li>
-        <li>Taste and adjust the seasoning before serving.</li>
-        <li>Garnish with chopped spring onions and enjoy while hot.</li>
+    <ol id="soup-steps" class="hidden" onchange="checkCompletion('soup-steps','soup-complete')">
+        <li><input type="checkbox">Bring chicken stock to a gentle boil.</li>
+        <li><input type="checkbox">Add chicken pieces and cook fully.</li>
+        <li><input type="checkbox">Shred chicken and return to pot.</li>
+        <li><input type="checkbox">Add sweet corn and simmer.</li>
+        <li><input type="checkbox">Stir in beaten eggs slowly.</li>
+        <li><input type="checkbox">Add noodles and cook until tender.</li>
+        <li><input type="checkbox">Season with salt, pepper, soy sauce.</li>
+        <li><input type="checkbox">Adjust seasoning before serving.</li>
+        <li><input type="checkbox">Garnish with spring onions.</li>
     </ol>
+    <div id="soup-complete" class="completed hidden">Completed!</div>
 </article>
 
 <article>
     <h2>Carbonara</h2>
-
     <figure>
         <img src="images/carbonara.jpg" alt="Carbonara">
         <figcaption>Creamy Carbonara</figcaption>
@@ -85,30 +102,40 @@
     </p>
 
     <h3 onclick="toggleInfo('carbonara-steps')">How to Make</h3>
-    <ol id="carbonara-steps" class="hidden">
-        <li>Cook the pasta in boiling salted water until al dente.</li>
-        <li>While the pasta cooks, fry the bacon or pancetta until crispy.</li>
-        <li>In a bowl, whisk together the eggs, grated Parmesan cheese, and black pepper.</li>
-        <li>Reserve a small amount of pasta cooking water before draining the pasta.</li>
-        <li>Add the hot pasta to the pan with the cooked bacon.</li>
-        <li>Remove the pan from the heat and pour in the egg mixture.</li>
-        <li>Toss the pasta quickly so the eggs create a smooth, creamy sauce.</li>
-        <li>Add a little reserved pasta water if the sauce needs to be thinner.</li>
-        <li>Serve immediately with extra Parmesan cheese and freshly ground black pepper.</li>
+    <ol id="carbonara-steps" class="hidden" onchange="checkCompletion('carbonara-steps','carbonara-complete')">
+        <li><input type="checkbox">Cook pasta until al dente.</li>
+        <li><input type="checkbox">Fry bacon until crispy.</li>
+        <li><input type="checkbox">Whisk eggs, Parmesan, and pepper.</li>
+        <li><input type="checkbox">Reserve pasta water before draining.</li>
+        <li><input type="checkbox">Add pasta to bacon pan.</li>
+        <li><input type="checkbox">Remove pan from heat, add egg mix.</li>
+        <li><input type="checkbox">Toss pasta quickly for creamy sauce.</li>
+        <li><input type="checkbox">Add pasta water if needed.</li>
+        <li><input type="checkbox">Serve with extra Parmesan and pepper.</li>
     </ol>
+    <div id="carbonara-complete" class="completed hidden">Completed!</div>
 </article>
 
 </main>
 
-<footer>
-</footer>
-
-<script>
+<!-- <script>
     function toggleInfo(id) {
         const element = document.getElementById(id);
         element.classList.toggle("hidden");
     }
-</script>
+
+    function checkCompletion(listId, completeId) {
+        const list = document.getElementById(listId);
+        const checkboxes = list.querySelectorAll("input[type='checkbox']");
+        const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+        const completeMsg = document.getElementById(completeId);
+        if (allChecked) {
+            completeMsg.classList.remove("hidden");
+        } else {
+            completeMsg.classList.add("hidden");
+        }
+    }
+</script> -->
 
 </body>
 </html>
