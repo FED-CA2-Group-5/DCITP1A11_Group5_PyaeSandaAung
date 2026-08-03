@@ -3,138 +3,101 @@
 <head>
 <meta charset="UTF-8">
 <title>Breakfast</title>
+<style>
+  .hidden { display: none; }
+  h2, h3 { cursor: pointer; color: #b58900; } /* pale yellow accent */
+</style>
 </head>
 
-<body class="bg-amber-100">
+<body>
 
 <header>
-<h1>Breakfast Recipes</h1>
+  <h1>Breakfast Recipes</h1>
 </header>
 
 <main>
 
 <article>
+  <h2>Scrambled Eggs</h2>
 
-<h2>Scrambled Eggs</h2>
+  <figure>
+    <img src="images/scrambled-eggs.jpg" alt="Scrambled Eggs">
+    <figcaption>Soft and creamy scrambled eggs.</figcaption>
+  </figure>
 
-<figure>
-<img src="images/scrambled-eggs.jpg" alt="Scrambled Eggs">
-<figcaption>Soft and creamy scrambled eggs.</figcaption>
-</figure>
+  <h3 onclick="toggleInfo('eggs-desc')">Description</h3>
+  <p id="eggs-desc" class="hidden">
+    Scrambled eggs are a quick and nutritious breakfast made with eggs,
+    butter and seasoning. They are soft, fluffy and perfect with toast.
+  </p>
 
-<p>
-Scrambled eggs are a quick and nutritious breakfast made with eggs,
-butter and seasoning. They are soft, fluffy and perfect with toast.
-</p>
-<section>
-    <h2>How to Make Scrambled Eggs</h2>
-
-    <ol>
-        <li>Crack the eggs into a bowl.</li>
-
-        <li>Add a small amount of milk or cream if desired, then season with salt and pepper.</li>
-
-        <li>Whisk the mixture until the yolks and whites are fully combined.</li>
-
-        <li>Heat a non-stick pan over low to medium heat and melt some butter.</li>
-
-        <li>Pour the egg mixture into the pan.</li>
-
-        <li>Allow the eggs to cook for a few seconds before gently stirring with a spatula.</li>
-
-        <li>Continue pushing the eggs from the edges toward the centre to form soft curds.</li>
-
-        <li>Remove the pan from the heat while the eggs are still slightly creamy.</li>
-
-        <li>Serve immediately with toast or your favourite toppings.</li>
-    </ol>
-</section>
-
-
+  <h3 onclick="toggleInfo('eggs-steps')">How to Make</h3>
+  <ol id="eggs-steps" class="hidden">
+    <li>Crack eggs into a bowl and whisk.</li>
+    <li>Heat butter in a pan.</li>
+    <li>Pour eggs in and stir gently.</li>
+    <li>Cook until soft and creamy.</li>
+  </ol>
 </article>
 
 <article>
+  <h2>French Toast</h2>
 
-<h2>French Toast</h2>
+  <figure>
+    <img src="images/french-toast.jpg" alt="French Toast">
+    <figcaption>Golden French toast.</figcaption>
+  </figure>
 
-<figure>
-<img src="images/french-toast.jpg" alt="French Toast">
-<figcaption>Golden French toast.</figcaption>
-</figure>
+  <h3 onclick="toggleInfo('toast-desc')">Description</h3>
+  <p id="toast-desc" class="hidden">
+    French toast is made by dipping bread into an egg mixture before frying
+    until golden brown. It is often served with syrup, fruits or butter.
+  </p>
 
-<p>
-French toast is made by dipping bread into an egg mixture before frying
-until golden brown. It is often served with syrup, fruits or butter.
-</p>
-<section>
-    <h2>How to Make French Toast</h2>
-
-    <ol>
-        <li>Whisk together eggs, milk, vanilla extract, cinnamon, and a little sugar in a shallow bowl.</li>
-
-        <li>Heat a frying pan over medium heat and add butter.</li>
-
-        <li>Dip each slice of bread into the egg mixture, coating both sides.</li>
-
-        <li>Allow the bread to absorb the mixture for a few seconds without becoming too soggy.</li>
-
-        <li>Place the bread onto the hot pan.</li>
-
-        <li>Cook until the bottom is golden brown.</li>
-
-        <li>Flip the bread and cook the other side until evenly browned.</li>
-
-        <li>Repeat with the remaining slices.</li>
-
-        <li>Serve warm with maple syrup, butter, fresh fruits, or powdered sugar.</li>
-    </ol>
-</section>
-
+  <h3 onclick="toggleInfo('toast-steps')">How to Make</h3>
+  <ol id="toast-steps" class="hidden">
+    <li>Whisk eggs, milk, and cinnamon.</li>
+    <li>Dip bread slices into mixture.</li>
+    <li>Cook on a buttered pan until golden.</li>
+    <li>Serve with syrup or fruit.</li>
+  </ol>
 </article>
 
 <article>
+  <h2>Waffles</h2>
 
-<h2>Waffles</h2>
+  <figure>
+    <img src="images/waffles.jpg" alt="Waffles">
+    <figcaption>Fresh homemade waffles.</figcaption>
+  </figure>
 
-<figure>
-<img src="images/waffles.jpg" alt="Waffles">
-<figcaption>Fresh homemade waffles.</figcaption>
-</figure>
+  <h3 onclick="toggleInfo('waffles-desc')">Description</h3>
+  <p id="waffles-desc" class="hidden">
+    Waffles are crispy on the outside and fluffy on the inside. They can be
+    served with maple syrup, berries or whipped cream.
+  </p>
 
-<p>
-Waffles are crispy on the outside and fluffy on the inside. They can be
-served with maple syrup, berries or whipped cream.
-</p>
-<section>
-    <h2>How to Make Waffles</h2>
-
-    <ol>
-        <li>Preheat the waffle maker according to the manufacturer's instructions.</li>
-
-        <li>In a bowl, mix the flour, baking powder, sugar, and salt.</li>
-
-        <li>In another bowl, whisk together the eggs, milk, melted butter, and vanilla extract.</li>
-
-        <li>Pour the wet ingredients into the dry ingredients and stir until just combined.</li>
-
-        <li>Lightly grease the waffle maker if needed.</li>
-
-        <li>Pour the recommended amount of batter onto the waffle plate.</li>
-
-        <li>Close the lid and cook until the waffle is golden brown and crisp.</li>
-
-        <li>Carefully remove the waffle using a non-metal utensil.</li>
-
-        <li>Serve with butter, maple syrup, fruits, whipped cream, or your favourite toppings.</li>
-    </ol>
-</section>
+  <h3 onclick="toggleInfo('waffles-steps')">How to Make</h3>
+  <ol id="waffles-steps" class="hidden">
+    <li>Mix flour, sugar, baking powder, and salt.</li>
+    <li>Whisk eggs, milk, and melted butter.</li>
+    <li>Combine wet and dry ingredients.</li>
+    <li>Cook in a preheated waffle iron.</li>
+  </ol>
 </article>
 
 </main>
 
 <footer>
-<p> Simply Savory</p>
+  <p>Simply Savory</p>
 </footer>
+
+<script>
+  function toggleInfo(id) {
+    const element = document.getElementById(id);
+    element.classList.toggle("hidden");
+  }
+</script>
 
 </body>
 </html>
