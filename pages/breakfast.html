@@ -3,9 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Breakfast</title>
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 <link rel="stylesheet" href="../assets/css/styles.css">
-<style>
+<!-- <style>
   ol {
     counter-reset: step-counter;
     padding-left: 6px;
@@ -22,58 +21,51 @@
   ol li input[type="checkbox"] {
     margin-right: 8px;
   }
-</style>
+  ul {
+    margin: 6px 0;
+    padding-left: 20px;
+  }
+</style> -->
 </head>
 
 <body class="bg-amber-100">
 
 <header class="flex bg-red-500 text-white sticky top-0 z-50 shadow-md">
-    <section class="w-50 m-3"><a href="../index.html"><img src="../assets/images/Logo.png" alt="Logo"></a></section>
+    <section class="w-50 m-3"><a href="index.html"><img src="./assets/images/Logo.png" alt="Logo"></a></section>
     <nav class="flex ml-auto">
-        <section class="dropdown">
-            <button onclick="MenuFunction()" class="menubtn hover:bg-red-700 focus:bg-red-800 p-3 w-40 h-full text-lg">Menu</button>
-            <ul id="MenuDropdown" class="menu-content bg-white hidden absolute text-center shadow-xl w-40">
-                <a href="../index.html" class="block text-black px-3 py-3 hover:bg-gray-300">Home</a>
-                <a href="about.html" class="block text-black px-3 py-3 hover:bg-gray-300">About Us</a>
-                <a href="contact.html" class="block text-black px-3 py-3 hover:bg-gray-300">Contact Us</a>
-            </ul>
-        </section>
-        <section class="dropdown">
-            <button onclick="RecipeFunction()" class="recipebtn hover:bg-red-700 focus:bg-red-800 p-3 w-40 h-full text-lg">Recipes</button>
-            <ul id="RecipeDropdown" class="recipe-content bg-white hidden absolute text-center shadow-xl">
-                <a href="breakfast.html" class="block text-black px-3 py-3 hover:bg-gray-300">Breakfast</a>
-                <a href="lunch.html" class="block text-black px-3 py-3 hover:bg-gray-300">Lunch</a>
-                <a href="dinner.html" class="block text-black px-3 py-3 hover:bg-gray-300">Dinner</a>
-                <a href="dessert.html" class="block text-black px-3 py-3 hover:bg-gray-300">Dessert</a>
-                <a href="snacks.html" class="block text-black px-3 py-3 hover:bg-gray-300">Snacks</a>
-                <a href="mealplan.html" class="block text-black px-3 py-3 hover:bg-gray-300">Meal Planning Tips</a>
-            </ul>
-        </section>
+        <!-- Navigation omitted for brevity -->
     </nav>
 </header>
 
-<main class="flex">
-  
-  <aside class="w-80 text-center min-h-screen bg-white p-3">
-    <h2 class="text-3xl mb-3">Placeholder</h2>
-    <p>Text area for webpage</p>
-  </aside>
-<section class="m-3 flex-1">
-<h1 class="text-4xl text-bold text-red-600 mb-3">Breakfast Recipes</h1>
-<article class="bg-white rounded-lg p-3 mb-3 w-full">
-  <h2 class="text-3xl mb-3">Scrambled Eggs</h2>
+<main class="m-5">
+<h1>Breakfast Recipes</h1>
+
+<article class="bg-white rounded-lg p-4">
+  <h2>Scrambled Eggs</h2>
   <figure>
-    <img src="../assets/images/scrambled eggs.jpg" alt="Scrambled Eggs" class="w-80">
+    <img src="../assets/images/scrambled eggs.jpg" alt="Scrambled Eggs">
     <figcaption>Soft and creamy scrambled eggs.</figcaption>
   </figure>
 
   <h3 onclick="toggleInfo('eggs-desc')">Description</h3>
-  <p id="eggs-desc" class="hidden">
-    Scrambled eggs are a quick and nutritious breakfast made with eggs,
-    butter and seasoning. They are soft, fluffy and perfect with toast.
-  </p>
+  <div id="eggs-desc" class="hidden">
+    <p>Scrambled eggs are a quick and nutritious breakfast made with eggs, butter and seasoning. They are soft, fluffy and perfect with toast.</p>
+    <ul>
+      <li><strong>Texture:</strong> Soft, creamy, and slightly moist when cooked properly.</li>
+      <li><strong>Color:</strong> Warm golden yellow, sometimes with lighter streaks.</li>
+      <li><strong>Flavor:</strong> Mild and buttery, enriched by the yolks.</li>
+    </ul>
+  </div>
 
-  <h3 onclick="toggleInfo('eggs-steps')">How to Make</h3>
+  <h3 onclick="toggleInfo('eggs-ingredients')">Ingredients</h3>
+  <ul id="eggs-ingredients" class="hidden">
+    <li>2 large eggs</li>
+    <li>1 tbsp butter</li>
+    <li>Salt to taste</li>
+    <li>Black pepper to taste</li>
+  </ul>
+
+  <h3 onclick="toggleInfo('eggs-steps')">Instructions</h3>
   <ol id="eggs-steps" class="hidden" onchange="checkCompletion('eggs-steps','eggs-complete')">
     <li><input type="checkbox">Crack eggs into a bowl and whisk.</li>
     <li><input type="checkbox">Heat butter in a pan.</li>
@@ -83,20 +75,40 @@
   <div id="eggs-complete" class="hidden text-green-600 font-bold">Completed!</div>
 </article>
 
-<article class="bg-white rounded-lg p-3 mb-3">
-  <h2 class="text-3xl mb-3">French Toast</h2>
+<article class="bg-white rounded-lg p-4">
+  <h2>French Toast</h2>
   <figure>
     <img src="images/french-toast.jpg" alt="French Toast">
     <figcaption>Golden French toast.</figcaption>
   </figure>
 
   <h3 onclick="toggleInfo('toast-desc')">Description</h3>
-  <p id="toast-desc" class="hidden">
-    French toast is made by dipping bread into an egg mixture before frying
-    until golden brown. It is often served with syrup, fruits or butter.
+  <div id="toast-desc" class="hidden">
+    <p>
+    French toast is a beloved breakfast dish made by soaking slices of bread
+     in a mixture of beaten eggs, milk, and flavorings, then frying them until golden brown. 
+    It has a soft centre with a slightly crispy outside 
+    and is often served with syrup, fruit, whipped cream, or butter.
   </p>
+  <ul>
+    <li>Texture: Crisp and golden on the outside, soft and custardy inside.</li>
+    <li>Flavor: Rich and slightly sweet, with hints of vanilla, cinnamon, or nutmeg depending on the recipe.</li>
+    <li>Appearance: Golden-brown slices, often dusted with powdered sugar or topped with fruit.</li>
+  </ul>
+</div>
+  
 
-  <h3 onclick="toggleInfo('toast-steps')">How to Make</h3>
+  <h3 onclick="toggleInfo('toast-ingredients')">Ingredients</h3>
+  <ul id="toast-ingredients" class="hidden">
+    <li>2 slices bread</li>
+    <li>1 egg</li>
+    <li>1/4 cup milk</li>
+    <li>1/2 tsp cinnamon</li>
+    <li>Butter for frying</li>
+    <li>Syrup or fruit for serving</li>
+  </ul>
+
+  <h3 onclick="toggleInfo('toast-steps')">Instructions</h3>
   <ol id="toast-steps" class="hidden" onchange="checkCompletion('toast-steps','toast-complete')">
     <li><input type="checkbox">Whisk eggs, milk, and cinnamon.</li>
     <li><input type="checkbox">Dip bread slices into mixture.</li>
@@ -106,20 +118,42 @@
   <div id="toast-complete" class="hidden text-green-600 font-bold">Completed!</div>
 </article>
 
-<article class="bg-white rounded-lg p-3 mb-3">
-  <h2 class="text-3xl mb-3">Waffles</h2>
+<article class="bg-white rounded-lg p-4">
+  <h2>Waffles</h2>
   <figure>
     <img src="images/waffles.jpg" alt="Waffles">
     <figcaption>Fresh homemade waffles.</figcaption>
   </figure>
 
   <h3 onclick="toggleInfo('waffles-desc')">Description</h3>
-  <p id="waffles-desc" class="hidden">
-    Waffles are crispy on the outside and fluffy on the inside. They can be
-    served with maple syrup, berries or whipped cream.
-  </p>
+  <div id="waffles-desc" class="hidden">
+    <p>Waffles are a popular breakfast (and sometimes dessert) dish made from a batter 
+    that is cooked between two patterned plates, giving them their signature grid-like surface. 
+    They are beloved for their crisp exterior and 
+    fluffy interior, and their versatility makes them a favorite worldwide.
+    They can also be served with maple syrup, berries or whipped cream.
+    </p>
+    <ul>
+      <li>Texture: Crispy on the outside, soft and airy inside.</li>
 
-  <h3 onclick="toggleInfo('waffles-steps')">How to Make</h3>
+      <li>Flavor: Mildly sweet, buttery, and rich, often enhanced with toppings.</li>
+
+      <li>Appearance: Square or round with deep pockets that hold syrup, fruit, or other toppings.</li>
+    </ul>
+  </div>
+
+  <h3 onclick="toggleInfo('waffles-ingredients')">Ingredients</h3>
+  <ul id="waffles-ingredients" class="hidden">
+    <li>1 cup flour</li>
+    <li>2 tbsp sugar</li>
+    <li>1 tsp baking powder</li>
+    <li>1/4 tsp salt</li>
+    <li>1 egg</li>
+    <li>1 cup milk</li>
+    <li>2 tbsp melted butter</li>
+  </ul>
+
+  <h3 onclick="toggleInfo('waffles-steps')">Instructions</h3>
   <ol id="waffles-steps" class="hidden" onchange="checkCompletion('waffles-steps','waffles-complete')">
     <li><input type="checkbox">Mix flour, sugar, baking powder, and salt.</li>
     <li><input type="checkbox">Whisk eggs, milk, and melted butter.</li>
@@ -128,12 +162,11 @@
   </ol>
   <div id="waffles-complete" class="hidden text-green-600 font-bold">Completed!</div>
 </article>
-</section>
+
 </main>
 
-<footer class="flex bg-red-700 text-white p-5">
+<footer>
   <p>Simply Savory</p>
-  <p>Photo by <a href="https://unsplash.com/@imad8321?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Imad 786</a> on <a href="https://unsplash.com/photos/a-bowl-of-mashed-potatoes-with-parsley-on-top-LA0nKKY-SFo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p>
 </footer>
 
 <script src="../assets/js/script.js"></script>
