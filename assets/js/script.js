@@ -36,23 +36,23 @@ window.onclick = function(event) {
 }
 
 
-//interacticity
-function toggleInfo(id) {
-    const element = document.getElementById(id);
-    element.classList.toggle("hidden");
-  }
+//interactivity
+// function toggleInfo(id) {
+//     const element = document.getElementById(id);
+//     element.classList.toggle("hidden");
+//   }
 
-  function checkCompletion(listId, completeId) {
-    const list = document.getElementById(listId);
-    const checkboxes = list.querySelectorAll("input[type='checkbox']");
-    const allChecked = Array.from(checkboxes).every(cb => cb.checked);
-    const completeMsg = document.getElementById(completeId);
-    if (allChecked) {
-      completeMsg.classList.remove("hidden");
-    } else {
-      completeMsg.classList.add("hidden");
-    }
-  }
+//   function checkCompletion(listId, completeId) {
+//     const list = document.getElementById(listId);
+//     const checkboxes = list.querySelectorAll("input[type='checkbox']");
+//     const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+//     const completeMsg = document.getElementById(completeId);
+//     if (allChecked) {
+//       completeMsg.classList.remove("hidden");
+//     } else {
+//       completeMsg.classList.add("hidden");
+//     }
+//   }
 
 document.addEventListener('DOMContentLoaded', function(){
     document.getElementById("(form)")
