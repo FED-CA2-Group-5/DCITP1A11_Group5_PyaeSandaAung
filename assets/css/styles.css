@@ -1,9 +1,9 @@
 .dropdown {}
 
 /* Show the dropdown menu*/
+.hidden { display: none; }
 .show {display:block;}
 
-/* .hidden { display: none; } */
 h2, h3 { cursor: pointer; color: #b58900; } /* pale yellow accent */
 
 
