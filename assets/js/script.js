@@ -35,40 +35,35 @@
 //   }
 // }
 /* When the user clicks on the button, toggle between hiding and showing the dropdown content */
+// When the user clicks on the Menu button
 function MenuFunction() {
-  document.getElementById("MenuDropdown").classList.toggle("show");
+    document.getElementById("MenuDropdown").classList.toggle("hidden");
 }
 
+// When the user clicks on the Recipes button
 function RecipeFunction() {
-  document.getElementById("RecipeDropdown").classList.toggle("show");
+    document.getElementById("RecipeDropdown").classList.toggle("hidden");
 }
 
 // Close the dropdown menus if the user clicks outside of them
 window.onclick = function(event) {
 
-  // Menu dropdown
-  if (!event.target.matches('.menubtn')) {
-    var dropdowns = document.getElementsByClassName("menu-content");
-    for (var i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains("show")) {
-        openDropdown.classList.remove("show");
-      }
+    // Close Menu dropdown
+    if (!event.target.matches(".menubtn")) {
+        var dropdowns = document.getElementsByClassName("menu-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+            dropdowns[i].classList.add("hidden");
+        }
     }
-  }
 
-  // Recipe dropdown
-  if (!event.target.matches('.recipebtn')) {
-    var dropdowns = document.getElementsByClassName("recipe-content");
-    for (var i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains("show")) {
-        openDropdown.classList.remove("show");
-      }
+    // Close Recipe dropdown
+    if (!event.target.matches(".recipebtn")) {
+        var dropdowns = document.getElementsByClassName("recipe-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+            dropdowns[i].classList.add("hidden");
+        }
     }
-  }
-
-}
+};
 
 
 //interactivity
