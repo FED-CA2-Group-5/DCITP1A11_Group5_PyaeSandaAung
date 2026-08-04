@@ -1,175 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact &amp; Submit a Recipe — Home Plate</title>
-<meta name="description" content="Get in touch with Home Plate or submit your own healthy recipe to be featured on the site.">
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-<link rel="stylesheet" href="../assets/css/styles.css">
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
-<body>
 
-<header class="site-header">
-  <nav class="nav container">
-    <a href="../index.html" class="brand" aria-label="Home Plate, home">
-      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/><path d="M14 12v8M17 12v8M14 16h3M15.5 20v9M25 12l-3 8 3 2v7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Home<span>Plate</span>
-    </a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    <ul class="nav-links">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="breakfast.html">Breakfast</a></li>
-      <li><a href="lunch.html">Lunch</a></li>
-      <li><a href="dinner.html">Dinner</a></li>
-      <li><a href="desserts.html">Desserts</a></li>
-      <li><a href="snacks.html">Snacks</a></li>
-      <li><a href="meal-planning.html">Meal Planning</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <div class="nav-actions">
-      <div class="fav-pill" title="Recipes you've saved">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.6-9.5-9C.7 8.2 2 4.8 5.4 4.1 7.6 3.6 10 4.7 12 7c2-2.3 4.4-3.4 6.6-2.9C22 4.8 23.3 8.2 21.5 12 19 16.4 12 21 12 21z"/></svg>
-        <span class="fav-count">0</span> Saved
-      </div>
-    </div>
-  </nav>
-</header>
+<body class="bg-orange-50 text-stone-800">
+
+<header class="flex items-center bg-red-800 text-white sticky top-0 z-50 shadow-lg px-6 py-3">
+        <section class="w-36">
+            <a href="../index.html">
+                <img src="../assets/images/Logo.png" alt="Simply Savory Logo" class="rounded-lg">
+            </a>
+        </section>
+        <nav class="flex ml-auto gap-8">
+            <section class="dropdown relative">
+                <button onclick="MenuFunction()" class="menubtn hover:bg-red-700 px-12 py-3 rounded-lg transition text-lg">Menu</button>
+                <ul id="MenuDropdown" class="menu-content hidden absolute right-0 mt-2 bg-white rounded-xl shadow-xl w-40 overflow-hidden">
+                    <a href="../index.html" class="block text-stone-800 px-4 py-3 hover:bg-orange-100">Home</a>
+                    <a href="about.html" class="block text-stone-800 px-4 py-3 hover:bg-orange-100">About Us</a>
+                    <a href="contact.html" class="block text-stone-800 px-4 py-3 hover:bg-orange-100">Contact Us</a>
+                </ul>
+            </section>
+            <section class="dropdown relative">
+                <button onclick="RecipeFunction()" class="recipebtn hover:bg-red-700 px-12 py-3 rounded-lg transition text-lg">Recipes</button>
+                <ul id="RecipeDropdown" class="recipe-content hidden absolute right-0 mt-2 bg-white rounded-xl shadow-xl w-45 overflow-hidden">
+                    <a href="breakfast.html" class="block text-stone-800 px-4 py-3 hover:bg-orange-100">Breakfast</a>
+                    <a href="lunch.html" class="block text-stone-800 px-4 py-3 hover:bg-orange-100">Lunch</a>
+                    <a href="dinner.html" class="block text-stone-800 px-4 py-3 hover:bg-orange-100">Dinner</a>
+                    <a href="dessert.html" class="block text-stone-800 px-4 py-3 hover:bg-orange-100">Dessert</a>
+                    <a href="snacks.html" class="block text-stone-800 px-4 py-3 hover:bg-orange-100">Snacks</a>
+                    <a href="mealplan.html" class="block text-stone-800 px-4 py-3 hover:bg-orange-100">Meal Planning Tips</a>
+                </ul>
+            </section>
+        </nav>
+    </header>
 
 <main>
-  <section class="container page-banner">
-    <p class="kicker">Get in touch</p>
-    <h1>Contact us &amp; submit a recipe</h1>
-    <p>Got a question, a correction, or a healthy recipe you think belongs on this site? Reach out below.</p>
-  </section>
 
-  <section class="container section contact-wrap">
-    <div class="contact-info">
-      <div class="info-row">
-        <span class="ico">✉️</span>
-        <div>
-          <strong>Email</strong>
-          <p>hello@homeplate.example</p>
-        </div>
-      </div>
-      <div class="info-row">
-        <span class="ico">📍</span>
-        <div>
-          <strong>Based in</strong>
-          <p>Singapore — student project, DCITP/FT/1A/11</p>
-        </div>
-      </div>
-      <div class="info-row">
-        <span class="ico">⏱️</span>
-        <div>
-          <strong>Response time</strong>
-          <p>We reply to messages within 2–3 days.</p>
-        </div>
-      </div>
-      <div>
-        <strong style="display:block; margin-bottom:.5em;">Follow along</strong>
-        <div class="social-row">
-          <a href="#" aria-label="Facebook">f</a>
-          <a href="#" aria-label="Instagram">ig</a>
-          <a href="#" aria-label="Pinterest">p</a>
-        </div>
-      </div>
-    </div>
+<section>
 
-    <form class="recipe-form" novalidate>
-      <div class="field-row">
-        <div class="field">
-          <label for="name">Your name</label>
-          <input type="text" id="name" name="name" data-required placeholder="Jane Tan">
-          <span class="err-msg">Please enter your name.</span>
-        </div>
-        <div class="field">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" data-required placeholder="jane@email.com">
-          <span class="err-msg">Please enter a valid email address.</span>
-        </div>
-      </div>
+<h2 class="ml-4 mt-3">Get in Touch</h2>
 
-      <div class="field">
-        <label for="subject">What's this about?</label>
-        <select id="subject" name="subject" data-required>
-          <option value="">Select one…</option>
-          <option value="question">General question</option>
-          <option value="correction">Recipe correction</option>
-          <option value="submit">Submit a recipe</option>
-          <option value="other">Something else</option>
-        </select>
-        <span class="err-msg">Please choose an option.</span>
-      </div>
+<p class="ml-4">
+Have a question or a recipe you'd like to share? We'd love to hear from you!
+</p>
 
-      <div class="field-row">
-        <div class="field">
-          <label for="recipe-title">Recipe title (if submitting)</label>
-          <input type="text" id="recipe-title" name="recipe-title" placeholder="e.g. Honey Garlic Tofu">
-        </div>
-        <div class="field">
-          <label for="category">Category</label>
-          <select id="category" name="category">
-            <option value="">Select one…</option>
-            <option>Breakfast</option>
-            <option>Lunch</option>
-            <option>Dinner</option>
-            <option>Dessert</option>
-            <option>Snack</option>
-          </select>
-        </div>
-      </div>
+</section>
 
-      <div class="field">
-        <label for="message">Message or recipe details</label>
-        <textarea id="message" name="message" rows="5" data-required placeholder="Tell us your question, or paste ingredients and steps…"></textarea>
-        <span class="err-msg">Please add a message.</span>
-      </div>
+<section >
 
-      <button type="submit" class="btn btn-primary btn-block">Send message</button>
-      <p class="form-status" role="status"></p>
-    </form>
-  </section>
+<h2 class="m-4 text-3xl font-bold">Submit Your Recipe</h2>
+
+<form id="submitRecipeForm" class="inline-flex flex-col m-4 border-2 p-4 rounded-xl">
+
+<fieldset class="">
+
+<legend>Recipe Submission Form</legend>
+
+<p>
+    <label for="name">Name:</label>
+    <input type="text" name="name" minlength="1" maxlength="20"
+         id="name" class="border p-1 mt-2 mb-6 bg-white"><br>
+</p>
+
+<p>
+    <label for="email">Email:</label>
+    <input type="email" name="email" minlength="1" maxlength="100"
+         id="email" class="border p-1 mt-2 mb-6 bg-white w-full"><br>
+</p>
+
+<p>
+<label for="recipe">Recipe Name:</label><br>
+<input type="text" id="recipe" name="recipe"
+    class="border mt-2 mb-6 p-1 bg-white w-full">
+</p>
+
+<p>
+<label for="ingredients">Ingredients:</label><br>
+<textarea id="ingredients" name="ingredients" rows="5"
+        class="border px-1 mt-2 mb-6 bg-white w-full"></textarea>
+</p>
+
+<p>
+    <label for="steps" class="flex -mb-4">Cooking Steps:</label><br>
+    <textarea minlength="10"
+         id="message" class="border mt-2 mb-6 bg-white px-1 w-full"></textarea><br>
+</p>
+
+<p>
+<!--<input type="submit" value="Submit Recipe">-->
+    <button type="submit" id="btnsubmit" 
+        class="border p-1 w-17 rounded-lg bg-yellow-500 
+            hover:bg-yellow-700 cursor-pointer">Submit</button>
+</p>
+
+</fieldset>
+
+</form>
+
+</section>
+
 </main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-col">
-      <div class="footer-brand">
-        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/><path d="M14 12v8M17 12v8M14 16h3M15.5 20v9M25 12l-3 8 3 2v7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Home Plate
-      </div>
-      <p style="color:rgba(251,243,229,0.7); max-width:32ch;">Quick, easy recipes for young adults cooking for themselves — one plate at a time.</p>
-      <div class="footer-social">
-        <a href="#" aria-label="Facebook">f</a>
-        <a href="#" aria-label="Instagram">ig</a>
-        <a href="#" aria-label="Pinterest">p</a>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4>Recipes</h4>
-      <ul>
-        <li><a href="breakfast.html">Breakfast</a></li>
-        <li><a href="lunch.html">Lunch</a></li>
-        <li><a href="dinner.html">Dinner</a></li>
-        <li><a href="desserts.html">Desserts</a></li>
-        <li><a href="snacks.html">Snacks</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Site</h4>
-      <ul>
-        <li><a href="about.html">About us</a></li>
-        <li><a href="meal-planning.html">Meal planning</a></li>
-        <li><a href="contact.html">Contact / submit a recipe</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">© 2026 Home Plate. Student project — recipe links credit their original authors.</div>
-</footer>
-
-<button class="back-top" aria-label="Back to top">↑</button>
+<footer class="bg-stone-900 text-white px-10 py-12">
+        <section class="max-w-6xl mx-auto grid grid-cols-3 gap-10">
+            <!-- Brand -->
+            <article>
+                <h2 class="text-2xl font-serif font-bold mb-5 flex items-center gap-3">🍴 Simply Savory</h2>
+                <p class="text-gray-300 leading-relaxed max-w-sm">
+                    Quick, easy recipes for young adults cooking for themselves, one plate at a time.
+                </p>
+                <section class="flex gap-4 mt-6">
+                    <a href="#" class="border border-gray-500 rounded-full w-10 h-10 flex items-center justify-center hover:bg-white hover:text-black transition">f</a>
+                    <a href="#" class="border border-gray-500 rounded-full w-10 h-10 flex items-center justify-center hover:bg-white hover:text-black transition">ig</a>
+                    <a href="#" class="border border-gray-500 rounded-full w-10 h-10 flex inside justify-center items-center hover:bg-white hover:text-black transition">p</a>
+                </section>
+            </article>
+            <!-- Recipes -->
+            <article>
+                <h3 class="text-yellow-500 font-bold tracking-widest mb-5">RECIPES</h3>
+                <ul class="space-y-4 text-gray-300">
+                    <li>
+                        <a href="breakfast.html" class="hover:text-white">Breakfast</a>
+                    </li>
+                    <li>
+                        <a href="lunch.html" class="hover:text-white">Lunch</a>
+                    </li>
+                    <li>
+                        <a href="dinner.html" class="hover:text-white">Dinner</a>
+                    </li>
+                    <li>
+                        <a href="dessert.html" class="hover:text-white">Desserts</a>
+                    </li>
+                    <li>
+                        <a href="snacks.html" class="hover:text-white">Snacks</a>
+                    </li>
+                </ul>
+            </article>
+            <!-- Site -->
+            <article>
+                <h3 class="text-yellow-500 font-bold tracking-widest mb-5">SITE</h3>
+                <ul class="space-y-4 text-gray-300">
+                    <li>
+                        <a href="about.html" class="hover:text-white">About Us</a>
+                    </li>
+                    <li>
+                        <a href="mealplan.html" class="hover:text-white">Meal Planning</a>
+                    </li>
+                    <li>
+                        <a href="contact.html" class="hover:text-white">Contact / Submit a Recipe</a>
+                    </li>
+                </ul>
+            </article>
+        </section>
+    </footer>
 <script src="../assets/js/script.js"></script>
 </body>
 </html>
