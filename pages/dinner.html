@@ -3,58 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <title>Dinner Recipes</title>
-    <link rel="stylesheet" href="./assets/css/styles.css">
-    <script src="../assets/js/script.js"></script>
-    <style>
-        .hidden { display: none; }
-        h3, h2 { cursor: pointer; color: #b58900; }
-        .completed { color: green; font-weight: bold; margin-top: 10px; }
-        ol {
-            list-style: none;
-            counter-reset: step-counter;
-            padding-left: 0;
-        }
-        ol li {
-            counter-increment: step-counter;
-            margin: 6px 0;
-        }
-        ol li::before {
-            content: counter(step-counter) ". ";
-            font-weight: bold;
-            margin-right: 6px;
-        }
-        ol li input[type="checkbox"] {
-            margin-right: 8px;
-        }
-        ul {
-            margin: 6px 0;
-            padding-left: 20px;
-        }
-    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+   
 </head>
 
-<body>
+<body class="bg-orange-50 text-stone-800">
 
-<header>
-    <h1>Dinner Recipes</h1>
+<header class="flex items-center bg-red-800 text-white sticky top-0 z-50 shadow-lg px-6 py-3">
+  <div class="w-36">
+    <a href="../index.html">
+      <img src="../assets/images/Logo.png" alt="Simply Savory Logo" class="rounded-lg">
+    </a>
+  </div>
+  <nav aria-label="Primary" class="flex ml-auto gap-8">
+    <div class="dropdown relative">
+      <button type="button" class="dropdown-btn menubtn cursor-pointer hover:bg-red-700 px-12 py-3 rounded-lg transition text-lg" aria-haspopup="true" aria-expanded="false" aria-controls="MenuDropdown">Menu</button>
+      <ul id="MenuDropdown" class="dropdown-menu hidden absolute right-0 mt-2 bg-white rounded-xl shadow-xl w-40 overflow-hidden text-stone-800">
+        <li><a href="../index.html" class="block px-4 py-3 hover:bg-orange-100">Home</a></li>
+        <li><a href="about.html" class="block px-4 py-3 hover:bg-orange-100">About Us</a></li>
+        <li><a href="contact.html" class="block px-4 py-3 hover:bg-orange-100">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="dropdown relative">
+      <button type="button" class="dropdown-btn recipebtn cursor-pointer hover:bg-red-700 px-12 py-3 rounded-lg transition text-lg" aria-haspopup="true" aria-expanded="false" aria-controls="RecipeDropdown">Recipes</button>
+      <ul id="RecipeDropdown" class="dropdown-menu hidden absolute right-0 mt-2 bg-white rounded-xl shadow-xl w-48 overflow-hidden text-stone-800">
+        <li><a href="breakfast.html" class="block px-4 py-3 hover:bg-orange-100" aria-current="page">Breakfast</a></li>
+        <li><a href="lunch.html" class="block px-4 py-3 hover:bg-orange-100">Lunch</a></li>
+        <li><a href="dinner.html" class="block px-4 py-3 hover:bg-orange-100">Dinner</a></li>
+        <li><a href="dessert.html" class="block px-4 py-3 hover:bg-orange-100">Dessert</a></li>
+        <li><a href="snacks.html" class="block px-4 py-3 hover:bg-orange-100">Snacks</a></li>
+        <li><a href="mealplan.html" class="block px-4 py-3 hover:bg-orange-100">Meal Planning Tips</a></li>
+      </ul>
+    </div>
+  </nav>
 </header>
 
-<main>
+<main class="max-w-6xl mx-auto lg:w-3/4 md:w-full sm:w-full p-6">
+<h1 class="text-4xl font-bold text-red-600 mb-3">Lunch Recipes</h1>
 
-<article>
-    <h2>Chicken Parmesan</h2>
-    <figure>
-        <img src="images/chicken-parmesan.jpg" alt="Chicken Parmesan">
-        <figcaption>Chicken Parmesan</figcaption>
+<!-- Chicken Parmesan -->
+<article class="bg-white rounded-2xl shadow-lg p-8 mb-6">
+  <h2 class="text-3xl mb-3">Chicken Parmesan</h2>
+  <div class="flex flex-col md:flex-row gap-6">
+    <figure class="md:w-1/3 w-full">
+      <img src="../assets/images/scrambled-eggs.jpg" alt="Chicken Parmesan" 
+            class="w-full rounded-lg object-cover" loading="lazy">
+      <figcaption class="text-sm text-stone-500 mt-1">Chicken Parmesan</figcaption>
     </figure>
+    <div class="md:w-2/3 w-full">
+      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between 
+                w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
+                aria-controls="parmesan-desc">
+        Description
+        <span class="chevron transition-transform">▾</span>
+      </button>
+      
+        <p id="parmesan-desc" class="hidden pt-2"> Chicken Parmesan is a beloved Italian-American dish 
+            that combines crispy breaded chicken cutlets with 
+            rich tomato sauce and gooey melted cheese. 
+            The golden crust provides a satisfying crunch, 
+            while the mozzarella and Parmesan add indulgent 
+            creaminess. Served over pasta or alongside salad, 
+            it’s a hearty, comforting 
+            dish perfect for family dinners or special occasions
+        </p>
+        
+      
 
-    <h3 onclick="toggleInfo('parmesan-desc')">Description</h3>
-    <p id="parmesan-desc" class="hidden">
-        Chicken Parmesan is a beloved Italian-American dish that combines crispy breaded chicken cutlets with rich tomato sauce and gooey melted cheese. The golden crust provides a satisfying crunch, while the mozzarella and Parmesan add indulgent creaminess. Served over pasta or alongside salad, it’s a hearty, comforting dish perfect for family dinners or special occasions.
-    </p>
-
-    <h3 onclick="toggleInfo('parmesan-ingredients')">Ingredients</h3>
-    <ul id="parmesan-ingredients" class="hidden">
+      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between 
+            w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
+            aria-controls="parmesan-ingredients">
+        Ingredients
+        <span class="chevron transition-transform">▾</span>
+      </button>
+      <ul id="parmesan-ingredients" class="hidden list-disc list-inside pt-2 space-y-1">
         <li>2 boneless chicken breasts</li>
         <li>1/2 cup all-purpose flour</li>
         <li>2 eggs, beaten</li>
@@ -64,34 +87,59 @@
         <li>1/4 cup grated Parmesan cheese</li>
         <li>2 tbsp olive oil</li>
         <li>Salt and pepper to taste</li>
-    </ul>
+      </ul>
 
-    <h3 onclick="toggleInfo('parmesan-steps')">Instructions</h3>
-    <ol id="parmesan-steps" class="hidden" onchange="checkCompletion('parmesan-steps','parmesan-complete')">
-        <li><input type="checkbox">Season and coat the chicken with flour, egg, and breadcrumbs.</li>
-        <li><input type="checkbox">Pan-fry the chicken until golden brown.</li>
-        <li><input type="checkbox">Place the chicken in a baking dish.</li>
-        <li><input type="checkbox">Top with tomato sauce, mozzarella, and Parmesan cheese.</li>
-        <li><input type="checkbox">Bake until the cheese is melted and the chicken is fully cooked.</li>
-        <li><input type="checkbox">Serve hot with pasta or a side salad.</li>
+      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between w-full 
+        text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
+        aria-controls="parmesan-steps">
+        Instructions
+        <span class="chevron transition-transform">▾</span>
+      </button>
+      <ol id="parmesan-steps" data-complete-target="wrap-complete" class="hidden list-decimal 
+                marker:font-bold pt-2 pl-6 space-y-1">
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Season and coat the chicken with flour, egg, and breadcrumbs.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Pan-fry the chicken until golden brown.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Place the chicken in a baking dish.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Top with tomato sauce, mozzarella, and Parmesan cheese.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Bake until the cheese is melted and the chicken is fully cooked.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Serve hot with pasta or a side salad.</label></li>
     </ol>
-    <div id="parmesan-complete" class="completed hidden">Completed!</div>
+      <p id="parmesan-complete" class="hidden text-green-600 font-bold mt-2" aria-live="polite">Completed!</p>
+    </div>
+  </div>
 </article>
 
-<article>
-    <h2>Chicken Noodle Soup</h2>
-    <figure>
-        <img src="images/chicken-noodle-soup.jpg" alt="Chicken Noodle Soup">
-        <figcaption>Chicken Noodle Soup</figcaption>
+<!-- Chicken Noodle Soup -->
+<article class="bg-white rounded-2xl shadow-lg p-8 mb-6">
+  <h2 class="text-3xl mb-3">Chicken Noodle Soup</h2>
+  <div class="flex flex-col md:flex-row gap-6">
+    <figure class="md:w-1/3 w-full">
+      <img src="../assets/images/chickennoodlesoup.jpg" alt="Golden French toast slices topped with syrup" 
+                class="w-full rounded-lg object-cover" loading="lazy">
+      <figcaption class="text-sm text-stone-500 mt-1">Chicken Noodle Soup</figcaption>
     </figure>
+    <div class="md:w-2/3 w-full">
+      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between 
+                w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
+                aria-controls="noodleSoup-desc">
+        Description
+        <span class="chevron transition-transform">▾</span>
+      </button>
+        <p id="noodleSoup-desc" class="hidden pt-2"> Chicken Noodle Soup is the ultimate comfort food, made with tender chicken, 
+          vegetables, noodles, and a flavorful broth. Its warmth and nourishment make it ideal for chilly evenings or 
+          when you’re feeling under the weather. The savory broth, soft noodles, and fresh herbs create a soothing, 
+          satisfying meal that feels like a hug in a bowl.
+        </p>
+       
+      
 
-    <h3 onclick="toggleInfo('soup-desc')">Description</h3>
-    <p id="soup-desc" class="hidden">
-        Chicken Noodle Soup is the ultimate comfort food, made with tender chicken, vegetables, noodles, and a flavorful broth. Its warmth and nourishment make it ideal for chilly evenings or when you’re feeling under the weather. The savory broth, soft noodles, and fresh herbs create a soothing, satisfying meal that feels like a hug in a bowl.
-    </p>
-
-    <h3 onclick="toggleInfo('soup-ingredients')">Ingredients</h3>
-    <ul id="soup-ingredients" class="hidden">
+      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between
+                 w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
+                 aria-controls="noodleSoup-ingredients">
+        Ingredients
+        <span class="chevron transition-transform">▾</span>
+      </button>
+      <ul id="noodleSoup-ingredients" class="hidden list-disc list-inside pt-2 space-y-1">
         <li>4 cups chicken stock</li>
         <li>1 cup cooked chicken, shredded</li>
         <li>1 cup egg noodles</li>
@@ -102,34 +150,57 @@
         <li>1 tbsp olive oil</li>
         <li>Salt and pepper to taste</li>
         <li>Fresh parsley for garnish</li>
-    </ul>
+      </ul>
 
-    <h3 onclick="toggleInfo('soup-steps')">Instructions</h3>
-    <ol id="soup-steps" class="hidden" onchange="checkCompletion('soup-steps','soup-complete')">
-        <li><input type="checkbox">Cook the onions, carrots, celery, and garlic in olive oil.</li>
-        <li><input type="checkbox">Pour in the chicken stock and bring to a boil.</li>
-        <li><input type="checkbox">Add chicken and simmer.</li>
-        <li><input type="checkbox">Add noodles and cook until tender.</li>
-        <li><input type="checkbox">Season with salt, pepper, and herbs.</li>
-        <li><input type="checkbox">Garnish with parsley and serve hot.</li>
-    </ol>
-    <div id="soup-complete" class="completed hidden">Completed!</div>
+      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between w-full text-left 
+      font-bold border-b border-stone-200 py-2" aria-expanded="false" 
+      aria-controls="noodleSoup-steps">
+        Instructions
+        <span class="chevron transition-transform">▾</span>
+      </button>
+      <ol id="noodleSoup-steps" data-complete-target="toast-complete" class="hidden list-decimal marker:font-bold pt-2 pl-6 space-y-1">
+        <li><label class="inline-flex items gap-2 cursor-pointer"><input type="checkbox">Cook the onions, carrots, celery, and garlic in olive oil.</label></li>
+        <li><label class="inline-flex items gap-2 cursor-pointer"><input type="checkbox">Pour in the chicken stock and bring to a boil.</label></li>
+        <li><label class="inline-flex items gap-2 cursor-pointer"><input type="checkbox">Add chicken and simmer.</label></li>
+        <li><label class="inline-flex items gap-2 cursor-pointer"><input type="checkbox">Add noodles and cook until tender.</label></li>
+        <li><label class="inline-flex items gap-2 cursor-pointer"><input type="checkbox">Season with salt, pepper, and herbs.</label></li>
+        <li><label class="inline-flex items gap-2 cursor-pointer"><input type="checkbox">Garnish with parsley and serve hot.</label></li>
+      </ol>
+      <p id="noodleSoup-complete" class="hidden text-green-600 font-bold mt-2" aria-live="polite">Completed!</p>
+    </div>
+  </div>
 </article>
 
-<article>
-    <h2>Taiwanese Three Cup Chicken</h2>
-    <figure>
-        <img src="images/three-cup-chicken.jpg" alt="Taiwanese Three Cup Chicken">
-        <figcaption>Taiwanese Three Cup Chicken</figcaption>
+<!-- Taiwanese Three Cup Chicken-->
+<article class="bg-white rounded-2xl shadow-lg p-8 mb-6">
+  <h2 class="text-3xl mb-3">Taiwanese Three Cup Chicken</h2>
+  <div class="flex flex-col md:flex-row gap-6">
+    <figure class="md:w-1/3 w-full">
+      <img src="../assets/images/TaiwaneseThreeCupChicken.jpg" alt="Taiwanese Three Cup Chicken" class="w-full rounded-lg object-cover" loading="lazy">
+      <figcaption class="text-sm text-stone-500 mt-1">Creamy Carbonara</figcaption>
     </figure>
+    <div class="md:w-2/3 w-full">
+      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between w-full 
+      text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
+      aria-controls="threeCup-desc">
+        Description
+        <span class="chevron transition-transform">▾</span>
+      </button>
+        <p id="threeCup-desc" class="hidden pt-2">Taiwanese Three Cup Chicken is a 
+          traditional dish named after its equal parts of soy sauce, sesame oil, 
+          and rice wine. The chicken is simmered with garlic, ginger, and fresh basil, 
+          creating a rich, savory, and slightly sweet flavor. Aromatic and deeply satisfying, 
+          it’s a staple of Taiwanese home cooking and pairs perfectly 
+          with steamed rice for a comforting dinner.
+      </p>
 
-    <h3 onclick="toggleInfo('threecup-desc')">Description</h3>
-    <p id="threecup-desc" class="hidden">
-        Taiwanese Three Cup Chicken is a traditional dish named after its equal parts of soy sauce, sesame oil, and rice wine. The chicken is simmered with garlic, ginger, and fresh basil, creating a rich, savory, and slightly sweet flavor. Aromatic and deeply satisfying, it’s a staple of Taiwanese home cooking and pairs perfectly with steamed rice for a comforting dinner.
-    </p>
-
-    <h3 onclick="toggleInfo('threecup-ingredients')">Ingredients</h3>
-    <ul id="threecup-ingredients" class="hidden">
+      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between
+            w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
+            aria-controls="threeCup-ingredients">
+        Ingredients
+        <span class="chevron transition-transform">▾</span>
+      </button>
+      <ul id="threeCup-ingredients" class="hidden list-disc list-inside pt-2 space-y-1">
         <li>500g chicken thighs, cut into pieces</li>
         <li>1/3 cup soy sauce</li>
         <li>1/3 cup sesame oil</li>
@@ -138,24 +209,71 @@
         <li>1 thumb-sized piece of ginger, sliced</li>
         <li>1 cup fresh basil leaves</li>
         <li>1 tbsp sugar</li>
-    </ul>
+      </ul>
 
-    <h3 onclick="toggleInfo('threecup-steps')">Instructions</h3>
-    <ol id="threecup-steps" class="hidden" onchange="checkCompletion('threecup-steps','threecup-complete')">
-        <li><input type="checkbox">Cook the ginger and garlic until fragrant.</li>
-        <li><input type="checkbox">Add the chicken and stir-fry until browned.</li>
-        <li><input type="checkbox">Add the soy sauce, sesame oil, rice wine, and sugar.</li>
-        <li><input type="checkbox">Simmer until the sauce thickens.</li>
-        <li><input type="checkbox">Stir in the fresh basil leaves.</li>
-        <li><input type="checkbox">Serve with steamed rice.</li>
-    </ol>
-    <div id="threecup-complete" class="completed hidden">Completed!</div>
+      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between
+            w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
+            aria-controls="threeCup-steps">
+        Instructions
+        <span class="chevron transition-transform">▾</span>
+      </button>
+      <ol id="threeCup-steps" data-complete-target="carbonara-complete" class="hidden list-decimal 
+            marker:font-bold pt-2 pl-6 space-y-1">
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Cook pasta until al dente.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Fry bacon until crispy.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Whisk eggs, Parmesan, and pepper.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Reserve pasta water before draining.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Add pasta to bacon pan.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Remove pan from heat, add egg mix.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Toss pasta quickly for creamy sauce.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Add pasta water if needed.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Serve with extra Parmesan and pepper.</label></li>
+      </ol>
+      <p id="threeCup-complete" class="hidden text-green-600 font-bold mt-2" aria-live="polite">Completed!</p>
+    </div>
+  </div>
 </article>
 
 </main>
 
-<footer>
-<p>2026 Simply Savory</p>
+<footer class="bg-stone-900 text-white px-6 sm:px-10 py-12">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-10">
+    <div>
+      <h2 class="text-2xl font-serif font-bold mb-5 flex items-center gap-3">🍴 Simply Savory</h2>
+      <p class="text-gray-300 leading-relaxed max-w-sm">
+        Quick, easy recipes for young adults cooking for themselves, one plate at a time.
+      </p>
+      <div class="flex gap-4 mt-6">
+        <a href="#" aria-label="Facebook" class="border border-gray-500 rounded-full w-10 h-10 
+        flex items-center justify-center hover:bg-white hover:text-black transition">f</a>
+        <a href="#" aria-label="Instagram" class="border border-gray-500 rounded-full w-10 h-10 
+        flex items-center justify-center hover:bg-white hover:text-black transition">ig</a>
+        <a href="#" aria-label="Pinterest" class="border border-gray-500 rounded-full w-10 h-10 
+        flex items-center justify-center hover:bg-white hover:text-black transition">p</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="text-yellow-500 font-bold tracking-widest mb-5">RECIPES</h3>
+      <ul class="space-y-4 text-gray-300">
+        <li><a href="breakfast.html" class="hover:text-white">Breakfast</a></li>
+        <li><a href="lunch.html" class="hover:text-white">Lunch</a></li>
+        <li><a href="dinner.html" class="hover:text-white">Dinner</a></li>
+        <li><a href="dessert.html" class="hover:text-white">Desserts</a></li>
+        <li><a href="snacks.html" class="hover:text-white">Snacks</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-yellow-500 font-bold tracking-widest mb-5">SITE</h3>
+      <ul class="space-y-4 text-gray-300">
+        <li><a href="about.html" class="hover:text-white">About Us</a></li>
+        <li><a href="mealplan.html" class="hover:text-white">Meal Planning</a></li>
+        <li><a href="contact.html" class="hover:text-white">Contact / Submit a Recipe</a></li>
+      </ul>
+    </div>
+  </div>
 </footer>
 
+<script src="../assets/js/script.js"></script>
+
 </body>
+</html>
