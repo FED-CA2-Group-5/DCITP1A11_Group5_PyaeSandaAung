@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Caveat:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
-
+ 
 <body class="bg-orange-50 text-stone-800">
-
+ 
 <header class="flex items-center bg-red-800 text-white sticky top-0 z-50 shadow-lg px-6 py-3">
         <section class="w-36">
             <a href="../index.html">
@@ -37,74 +40,143 @@
             </section>
         </nav>
     </header>
-
+ 
 <main>
-
-<section>
-
-<h2 class="ml-4 mt-3">Get in Touch</h2>
-
-<p class="ml-4">
-Have a question or a recipe you'd like to share? We'd love to hear from you!
-</p>
-
+ 
+<!-- Hero -->
+<section class="max-w-5xl mx-auto px-6 pt-14 pb-10 text-center">
+    <h1 class="[font-family:'Fraunces',serif] text-5xl md:text-6xl font-bold text-stone-900">Let's Get in Touch</h1>
 </section>
-
-<section >
-
-<h2 class="m-4 text-3xl font-bold">Submit Your Recipe</h2>
-
-<form id="submitRecipeForm" class="inline-flex flex-col m-4 border-2 p-4 rounded-xl">
-
-<fieldset class="">
-
-<legend>Recipe Submission Form</legend>
-
-<p>
-    <label for="name">Name:</label>
-    <input type="text" name="name" minlength="1" maxlength="20"
-         id="name" class="border p-1 mt-2 mb-6 bg-white"><br>
-</p>
-
-<p>
-    <label for="email">Email:</label>
-    <input type="email" name="email" minlength="1" maxlength="100"
-         id="email" class="border p-1 mt-2 mb-6 bg-white w-full"><br>
-</p>
-
-<p>
-<label for="recipe">Recipe Name:</label><br>
-<input type="text" id="recipe" name="recipe"
-    class="border mt-2 mb-6 p-1 bg-white w-full">
-</p>
-
-<p>
-<label for="ingredients">Ingredients:</label><br>
-<textarea id="ingredients" name="ingredients" rows="5"
-        class="border px-1 mt-2 mb-6 bg-white w-full"></textarea>
-</p>
-
-<p>
-    <label for="steps" class="flex -mb-4">Cooking Steps:</label><br>
-    <textarea minlength="10"
-         id="message" class="border mt-2 mb-6 bg-white px-1 w-full"></textarea><br>
-</p>
-
-<p>
-<!--<input type="submit" value="Submit Recipe">-->
-    <button type="submit" id="btnsubmit" 
-        class="border p-1 w-17 rounded-lg bg-yellow-500 
-            hover:bg-yellow-700 cursor-pointer">Submit</button>
-</p>
-
-</fieldset>
-
-</form>
-
+ 
+<!-- Two cards -->
+<section class="max-w-6xl mx-auto px-6 pb-20 grid gap-10 lg:grid-cols-2 items-start">
+ 
+    <!-- Recipe submission card -->
+    <form id="submitRecipeForm"
+        class="bg-[#fffdf8] bg-[repeating-linear-gradient(#fffdf8,#fffdf8_27px,#fbe3c4_27px,#fbe3c4_28px)]
+            border-2 border-red-800/70 rounded-sm shadow-lg p-8 -rotate-1
+            hover:rotate-0 hover:-translate-y-0.5 hover:shadow-[0_18px_30px_-12px_rgba(153,27,27,0.25)]
+            transition-transform transition-shadow duration-300 relative">
+        <span class="absolute -top-3 left-8 w-5 h-5 rounded-full bg-red-700
+            shadow-[0_2px_4px_rgba(0,0,0,0.3),inset_0_1px_2px_rgba(255,255,255,0.4)]"></span>
+        <fieldset>
+            <legend class="[font-family:'Fraunces',serif] text-2xl font-bold text-red-800 mb-1">Share a Recipe</legend>
+ 
+            <p class="mb-5">
+                <label for="name" class="block text-sm font-semibold text-stone-700 mb-1">Name</label>
+                <input type="text" name="name" minlength="1" maxlength="20" id="name"
+                    class="border border-stone-300 rounded-md p-2 bg-white/80 w-full focus:outline-none focus:ring-2 focus:ring-red-700">
+            </p>
+ 
+            <p class="mb-5">
+                <label for="email" class="block text-sm font-semibold text-stone-700 mb-1">Email</label>
+                <input type="email" name="email" minlength="1" maxlength="100" id="email"
+                    class="border border-stone-300 rounded-md p-2 bg-white/80 w-full focus:outline-none focus:ring-2 focus:ring-red-700">
+            </p>
+ 
+            <p class="mb-5">
+                <label for="recipe" class="block text-sm font-semibold text-stone-700 mb-1">Recipe Name</label>
+                <input type="text" id="recipe" name="recipe"
+                    class="border border-stone-300 rounded-md p-2 bg-white/80 w-full focus:outline-none focus:ring-2 focus:ring-red-700">
+            </p>
+ 
+            <p class="mb-5">
+                <label for="ingredients" class="block text-sm font-semibold text-stone-700 mb-1">Ingredients</label>
+                <textarea id="ingredients" name="ingredients" rows="4"
+                    class="border border-stone-300 rounded-md p-2 bg-white/80 w-full focus:outline-none focus:ring-2 focus:ring-red-700"></textarea>
+            </p>
+ 
+            <p class="mb-6">
+                <label for="steps" class="block text-sm font-semibold text-stone-700 mb-1">Cooking Steps</label>
+                <textarea minlength="10" id="steps" name="steps" rows="4"
+                    class="border border-stone-300 rounded-md p-2 bg-white/80 w-full focus:outline-none focus:ring-2 focus:ring-red-700"></textarea>
+            </p>
+ 
+            <button type="submit" id="btnsubmit"
+                class="w-full border border-yellow-600 rounded-lg bg-yellow-500 hover:bg-yellow-600 transition
+                    cursor-pointer font-semibold text-stone-900 py-2.5">
+                Submit Recipe
+            </button>
+        </fieldset>
+    </form>
+ 
+    <!-- Feedback card -->
+    <form id="feedbackForm"
+        class="bg-[#fffdf8] bg-[repeating-linear-gradient(#fffdf8,#fffdf8_27px,#fbe3c4_27px,#fbe3c4_28px)]
+            border-2 border-red-800/70 rounded-sm shadow-lg p-8 rotate-1
+            hover:rotate-0 hover:-translate-y-0.5 hover:shadow-[0_18px_30px_-12px_rgba(153,27,27,0.25)]
+            transition-transform transition-shadow duration-300 relative">
+        <span class="absolute -top-3 left-8 w-5 h-5 rounded-full bg-red-700
+            shadow-[0_2px_4px_rgba(0,0,0,0.3),inset_0_1px_2px_rgba(255,255,255,0.4)]"></span>
+        <fieldset>
+            <legend class="[font-family:'Fraunces',serif] text-2xl font-bold text-red-800 mb-1">Send Feedback</legend>
+ 
+            <p class="mb-5">
+                <label for="fb-name" class="block text-sm font-semibold text-stone-700 mb-1">Name</label>
+                <input type="text" name="fb-name" maxlength="20" id="fb-name"
+                    class="border border-stone-300 rounded-md p-2 bg-white/80 w-full focus:outline-none focus:ring-2 focus:ring-red-700">
+            </p>
+ 
+            <p class="mb-5">
+                <label for="fb-email" class="block text-sm font-semibold text-stone-700 mb-1">Email</label>
+                <input type="email" name="fb-email" maxlength="100" id="fb-email"
+                    class="border border-stone-300 rounded-md p-2 bg-white/80 w-full focus:outline-none focus:ring-2 focus:ring-red-700">
+            </p>
+ 
+            <p class="mb-5">
+                <label for="fb-topic" class="block text-sm font-semibold text-stone-700 mb-1">What's this about?</label>
+                <select id="fb-topic" name="fb-topic"
+                    class="border border-stone-300 rounded-md p-2 bg-white/80 w-full focus:outline-none focus:ring-2 focus:ring-red-700">
+                    <option>General feedback</option>
+                    <option>Website bug</option>
+                    <option>Recipe question</option>
+                    <option>Something else</option>
+                </select>
+            </p>
+ 
+            <p class="mb-5">
+                <label class="block text-sm font-semibold text-stone-700 mb-1">How's the site treating you?</label>
+                <span class="flex flex-row-reverse justify-end gap-0.5">
+                    <input type="radio" id="star5" name="rating" value="5" class="peer hidden">
+                    <label for="star5" title="5 stars"
+                        class="peer text-3xl leading-none cursor-pointer text-stone-300 peer-checked:text-yellow-500 peer-hover:text-yellow-500 hover:text-yellow-500 transition-colors">★</label>
+ 
+                    <input type="radio" id="star4" name="rating" value="4" class="peer hidden">
+                    <label for="star4" title="4 stars"
+                        class="peer text-3xl leading-none cursor-pointer text-stone-300 peer-checked:text-yellow-500 peer-hover:text-yellow-500 hover:text-yellow-500 transition-colors">★</label>
+ 
+                    <input type="radio" id="star3" name="rating" value="3" class="peer hidden">
+                    <label for="star3" title="3 stars"
+                        class="peer text-3xl leading-none cursor-pointer text-stone-300 peer-checked:text-yellow-500 peer-hover:text-yellow-500 hover:text-yellow-500 transition-colors">★</label>
+ 
+                    <input type="radio" id="star2" name="rating" value="2" class="peer hidden">
+                    <label for="star2" title="2 stars"
+                        class="peer text-3xl leading-none cursor-pointer text-stone-300 peer-checked:text-yellow-500 peer-hover:text-yellow-500 hover:text-yellow-500 transition-colors">★</label>
+ 
+                    <input type="radio" id="star1" name="rating" value="1" class="peer hidden">
+                    <label for="star1" title="1 star"
+                        class="peer text-3xl leading-none cursor-pointer text-stone-300 peer-checked:text-yellow-500 peer-hover:text-yellow-500 hover:text-yellow-500 transition-colors">★</label>
+                </span>
+            </p>
+ 
+            <p class="mb-6">
+                <label for="fb-message" class="block text-sm font-semibold text-stone-700 mb-1">Message</label>
+                <textarea minlength="10" id="fb-message" name="fb-message" rows="5"
+                    class="border border-stone-300 rounded-md p-2 bg-white/80 w-full focus:outline-none focus:ring-2 focus:ring-red-700"></textarea>
+            </p>
+ 
+            <button type="submit" id="btnfeedback"
+                class="w-full border border-red-900 rounded-lg bg-red-800 hover:bg-red-900 transition
+                    cursor-pointer font-semibold text-white py-2.5">
+                Send Feedback
+            </button>
+        </fieldset>
+    </form>
+ 
 </section>
-
+ 
 </main>
-
+ 
 <footer class="bg-stone-900 text-white px-10 py-12">
         <section class="max-w-6xl mx-auto grid grid-cols-3 gap-10">
             <!-- Brand -->
