@@ -5,70 +5,61 @@
     <title>Lunch Recipes</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="../assets/css/styles.css">
-    <style>
-  ol {
-    counter-reset: step-counter;
-    padding-left: 6px;
-  }
-  ol li {
-    counter-increment: step-counter;
-    margin: 6px 0;
-  }
-  ol li::before {
-    content: counter(step-counter) ". ";
-    font-weight: bold;
-    margin-right: 6px;
-  }
-  ol li input[type="checkbox"] {
-    margin-right: 8px;
-  }
-</style>
+   
 </head>
 
 <body class="bg-orange-50 text-stone-800">
 
 <header class="flex items-center bg-red-800 text-white sticky top-0 z-50 shadow-lg px-6 py-3">
-        <section class="w-36">
-            <a href="../index.html">
-                <img src="../assets/images/Logo.png" alt="Simply Savory Logo" class="rounded-lg">
-            </a>
-        </section>
-        <nav class="flex ml-auto gap-8">
-            <section class="dropdown relative">
-                <button onclick="MenuFunction()" class="menubtn hover:bg-red-700 px-12 py-3 rounded-lg transition text-lg">Menu</button>
-                <ul id="MenuDropdown" class="menu-content hidden absolute right-0 mt-2 bg-white rounded-xl shadow-xl w-40 overflow-hidden">
-                    <a href="../index.html" class="block text-stone-800 px-4 py-3 hover:bg-orange-100">Home</a>
-                    <a href="about.html" class="block text-stone-800 px-4 py-3 hover:bg-orange-100">About Us</a>
-                    <a href="contact.html" class="block text-stone-800 px-4 py-3 hover:bg-orange-100">Contact Us</a>
-                </ul>
-            </section>
-            <section class="dropdown relative">
-                <button onclick="RecipeFunction()" class="recipebtn hover:bg-red-700 px-12 py-3 rounded-lg transition text-lg">Recipes</button>
-                <ul id="RecipeDropdown" class="recipe-content hidden absolute right-0 mt-2 bg-white rounded-xl shadow-xl w-45 overflow-hidden">
-                    <a href="breakfast.html" class="block text-stone-800 px-4 py-3 hover:bg-orange-100">Breakfast</a>
-                    <a href="lunch.html" class="block text-stone-800 px-4 py-3 hover:bg-orange-100">Lunch</a>
-                    <a href="dinner.html" class="block text-stone-800 px-4 py-3 hover:bg-orange-100">Dinner</a>
-                    <a href="dessert.html" class="block text-stone-800 px-4 py-3 hover:bg-orange-100">Dessert</a>
-                    <a href="snacks.html" class="block text-stone-800 px-4 py-3 hover:bg-orange-100">Snacks</a>
-                    <a href="mealplan.html" class="block text-stone-800 px-4 py-3 hover:bg-orange-100">Meal Planning Tips</a>
-                </ul>
-            </section>
-        </nav>
-    </header>
+  <div class="w-36">
+    <a href="../index.html">
+      <img src="../assets/images/Logo.png" alt="Simply Savory Logo" class="rounded-lg">
+    </a>
+  </div>
+  <nav aria-label="Primary" class="flex ml-auto gap-8">
+    <div class="dropdown relative">
+      <button type="button" class="dropdown-btn menubtn cursor-pointer hover:bg-red-700 px-12 py-3 rounded-lg transition text-lg" aria-haspopup="true" aria-expanded="false" aria-controls="MenuDropdown">Menu</button>
+      <ul id="MenuDropdown" class="dropdown-menu hidden absolute right-0 mt-2 bg-white rounded-xl shadow-xl w-40 overflow-hidden text-stone-800">
+        <li><a href="../index.html" class="block px-4 py-3 hover:bg-orange-100">Home</a></li>
+        <li><a href="about.html" class="block px-4 py-3 hover:bg-orange-100">About Us</a></li>
+        <li><a href="contact.html" class="block px-4 py-3 hover:bg-orange-100">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="dropdown relative">
+      <button type="button" class="dropdown-btn recipebtn cursor-pointer hover:bg-red-700 px-12 py-3 rounded-lg transition text-lg" aria-haspopup="true" aria-expanded="false" aria-controls="RecipeDropdown">Recipes</button>
+      <ul id="RecipeDropdown" class="dropdown-menu hidden absolute right-0 mt-2 bg-white rounded-xl shadow-xl w-48 overflow-hidden text-stone-800">
+        <li><a href="breakfast.html" class="block px-4 py-3 hover:bg-orange-100" aria-current="page">Breakfast</a></li>
+        <li><a href="lunch.html" class="block px-4 py-3 hover:bg-orange-100">Lunch</a></li>
+        <li><a href="dinner.html" class="block px-4 py-3 hover:bg-orange-100">Dinner</a></li>
+        <li><a href="dessert.html" class="block px-4 py-3 hover:bg-orange-100">Dessert</a></li>
+        <li><a href="snacks.html" class="block px-4 py-3 hover:bg-orange-100">Snacks</a></li>
+        <li><a href="mealplan.html" class="block px-4 py-3 hover:bg-orange-100">Meal Planning Tips</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
 
-<main>
-  <section class="m-3 flex-1">
-<h1 class="text-4xl text-bold text-red-600 mb-3">Lunch Recipes</h1>
-<article class="bg-white rounded-lg p-3 mb-3 w-full">
-    <h2 class="text-3xl mb-3">Chicken Caesar Wrap</h2>
-    <figure>
-        <img src="images/chicken-caesar-wrap.jpg" alt="Chicken Caesar Wrap">
-        <figcaption>Chicken Caesar Wrap</figcaption>
+<main class="max-w-6xl mx-auto lg:w-3/4 md:w-full sm:w-full p-6">
+<h1 class="text-4xl font-bold text-red-600 mb-3">Lunch Recipes</h1>
+
+<!-- Chicken Ceasar Wrap -->
+<article class="bg-white rounded-2xl shadow-lg p-8 mb-6">
+  <h2 class="text-3xl mb-3">Chicken Caesar Wrap</h2>
+  <div class="flex flex-col md:flex-row gap-6">
+    <figure class="md:w-1/3 w-full">
+      <img src="../assets/images/scrambled-eggs.jpg" alt="Chicken and Sweet Corn Soup" 
+            class="w-full rounded-lg object-cover" loading="lazy">
+      <figcaption class="text-sm text-stone-500 mt-1">Chicken Caesar Wrap.</figcaption>
     </figure>
-
-    <h3 onclick="toggleInfo('wrap-desc')">Description</h3>
-    <p id="wrap-desc" class="hidden">
-         A Chicken Caesar Wrap is a quick and satisfying meal made with tender
+    <div class="md:w-2/3 w-full">
+      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between 
+                w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
+                aria-controls="eggs-desc">
+        Description
+        <span class="chevron transition-transform">▾</span>
+      </button>
+      
+        <p id="eggs-desc" class="hidden pt-2">Chicken Caesar Wrap is a quick and satisfying meal made with tender
         chicken, crisp lettuce, Parmesan cheese, and creamy Caesar dressing,
         all wrapped inside a soft tortilla. Beyond its convenience, this wrap
         balances textures and flavors: juicy chicken pairs with crunchy greens,
@@ -77,42 +68,64 @@
         it perfect for on-the-go lunches, picnics, or a light dinner. Its
         versatility allows for variations such as grilled chicken, whole-wheat
         tortillas, or added vegetables for extra nutrition. It is perfect for a quick and easy meal.
-    </p>
+        </p>
+        
+      
 
-    <h3 onclick="toggleInfo('wrap-ingredients')">Ingredients</h3>
-    <ul id="wrap-ingredients" class="hidden">
+      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between 
+            w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
+            aria-controls="wrap-ingredients">
+        Ingredients
+        <span class="chevron transition-transform">▾</span>
+      </button>
+      <ul id="wrap-ingredients" class="hidden list-disc list-inside pt-2 space-y-1">
         <li>1 tortilla wrap</li>
         <li>1 cup grilled chicken, sliced</li>
         <li>1 cup romaine lettuce</li>
         <li>2 tbsp Caesar dressing</li>
         <li>2 tbsp grated Parmesan cheese</li>
-    </ul>
+      </ul>
 
-    <h3 onclick="toggleInfo('wrap-steps')">How to Make</h3>
-    <ol id="wrap-steps" class="hidden" onchange="checkCompletion('wrap-steps','wrap-complete')">
-        <li><input type="checkbox">Cook the chicken until fully done, then slice it into thin strips.</li>
-        <li><input type="checkbox">Wash and dry the lettuce before cutting it into bite-sized pieces.</li>
-        <li><input type="checkbox">Combine chicken, lettuce, Parmesan, and Caesar dressing.</li>
-        <li><input type="checkbox">Mix everything until evenly coated.</li>
-        <li><input type="checkbox">Lay a tortilla flat on a clean surface.</li>
-        <li><input type="checkbox">Place the chicken mixture in the centre.</li>
-        <li><input type="checkbox">Fold in the sides and roll tightly.</li>
-        <li><input type="checkbox">Slice the wrap in half if desired.</li>
-        <li><input type="checkbox">Serve immediately or wrap for later.</li>
+      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between w-full 
+        text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
+        aria-controls="wrap-steps">
+        Instructions
+        <span class="chevron transition-transform">▾</span>
+      </button>
+      <ol id="wrap-steps" data-complete-target="wrap-complete" class="hidden list-decimal 
+                marker:font-bold pt-2 pl-6 space-y-1">
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Cook the chicken until fully done, then slice it into thin strips.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Wash and dry the lettuce before cutting it into bite-sized pieces.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Combine chicken, lettuce, Parmesan, and Caesar dressing.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Mix everything until evenly coated.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Lay a tortilla flat on a clean surface.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Place the chicken mixture in the centre.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Fold in the sides and roll tightly.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Slice the wrap in half if desired.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Serve immediately or wrap for later.</label></li>
     </ol>
-    <div id="wrap-complete" class="hidden text-green-600 font-bold">Completed!</div>
+      <p id="wrap-complete" class="hidden text-green-600 font-bold mt-2" aria-live="polite">Completed!</p>
+    </div>
+  </div>
 </article>
 
-<article class="bg-white rounded-lg p-3 mb-3 w-full">
-    <h2 class="text-3xl mb-3">Chicken and Sweet Corn Soup with Noodles</h2>
-    <figure>
-        <img src="images/chicken-corn-soup.jpg" alt="Chicken and Sweet Corn Soup">
-        <figcaption>Chicken and Sweet Corn Soup with Noodles</figcaption>
+<!-- Chicken and Sweet Corn Soup with Noodles -->
+<article class="bg-white rounded-2xl shadow-lg p-8 mb-6">
+  <h2 class="text-3xl mb-3">Chicken and Sweet Corn Soup with Noodles</h2>
+  <div class="flex flex-col md:flex-row gap-6">
+    <figure class="md:w-1/3 w-full">
+      <img src="../assets/images/Chicken and Sweet Corn Soup with Noodles.jpg" alt="Golden French toast slices topped with syrup" 
+                class="w-full rounded-lg object-cover" loading="lazy">
+      <figcaption class="text-sm text-stone-500 mt-1">Chicken and Sweet Corn Soup with Noodles</figcaption>
     </figure>
-
-    <h3 onclick="toggleInfo('soup-desc')">Description</h3>
-    <p id="soup-desc" class="hidden">
-        Chicken and Sweet Corn Soup with Noodles is a warm and comforting dish
+    <div class="md:w-2/3 w-full">
+      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between 
+                w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
+                aria-controls="soup-desc">
+        Description
+        <span class="chevron transition-transform">▾</span>
+      </button>
+        <p id="soup-desc" class="hidden pt-2">Chicken and Sweet Corn Soup with Noodles is a warm and comforting dish
         made with tender chicken, sweet corn, silky egg ribbons, and soft
         noodles in a flavourful broth. The sweetness of corn balances the
         savory depth of chicken stock, while the egg ribbons add a delicate,
@@ -121,11 +134,17 @@
         enjoyed during cooler weather or when seeking comfort food, as its
         gentle flavors and soothing warmth provide both nourishment and
         satisfaction. It is filling, easy to prepare, and
-        perfect for a cozy meal.
-    </p>
+        perfect for a cozy meal.</p>
+       
+      
 
-    <h3 onclick="toggleInfo('soup-ingredients')">Ingredients</h3>
-    <ul id="soup-ingredients" class="hidden">
+      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between
+                 w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
+                 aria-controls="soup-ingredients">
+        Ingredients
+        <span class="chevron transition-transform">▾</span>
+      </button>
+      <ul id="soup-ingredients" class="hidden list-disc list-inside pt-2 space-y-1">
         <li>4 cups chicken stock</li>
         <li>1 cup cooked chicken, shredded</li>
         <li>1 cup sweet corn kernels</li>
@@ -134,33 +153,44 @@
         <li>Salt and pepper to taste</li>
         <li>1 tbsp soy sauce (optional)</li>
         <li>Spring onions for garnish</li>
-    </ul>
+      </ul>
 
-    <h3 onclick="toggleInfo('soup-steps')">How to Make</h3>
-    <ol id="soup-steps" class="hidden" onchange="checkCompletion('soup-steps','soup-complete')">
-        <li><input type="checkbox">Bring chicken stock to a gentle boil.</li>
-        <li><input type="checkbox">Add chicken pieces and cook fully.</li>
-        <li><input type="checkbox">Shred chicken and return to pot.</li>
-        <li><input type="checkbox">Add sweet corn and simmer.</li>
-        <li><input type="checkbox">Stir in beaten eggs slowly.</li>
-        <li><input type="checkbox">Add noodles and cook until tender.</li>
-        <li><input type="checkbox">Season with salt, pepper, soy sauce.</li>
-        <li><input type="checkbox">Adjust seasoning before serving.</li>
-        <li><input type="checkbox">Garnish with spring onions.</li>
-    </ol>
-    <div id="soup-complete" class="hidden text-green-600 font-bold">Completed!</div>
+      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between w-full text-left 
+      font-bold border-b border-stone-200 py-2" aria-expanded="false" aria-controls="soup-steps">
+        Instructions
+        <span class="chevron transition-transform">▾</span>
+      </button>
+      <ol id="soup-steps" data-complete-target="toast-complete" class="hidden list-decimal marker:font-bold pt-2 pl-6 space-y-1">
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Bring chicken stock to a gentle boil.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Add chicken pieces and cook fully.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Add sweet corn and simmer.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Stir in beaten eggs slowly.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Add noodles and cook until tender.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Season with salt, pepper, soy sauce.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Adjust seasoning before serving.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Garnish with spring onions.</label></li>
+      </ol>
+      <p id="soup-complete" class="hidden text-green-600 font-bold mt-2" aria-live="polite">Completed!</p>
+    </div>
+  </div>
 </article>
 
-<article class="bg-white rounded-lg p-3 mb-3 w-full">
-    <h2 class="text-3xl mb-3">Carbonara</h2>
-    <figure>
-        <img src="images/carbonara.jpg" alt="Carbonara">
-        <figcaption>Creamy Carbonara</figcaption>
+<!-- Carbonara-->
+<article class="bg-white rounded-2xl shadow-lg p-8 mb-6">
+  <h2 class="text-3xl mb-3">Carbonara</h2>
+  <div class="flex flex-col md:flex-row gap-6">
+    <figure class="md:w-1/3 w-full">
+      <img src="../assets/images/carbonara.jpg" alt="Creamy Carbonara" class="w-full rounded-lg object-cover" loading="lazy">
+      <figcaption class="text-sm text-stone-500 mt-1">Creamy Carbonara</figcaption>
     </figure>
-
-    <h3 onclick="toggleInfo('carbonara-desc')">Description</h3>
-    <p id="carbonara-desc" class="hidden">
-        Carbonara is a classic Italian pasta dish made with pasta, eggs,
+    <div class="md:w-2/3 w-full">
+      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between w-full 
+      text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
+      aria-controls="carbonara-desc">
+        Description
+        <span class="chevron transition-transform">▾</span>
+      </button>
+        <p id="carbonara-desc" class="hidden pt-2">Carbonara is a classic Italian pasta dish made with pasta, eggs,
         Parmesan cheese, black pepper, and crispy bacon or pancetta. The hot
         pasta creates a rich and creamy sauce without using cream, making it a
         simple yet delicious comfort meal. Its charm lies in the balance of
@@ -170,87 +200,87 @@
         Italian cooking — minimal ingredients, maximum flavor. When prepared
         correctly, it delivers a luxurious mouthfeel and a depth of taste that
         feels indulgent yet homely, making it a timeless favorite worldwide.
-    </p>
+      </p>
 
-    <h3 onclick="toggleInfo('carbonara-ingredients')">Ingredients</h3>
-    <ul id="carbonara-ingredients" class="hidden">
+      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between
+            w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
+            aria-controls="carbonara-ingredients">
+        Ingredients
+        <span class="chevron transition-transform">▾</span>
+      </button>
+      <ul id="carbonara-ingredients" class="hidden list-disc list-inside pt-2 space-y-1">
         <li>200g spaghetti</li>
         <li>100g pancetta or bacon</li>
         <li>2 large eggs</li>
         <li>1/2 cup grated Parmesan cheese</li>
         <li>1/2 tsp black pepper</li>
         <li>Salt to taste</li>
-    </ul>
+      </ul>
 
-    <h3 onclick="toggleInfo('carbonara-steps')">How to Make</h3>
-    <ol id="carbonara-steps" class="hidden" onchange="checkCompletion('carbonara-steps','carbonara-complete')">
-        <li><input type="checkbox">Cook pasta until al dente.</li>
-        <li><input type="checkbox">Fry bacon until crispy.</li>
-        <li><input type="checkbox">Whisk eggs, Parmesan, and pepper.</li>
-        <li><input type="checkbox">Reserve pasta water before draining.</li>
-        <li><input type="checkbox">Add pasta to bacon pan.</li>
-        <li><input type="checkbox">Remove pan from heat, add egg mix.</li>
-        <li><input type="checkbox">Toss pasta quickly for creamy sauce.</li>
-        <li><input type="checkbox">Add pasta water if needed.</li>
-        <li><input type="checkbox">Serve with extra Parmesan and pepper.</li>
-    </ol>
-    <div id="carbonara-complete" class="hidden text-green-600 font-bold">Completed!</div>
+      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between
+            w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
+            aria-controls="carbonara-steps">
+        Instructions
+        <span class="chevron transition-transform">▾</span>
+      </button>
+      <ol id="carbonara-steps" data-complete-target="carbonara-complete" class="hidden list-decimal 
+            marker:font-bold pt-2 pl-6 space-y-1">
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Cook pasta until al dente.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Fry bacon until crispy.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Whisk eggs, Parmesan, and pepper.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Reserve pasta water before draining.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Add pasta to bacon pan.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Remove pan from heat, add egg mix.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Toss pasta quickly for creamy sauce.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Add pasta water if needed.</label></li>
+        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Serve with extra Parmesan and pepper.</label></li>
+      </ol>
+      <p id="carbonara-complete" class="hidden text-green-600 font-bold mt-2" aria-live="polite">Completed!</p>
+    </div>
+  </div>
 </article>
-</section>
+
 </main>
-<footer class="bg-stone-900 text-white px-10 py-12">
-        <section class="max-w-6xl mx-auto grid grid-cols-3 gap-10">
-            <!-- Brand -->
-            <article>
-                <h2 class="text-2xl font-serif font-bold mb-5 flex items-center gap-3">🍴 Simply Savory</h2>
-                <p class="text-gray-300 leading-relaxed max-w-sm">
-                    Quick, easy recipes for young adults cooking for themselves, one plate at a time.
-                </p>
-                <section class="flex gap-4 mt-6">
-                    <a href="#" class="border border-gray-500 rounded-full w-10 h-10 flex items-center justify-center hover:bg-white hover:text-black transition">f</a>
-                    <a href="#" class="border border-gray-500 rounded-full w-10 h-10 flex items-center justify-center hover:bg-white hover:text-black transition">ig</a>
-                    <a href="#" class="border border-gray-500 rounded-full w-10 h-10 flex inside justify-center items-center hover:bg-white hover:text-black transition">p</a>
-                </section>
-            </article>
-            <!-- Recipes -->
-            <article>
-                <h3 class="text-yellow-500 font-bold tracking-widest mb-5">RECIPES</h3>
-                <ul class="space-y-4 text-gray-300">
-                    <li>
-                        <a href="breakfast.html" class="hover:text-white">Breakfast</a>
-                    </li>
-                    <li>
-                        <a href="lunch.html" class="hover:text-white">Lunch</a>
-                    </li>
-                    <li>
-                        <a href="dinner.html" class="hover:text-white">Dinner</a>
-                    </li>
-                    <li>
-                        <a href="dessert.html" class="hover:text-white">Desserts</a>
-                    </li>
-                    <li>
-                        <a href="snacks.html" class="hover:text-white">Snacks</a>
-                    </li>
-                </ul>
-            </article>
-            <!-- Site -->
-            <article>
-                <h3 class="text-yellow-500 font-bold tracking-widest mb-5">SITE</h3>
-                <ul class="space-y-4 text-gray-300">
-                    <li>
-                        <a href="about.html" class="hover:text-white">About Us</a>
-                    </li>
-                    <li>
-                        <a href="mealplan.html" class="hover:text-white">Meal Planning</a>
-                    </li>
-                    <li>
-                        <a href="contact.html" class="hover:text-white">Contact / Submit a Recipe</a>
-                    </li>
-                </ul>
-            </article>
-        </section>
-    </footer>
+
+<footer class="bg-stone-900 text-white px-6 sm:px-10 py-12">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-10">
+    <div>
+      <h2 class="text-2xl font-serif font-bold mb-5 flex items-center gap-3">🍴 Simply Savory</h2>
+      <p class="text-gray-300 leading-relaxed max-w-sm">
+        Quick, easy recipes for young adults cooking for themselves, one plate at a time.
+      </p>
+      <div class="flex gap-4 mt-6">
+        <a href="#" aria-label="Facebook" class="border border-gray-500 rounded-full w-10 h-10 
+        flex items-center justify-center hover:bg-white hover:text-black transition">f</a>
+        <a href="#" aria-label="Instagram" class="border border-gray-500 rounded-full w-10 h-10 
+        flex items-center justify-center hover:bg-white hover:text-black transition">ig</a>
+        <a href="#" aria-label="Pinterest" class="border border-gray-500 rounded-full w-10 h-10 
+        flex items-center justify-center hover:bg-white hover:text-black transition">p</a>
+      </div>
+    </div>
+    <div>
+      <h3 class="text-yellow-500 font-bold tracking-widest mb-5">RECIPES</h3>
+      <ul class="space-y-4 text-gray-300">
+        <li><a href="breakfast.html" class="hover:text-white">Breakfast</a></li>
+        <li><a href="lunch.html" class="hover:text-white">Lunch</a></li>
+        <li><a href="dinner.html" class="hover:text-white">Dinner</a></li>
+        <li><a href="dessert.html" class="hover:text-white">Desserts</a></li>
+        <li><a href="snacks.html" class="hover:text-white">Snacks</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-yellow-500 font-bold tracking-widest mb-5">SITE</h3>
+      <ul class="space-y-4 text-gray-300">
+        <li><a href="about.html" class="hover:text-white">About Us</a></li>
+        <li><a href="mealplan.html" class="hover:text-white">Meal Planning</a></li>
+        <li><a href="contact.html" class="hover:text-white">Contact / Submit a Recipe</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
 <script src="../assets/js/script.js"></script>
+
 </body>
 </html>
 
