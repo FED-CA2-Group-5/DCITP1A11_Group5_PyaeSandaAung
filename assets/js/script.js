@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
       message.classList.toggle('hidden', !allChecked);
     });
   });
+});
 // /* When the user clicks on the button, toggle between hiding and showing the dropdown content */
 // function MenuFunction() {
 //   document.getElementById("MenuDropdown").classList.toggle("show");
