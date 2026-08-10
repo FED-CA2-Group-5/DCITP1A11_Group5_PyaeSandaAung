@@ -1,11 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
-  setupDropdowns();
-  setupToggles();
-  setupStepChecklists();
-  setupRecipeForm();
-  setupLikeButtons();
-  showRecipeOfTheWeek();
-});
+
 
 
 //new function of fropdown menu and description, ingredients and instructions
@@ -235,41 +228,32 @@ function showFieldError(field, hasError) {
 }
 
 
-/* ---------- 5. Like buttons + Recipe of the Week ----------
+document.addEventListener('DOMContentLoaded', function () {
+  setupLikeButtons();
+  showRecipeOfTheWeek();
+});
 
-   Tapping the heart on a recipe saves that recipe's info using the
-   browser's own storage (localStorage). The homepage reads it back
-   and displays it as the Recipe of the Week.
-
-   Important: this only works when the site is hosted on a real (even
-   local) web server, or opened as real files on your computer — not
-   inside a chat preview panel. If two pages are on different origins,
-   they don't share localStorage. */
-
-var RECIPE_OF_THE_WEEK_KEY = 'ss-recipe-of-the-week';
+const RECIPE_OF_THE_WEEK_KEY = 'ss-recipe-of-the-week';
 
 function setupLikeButtons() {
   document.querySelectorAll('.like-btn').forEach(function (button) {
-    var recipeId = button.getAttribute('data-recipe-id');
+    const recipeId = button.dataset.recipeId;
     if (!recipeId) return;
 
-    // Show whether this recipe was already liked on a past visit.
+    // Show whether this recipe was already liked
     setLikedLook(button, wasLikedBefore(recipeId));
 
     button.addEventListener('click', function () {
-      var nowLiked = button.getAttribute('aria-pressed') !== 'true';
+      const nowLiked = button.getAttribute('aria-pressed') !== 'true';
       setLikedLook(button, nowLiked);
       rememberLike(recipeId, nowLiked);
 
-      // Liking a recipe makes it the new Recipe of the Week. Un-liking
-      // it does NOT clear the homepage — the last-liked recipe stays
-      // featured until something else is liked.
       if (nowLiked) {
         saveRecipeOfTheWeek({
-          title: button.getAttribute('data-recipe-title'),
-          page: button.getAttribute('data-recipe-page'),
-          desc: button.getAttribute('data-recipe-desc'),
-          image: button.getAttribute('data-recipe-image'),
+          title: button.dataset.recipeTitle,
+          page: button.dataset.recipePage,
+          desc: button.dataset.recipeDesc,
+          image: button.dataset.recipeImage
         });
       }
     });
@@ -278,11 +262,7 @@ function setupLikeButtons() {
 
 function setLikedLook(button, liked) {
   button.setAttribute('aria-pressed', liked ? 'true' : 'false');
-  // Set the color directly rather than toggling two Tailwind classes —
-  // this guarantees it wins over the button's own hover:text-red-400
-  // class instead of the two fighting for specificity while the mouse
-  // is still sitting on the button right after a click.
-  button.style.color = liked ? '#ef4444' /* red-500 */ : '';
+  button.style.color = liked ? '#ef4444' : ''; // red when liked
 }
 
 function wasLikedBefore(recipeId) {
@@ -297,28 +277,25 @@ function saveRecipeOfTheWeek(recipe) {
   localStorage.setItem(RECIPE_OF_THE_WEEK_KEY, JSON.stringify(recipe));
 }
 
-// Runs on the homepage. Fills in the Recipe of the Week section if one
-// has been saved; otherwise the page's own "no favorite yet" message
-// (already in the HTML) is left showing.
 function showRecipeOfTheWeek() {
-  var section = document.getElementById('recipe-of-the-week');
-  if (!section) return; // not the homepage — nothing to do
+  const section = document.getElementById('recipe-of-the-week');
+  if (!section) return;
 
-  var recipe = readRecipeOfTheWeek();
+  const recipe = readRecipeOfTheWeek();
   if (!recipe || !recipe.title) return;
 
   section.querySelector('.rotw-title').textContent = recipe.title;
   section.querySelector('.rotw-desc').textContent = recipe.desc || '';
-  section.querySelector('.rotw-link').setAttribute('href', recipe.page || './pages/breakfast.html');
+  section.querySelector('.rotw-link').href = recipe.page || './pages/breakfast.html';
 
-  var image = section.querySelector('.rotw-image');
+  const image = section.querySelector('.rotw-image');
   if (image) {
     if (recipe.image) {
       image.src = recipe.image;
       image.alt = recipe.title;
       image.classList.remove('hidden');
     } else {
-      image.classList.add('hidden'); // no image saved — just skip it
+      image.classList.add('hidden');
     }
   }
 
@@ -329,7 +306,7 @@ function showRecipeOfTheWeek() {
 function readRecipeOfTheWeek() {
   try {
     return JSON.parse(localStorage.getItem(RECIPE_OF_THE_WEEK_KEY));
-  } catch (error) {
+  } catch {
     return null;
   }
 }
