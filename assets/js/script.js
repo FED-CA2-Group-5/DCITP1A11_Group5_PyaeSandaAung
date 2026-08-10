@@ -27,13 +27,22 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  /* ---------- Mobile hamburger toggle ---------- */
+/* ---------- Mobile hamburger toggle ---------- */
 var hamburgerBtn = document.getElementById('hamburgerBtn');
 var primaryNav = document.getElementById('primaryNav');
 
 function closeMobileNav() {
   primaryNav.classList.add('hidden');
   hamburgerBtn.setAttribute('aria-expanded', 'false');
+}
+
+function syncNavForViewport() {
+  if (window.innerWidth >= 1024) {
+    primaryNav.classList.remove('hidden');
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+  } else {
+    primaryNav.classList.add('hidden');
+  }
 }
 
 hamburgerBtn.addEventListener('click', function (e) {
@@ -48,7 +57,6 @@ hamburgerBtn.addEventListener('click', function (e) {
   }
 });
 
-// Close mobile nav on outside click (only matters below lg)
 document.addEventListener('click', function (e) {
   if (window.innerWidth < 1024 &&
       !primaryNav.contains(e.target) &&
@@ -57,15 +65,10 @@ document.addEventListener('click', function (e) {
   }
 });
 
-// Reset nav state if the window is resized across the breakpoint
-window.addEventListener('resize', function () {
-  if (window.innerWidth >= 1024) {
-    primaryNav.classList.remove('hidden');
-    hamburgerBtn.setAttribute('aria-expanded', 'false');
-  } else {
-    primaryNav.classList.add('hidden');
-  }
-});
+window.addEventListener('resize', syncNavForViewport);
+
+// Run once immediately so desktop shows correctly on first load
+syncNavForViewport();
 
   // One shared outside-click handler for every dropdown (the duplicate
   // window.onclick assignments in the old script silently overwrote
