@@ -1,296 +1,530 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Breakfast Recipes — Simply Savory</title>
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-<link rel="stylesheet" href="../assets/css/styles.css">
-</head>
-
-<body class="bg-orange-50 text-stone-800">
-  <header class="flex items-center bg-red-800 text-white sticky top-0 z-50 shadow-lg px-6 py-3">
-    <section class="w-36">
-      <a href="../index.html">
-        <img src="../assets/images/Logo.png" alt="Simply Savory Logo" class="rounded-lg">
-      </a>
-    </section>
-    
-    <!-- Hamburger, shown only below lg -->
-    <button type="button" id="hamburgerBtn" class="lg:hidden ml-auto p-2 rounded-lg hover:bg-red-700 transition" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primaryNav">
-      <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-    </button>
-
-    <nav id="primaryNav" aria-label="Primary" class="hidden lg:flex lg:ml-auto gap-8 absolute lg:static top-full left-0 w-full lg:w-auto bg-red-800 lg:bg-transparent px-6 lg:px-0 pb-4 lg:pb-0 shadow-lg lg:shadow-none">
-      <section class="dropdown relative">
-        <button type="button" class="dropdown-btn cursor-pointer hover:bg-red-700 px-4 lg:px-12 py-3 rounded-lg transition text-lg w-full lg:w-auto flex justify-between lg:inline-block" aria-haspopup="true" aria-expanded="false" aria-controls="MenuDropdown">
-          Menu
-          <span class="chevron transition-transform">▾</span>
-        </button>
-        <ul id="MenuDropdown" class="dropdown-menu hidden static lg:absolute lg:right-0 lg:mt-2 mt-1 w-full lg:w-40 bg-white rounded-xl shadow-xl overflow-hidden text-stone-800">
-          <li><a href="../index.html" class="block px-4 py-3 hover:bg-orange-100">Home</a></li>
-          <li><a href="about.html" class="block px-4 py-3 hover:bg-orange-100">About Us</a></li>
-          <li><a href="contact.html" class="block px-4 py-3 hover:bg-orange-100">Contact Us</a></li>
-        </ul>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      Breakfast Recipes — Simply Savory
+    </title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4">
+    </script>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+  </head>
+  <body class="bg-orange-50 text-stone-800">
+    <header class="flex items-center bg-red-800 text-white sticky top-0 z-50 shadow-lg px-6 py-3">
+      <section class="w-36">
+        <a href="../index.html">
+          <img src="../assets/images/Logo.png" alt="Simply Savory Logo" class="rounded-lg">
+        </a>
       </section>
-      
-      <section class="dropdown relative">
-        <button type="button" class="dropdown-btn cursor-pointer hover:bg-red-700 px-4 lg:px-12 py-3 rounded-lg transition text-lg w-full lg:w-auto flex justify-between lg:inline-block" aria-haspopup="true" aria-expanded="false" aria-controls="RecipeDropdown">
-          Recipes
-          <span class="chevron transition-transform">▾</span>
-        </button>
-        <ul id="RecipeDropdown" class="dropdown-menu hidden static lg:absolute lg:right-0 lg:mt-2 mt-1 w-full lg:w-48 bg-white rounded-xl shadow-xl overflow-hidden text-stone-800">
-          <li><a href="breakfast.html" class="block px-4 py-3 hover:bg-orange-100" aria-current="page">Breakfast</a></li>
-          <li><a href="lunch.html" class="block px-4 py-3 hover:bg-orange-100">Lunch</a></li>
-          <li><a href="dinner.html" class="block px-4 py-3 hover:bg-orange-100">Dinner</a></li>
-          <li><a href="dessert.html" class="block px-4 py-3 hover:bg-orange-100">Dessert</a></li>
-          <li><a href="snacks.html" class="block px-4 py-3 hover:bg-orange-100">Snacks</a></li>
-          <li><a href="mealplan.html" class="block px-4 py-3 hover:bg-orange-100">Meal Planning Tips</a></li>
-        </ul>
-      </section>
-    </nav>
-  </header>
-
-<main class="max-w-6xl mx-auto lg:w-3/4 md:w-full sm:w-full p-6">
-<h1 class="text-3xl sm:text-4xl font-bold text-red-600 mb-3">Breakfast Recipes</h1>
-
-<!-- Scrambled Eggs -->
-<article id="scrambled-eggs" class="bg-white rounded-2xl shadow-lg p-8 mb-6 scroll-mt-24">
-  <div class="flex items-center justify-between gap-3 mb-3">
-    <h2 class="text-2xl sm:text-3xl">Scrambled Eggs</h2>
-    <button type="button" class="like-btn cursor-pointer text-3xl leading-none text-stone-300 hover:text-red-400 transition"
-            data-recipe-id="scrambled-eggs" data-recipe-title="Scrambled Eggs" data-recipe-page="./pages/breakfast.html#scrambled-eggs" data-recipe-image="./assets/images/scrambled eggs.jpg"
-            data-recipe-desc="Soft, fluffy scrambled eggs made with butter and a touch of seasoning."
-            aria-pressed="false" aria-label="Like Scrambled Eggs">♥</button>
-  </div>
-  <div class="flex flex-col md:flex-row gap-6">
-    <figure class="md:w-1/3 w-full">
-      <img src="../assets/images/scrambled eggs.jpg" alt="A plate of soft, creamy scrambled eggs"
-            class="w-full rounded-lg h-64 object-cover" loading="lazy">
-      <figcaption class="text-sm text-stone-500 mt-1">Soft and creamy scrambled eggs.</figcaption>
-    </figure>
-    <div class="md:w-2/3 w-full">
-      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between
-                w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false"
-                aria-controls="eggs-desc">
-        Description
-        <span class="chevron transition-transform">▾</span>
+      <!-- Hamburger, shown only below lg -->
+      <button type="button" id="hamburgerBtn" class="lg:hidden ml-auto p-2 rounded-lg hover:bg-red-700 transition" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primaryNav">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
       </button>
-      <div id="eggs-desc" class="hidden pt-2">
-        <p>Scrambled eggs are a quick and nutritious breakfast made with eggs, butter and seasoning. They are soft, fluffy and perfect with toast.</p>
-        <ul class="list-disc list-inside mt-2 space-y-1">
-          <li><strong>Texture:</strong> Soft, creamy, and slightly moist when cooked properly.</li>
-          <li><strong>Color:</strong> Warm golden yellow, sometimes with lighter streaks.</li>
-          <li><strong>Flavor:</strong> Mild and buttery, enriched by the yolks.</li>
-        </ul>
-      </div>
-
-      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between
+      <nav id="primaryNav" aria-label="Primary" class="hidden lg:flex lg:ml-auto gap-8 absolute lg:static top-full left-0 w-full lg:w-auto bg-red-800 lg:bg-transparent px-6 lg:px-0 pb-4 lg:pb-0 shadow-lg lg:shadow-none">
+        <section class="dropdown relative">
+          <button type="button" class="dropdown-btn cursor-pointer hover:bg-red-700 px-4 lg:px-12 py-3 rounded-lg transition text-lg w-full lg:w-auto flex justify-between lg:inline-block" aria-haspopup="true" aria-expanded="false" aria-controls="MenuDropdown">
+            Menu
+            <span class="chevron transition-transform">
+              ▾
+            </span>
+          </button>
+          <ul id="MenuDropdown" class="dropdown-menu hidden static lg:absolute lg:right-0 lg:mt-2 mt-1 w-full lg:w-40 bg-white rounded-xl shadow-xl overflow-hidden text-stone-800">
+            <li>
+              <a href="../index.html" class="block px-4 py-3 hover:bg-orange-100">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="about.html" class="block px-4 py-3 hover:bg-orange-100">
+                About Us
+              </a>
+            </li>
+            <li>
+              <a href="contact.html" class="block px-4 py-3 hover:bg-orange-100">
+                Contact Us
+              </a>
+            </li>
+          </ul>
+        </section>
+        <section class="dropdown relative">
+          <button type="button" class="dropdown-btn cursor-pointer hover:bg-red-700 px-4 lg:px-12 py-3 rounded-lg transition text-lg w-full lg:w-auto flex justify-between lg:inline-block" aria-haspopup="true" aria-expanded="false" aria-controls="RecipeDropdown">
+            Recipes
+            <span class="chevron transition-transform">
+              ▾
+            </span>
+          </button>
+          <ul id="RecipeDropdown" class="dropdown-menu hidden static lg:absolute lg:right-0 lg:mt-2 mt-1 w-full lg:w-48 bg-white rounded-xl shadow-xl overflow-hidden text-stone-800">
+            <li>
+              <a href="breakfast.html" class="block px-4 py-3 hover:bg-orange-100" aria-current="page">
+                Breakfast
+              </a>
+            </li>
+            <li>
+              <a href="lunch.html" class="block px-4 py-3 hover:bg-orange-100">
+                Lunch
+              </a>
+            </li>
+            <li>
+              <a href="dinner.html" class="block px-4 py-3 hover:bg-orange-100">
+                Dinner
+              </a>
+            </li>
+            <li>
+              <a href="dessert.html" class="block px-4 py-3 hover:bg-orange-100">
+                Dessert
+              </a>
+            </li>
+            <li>
+              <a href="snacks.html" class="block px-4 py-3 hover:bg-orange-100">
+                Snacks
+              </a>
+            </li>
+            <li>
+              <a href="mealplan.html" class="block px-4 py-3 hover:bg-orange-100">
+                Meal Planning Tips
+              </a>
+            </li>
+          </ul>
+        </section>
+      </nav>
+    </header>
+    <main class="max-w-6xl mx-auto lg:w-3/4 md:w-full sm:w-full p-6">
+      <h1 class="text-3xl sm:text-4xl font-bold text-red-800 mb-3">
+        Breakfast Recipes
+      </h1>
+      <!-- Scrambled Eggs -->
+      <section id="scrambled-eggs" class="bg-white rounded-2xl shadow-lg p-8 mb-6 scroll-mt-24">
+        <article class="flex items-center justify-between gap-3 mb-3">
+          <h2 class="text-2xl sm:text-3xl">
+            Scrambled Eggs
+          </h2>
+          <button type="button" class="like-btn cursor-pointer text-3xl leading-none text-stone-300 hover:text-red-400 transition" data-recipe-id="scrambled-eggs" 
+        data-recipe-title="Scrambled Eggs" data-recipe-page="./pages/breakfast.html#scrambled-eggs" data-recipe-image="./assets/images/scrambled eggs.jpg" 
+        data-recipe-desc="Soft, fluffy scrambled eggs made with butter and a touch of seasoning." aria-pressed="false" aria-label="Like Scrambled Eggs">
+            ♥
+          </button>
+        </article>
+        <section class="flex flex-col md:flex-row gap-6">
+          <figure class="md:w-1/3 w-full">
+            <img src="../assets/images/scrambled eggs.jpg" alt="A plate of soft, creamy scrambled eggs" class="w-full rounded-lg h-64 object-cover" loading="lazy">
+            <figcaption class="text-sm text-stone-500 mt-1">
+              Soft and creamy scrambled eggs.
+            </figcaption>
+          </figure>
+          <article class="md:w-2/3 w-full">
+            <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between w-full text-left font-bold border-b border-stone-200 py-2" 
+          aria-expanded="false" aria-controls="eggs-desc">
+              Description
+              <span class="chevron transition-transform">
+                ▾
+              </span>
+            </button>
+            <section id="eggs-desc" class="hidden pt-2">
+              <p>
+                Scrambled eggs are a quick and nutritious breakfast made with eggs, butter and seasoning. They are soft, fluffy and perfect with toast.
+              </p>
+              <ul class="list-disc list-inside mt-2 space-y-1">
+                <li>
+                  <strong>
+                    Texture:
+                  </strong>
+                  Soft, creamy, and slightly moist when cooked properly.
+                </li>
+                <li>
+                  <strong>
+                    Color:
+                  </strong>
+                  Warm golden yellow, sometimes with lighter streaks.
+                </li>
+                <li>
+                  <strong>
+                    Flavor:
+                  </strong>
+                  Mild and buttery, enriched by the yolks.
+                </li>
+              </ul>
+            </section>
+            <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between
             w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false"
             aria-controls="eggs-ingredients">
-        Ingredients
-        <span class="chevron transition-transform">▾</span>
-      </button>
-      <ul id="eggs-ingredients" class="hidden list-disc list-inside pt-2 space-y-1">
-        <li>2 large eggs</li>
-        <li>1 tbsp butter</li>
-        <li>Salt to taste</li>
-        <li>Black pepper to taste</li>
-      </ul>
-
-      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" aria-controls="eggs-steps">
-        Instructions
-        <span class="chevron transition-transform">▾</span>
-      </button>
-      <ol id="eggs-steps" data-complete-target="eggs-complete" class="hidden list-decimal
+              Ingredients
+              <span class="chevron transition-transform">
+                ▾
+              </span>
+            </button>
+            <ul id="eggs-ingredients" class="hidden list-disc list-inside pt-2 space-y-1">
+              <li>
+                2 large eggs
+              </li>
+              <li>
+                1 tbsp butter
+              </li>
+              <li>
+                Salt to taste
+              </li>
+              <li>
+                Black pepper to taste
+              </li>
+            </ul>
+            <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" aria-controls="eggs-steps">
+              Instructions
+              <span class="chevron transition-transform">
+                ▾
+              </span>
+            </button>
+            <ol id="eggs-steps" data-complete-target="eggs-complete" class="hidden list-decimal
                 marker:font-bold pt-2 pl-6 space-y-1">
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Crack eggs into a bowl and whisk.</label></li>
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Heat butter in a pan.</label></li>
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Pour eggs in and stir gently.</label></li>
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Cook until soft and creamy.</label></li>
-      </ol>
-      <p id="eggs-complete" class="hidden text-green-600 font-bold mt-2" aria-live="polite">Completed!</p>
-    </div>
-  </div>
-</article>
-
-<!-- French Toast -->
-<article id="french-toast" class="bg-white rounded-2xl shadow-lg p-8 mb-6 scroll-mt-24">
-  <div class="flex items-center justify-between gap-3 mb-3">
-    <h2 class="text-2xl sm:text-3xl">French Toast</h2>
-    <button type="button" class="like-btn cursor-pointer text-3xl leading-none text-stone-300 hover:text-red-400 transition"
+              <li>
+                <label class="inline-flex items-start gap-2 cursor-pointer">
+                  <input type="checkbox" class="mt-1">
+                  Crack eggs into a bowl and whisk.
+                </label>
+              </li>
+              <li>
+                <label class="inline-flex items-start gap-2 cursor-pointer">
+                  <input type="checkbox" class="mt-1">
+                  Heat butter in a pan.
+                </label>
+              </li>
+              <li>
+                <label class="inline-flex items-start gap-2 cursor-pointer">
+                  <input type="checkbox" class="mt-1">
+                  Pour eggs in and stir gently.
+                </label>
+              </li>
+              <li>
+                <label class="inline-flex items-start gap-2 cursor-pointer">
+                  <input type="checkbox" class="mt-1">
+                  Cook until soft and creamy.
+                </label>
+              </li>
+            </ol>
+            <p id="eggs-complete" class="hidden text-green-600 font-bold mt-2" aria-live="polite">
+              Completed!
+            </p>
+          </article>
+        </section>
+      <!-- French Toast -->
+      <article id="french-toast" class="bg-white rounded-2xl shadow-lg p-8 mb-6 scroll-mt-24">
+        <header class="flex items-center justify-between gap-3 mb-3">
+          <h2 class="text-2xl sm:text-3xl">
+            French Toast
+          </h2>
+          <button type="button" class="like-btn cursor-pointer text-3xl leading-none text-stone-300 hover:text-red-400 transition"
             data-recipe-id="french-toast" data-recipe-title="French Toast" data-recipe-page="./pages/breakfast.html#french-toast" data-recipe-image="./assets/images/french toast.png"
             data-recipe-desc="Golden French toast soaked in a cinnamon-egg custard and pan-fried until crisp."
-            aria-pressed="false" aria-label="Like French Toast">♥</button>
-  </div>
-  <div class="flex flex-col md:flex-row gap-6">
-    <figure class="md:w-1/3 w-full">
-      <img src="../assets/images/french toast.png" alt="Golden French toast slices topped with syrup"
+            aria-pressed="false" aria-label="Like French Toast">
+            ♥
+          </button>
+        </header>
+        <section class="flex flex-col md:flex-row gap-6">
+          <figure class="md:w-1/3 w-full">
+            <img src="../assets/images/french toast.png" alt="Golden French toast slices topped with syrup"
                 class="w-full rounded-lg h-64 object-cover" loading="lazy">
-      <figcaption class="text-sm text-stone-500 mt-1">Golden French toast.</figcaption>
-    </figure>
-    <div class="md:w-2/3 w-full">
-      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between
+            <figcaption class="text-sm text-stone-500 mt-1">
+              Golden French toast.
+            </figcaption>
+          </figure>
+          <section class="md:w-2/3 w-full">
+            <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between
                 w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" aria-controls="toast-desc">
-        Description
-        <span class="chevron transition-transform">▾</span>
-      </button>
-      <div id="toast-desc" class="hidden pt-2">
-        <p>French toast is a beloved breakfast dish made by soaking slices of bread in a mixture
+              Description
+              <span class="chevron transition-transform">
+                ▾
+              </span>
+            </button>
+            <section id="toast-desc" class="hidden pt-2">
+              <p>
+                French toast is a beloved breakfast dish made by soaking slices of bread in a mixture
             of beaten eggs, milk, and flavorings, then frying them until golden brown.
             It has a soft centre with a slightly crispy outside and is often served with syrup,
-            fruit, whipped cream, or butter.</p>
-        <ul class="list-disc list-inside mt-2 space-y-1">
-          <li>Texture: Crisp and golden on the outside, soft and custardy inside.</li>
-          <li>Flavor: Rich and slightly sweet, with hints of vanilla, cinnamon, or nutmeg depending on the recipe.</li>
-          <li>Appearance: Golden-brown slices, often dusted with powdered sugar or topped with fruit.</li>
-        </ul>
-      </div>
-
-      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between
+            fruit, whipped cream, or butter.
+              </p>
+              <ul class="list-disc list-inside mt-2 space-y-1">
+                <li>
+                  Texture: Crisp and golden on the outside, soft and custardy inside.
+                </li>
+                <li>
+                  Flavor: Rich and slightly sweet, with hints of vanilla, cinnamon, or nutmeg depending on the recipe.
+                </li>
+                <li>
+                  Appearance: Golden-brown slices, often dusted with powdered sugar or topped with fruit.
+                </li>
+              </ul>
+            </section>
+            <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between
                  w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" aria-controls="toast-ingredients">
-        Ingredients
-        <span class="chevron transition-transform">▾</span>
-      </button>
-      <ul id="toast-ingredients" class="hidden list-disc list-inside pt-2 space-y-1">
-        <li>2 slices bread</li>
-        <li>1 egg</li>
-        <li>1/4 cup milk</li>
-        <li>1/2 tsp cinnamon</li>
-        <li>Butter for frying</li>
-        <li>Syrup or fruit for serving</li>
-      </ul>
-
-      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" aria-controls="toast-steps">
-        Instructions
-        <span class="chevron transition-transform">▾</span>
-      </button>
-      <ol id="toast-steps" data-complete-target="toast-complete" class="hidden list-decimal marker:font-bold pt-2 pl-6 space-y-1">
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Whisk eggs, milk, and cinnamon.</label></li>
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Dip bread slices into mixture.</label></li>
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Cook on a buttered pan until golden.</label></li>
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Serve with syrup or fruit.</label></li>
-      </ol>
-      <p id="toast-complete" class="hidden text-green-600 font-bold mt-2" aria-live="polite">Completed!</p>
-    </div>
-  </div>
-</article>
-
-<!-- Waffles -->
-<article id="waffles" class="bg-white rounded-2xl shadow-lg p-8 mb-6 scroll-mt-24">
-  <div class="flex items-center justify-between gap-3 mb-3">
-    <h2 class="text-2xl sm:text-3xl">Waffles</h2>
-    <button type="button" class="like-btn cursor-pointer text-3xl leading-none text-stone-300 hover:text-red-400 transition"
+              Ingredients
+              <span class="chevron transition-transform">
+                ▾
+              </span>
+            </button>
+            <ul id="toast-ingredients" class="hidden list-disc list-inside pt-2 space-y-1">
+              <li>
+                2 slices bread
+              </li>
+              <li>
+                1 egg
+              </li>
+              <li>
+                1/4 cup milk
+              </li>
+              <li>
+                1/2 tsp cinnamon
+              </li>
+              <li>
+                Butter for frying
+              </li>
+              <li>
+                Syrup or fruit for serving
+              </li>
+            </ul>
+            <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" aria-controls="toast-steps">
+              Instructions
+              <span class="chevron transition-transform">
+                ▾
+              </span>
+            </button>
+            <ol id="toast-steps" data-complete-target="toast-complete" class="hidden list-decimal marker:font-bold pt-2 pl-6 space-y-1">
+              <li>
+                <label class="inline-flex items-start gap-2 cursor-pointer">
+                  <input type="checkbox" class="mt-1">
+                  Whisk eggs, milk, and cinnamon.
+                </label>
+              </li>
+              <li>
+                <label class="inline-flex items-start gap-2 cursor-pointer">
+                  <input type="checkbox" class="mt-1">
+                  Dip bread slices into mixture.
+                </label>
+              </li>
+              <li>
+                <label class="inline-flex items-start gap-2 cursor-pointer">
+                  <input type="checkbox" class="mt-1">
+                  Cook on a buttered pan until golden.
+                </label>
+              </li>
+              <li>
+                <label class="inline-flex items-start gap-2 cursor-pointer">
+                  <input type="checkbox" class="mt-1">
+                  Serve with syrup or fruit.
+                </label>
+              </li>
+            </ol>
+            <p id="toast-complete" class="hidden text-green-600 font-bold mt-2" aria-live="polite">
+              Completed!
+            </p>
+          </section>
+        </section>
+      </article>
+      <!-- Waffles -->
+      <article id="waffles" class="bg-white rounded-2xl shadow-lg p-8 mb-6 scroll-mt-24">
+        <header class="flex items-center justify-between gap-3 mb-3">
+          <h2 class="text-2xl sm:text-3xl">
+            Waffles
+          </h2>
+          <button type="button" class="like-btn cursor-pointer text-3xl leading-none text-stone-300 hover:text-red-400 transition"
             data-recipe-id="waffles" data-recipe-title="Waffles" data-recipe-page="./pages/breakfast.html#waffles" data-recipe-image="./assets/images/waffles.png"
             data-recipe-desc="Crisp, golden waffles with a light, fluffy centre."
-            aria-pressed="false" aria-label="Like Waffles">♥</button>
-  </div>
-  <div class="flex flex-col md:flex-row gap-6">
-    <figure class="md:w-1/3 w-full">
-      <img src="../assets/images/waffles.png" alt="A stack of freshly made waffles" class="w-full rounded-lg h-64 object-cover" loading="lazy">
-      <figcaption class="text-sm text-stone-500 mt-1">Fresh homemade waffles.</figcaption>
-    </figure>
-    <div class="md:w-2/3 w-full">
-      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" aria-controls="waffles-desc">
-        Description
-        <span class="chevron transition-transform">▾</span>
-      </button>
-      <div id="waffles-desc" class="hidden pt-2">
-        <p>Waffles are a popular breakfast (and sometimes dessert) dish made from a batter that is cooked between two patterned plates, giving them their signature grid-like surface. They are beloved for their crisp exterior and fluffy interior, and their versatility makes them a favorite worldwide. They can also be served with maple syrup, berries or whipped cream.</p>
-        <ul class="list-disc list-inside mt-2 space-y-1">
-          <li>Texture: Crispy on the outside, soft and airy inside.</li>
-          <li>Flavor: Mildly sweet, buttery, and rich, often enhanced with toppings.</li>
-          <li>Appearance: Square or round with deep pockets that hold syrup, fruit, or other toppings.</li>
-        </ul>
-      </div>
-
-      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between
+            aria-pressed="false" aria-label="Like Waffles">
+            ♥
+          </button>
+        </header>
+        <section class="flex flex-col md:flex-row gap-6">
+          <figure class="md:w-1/3 w-full">
+            <img src="../assets/images/waffles.png" alt="A stack of freshly made waffles" class="w-full rounded-lg h-64 object-cover" loading="lazy">
+            <figcaption class="text-sm text-stone-500 mt-1">
+              Fresh homemade waffles.
+            </figcaption>
+          </figure>
+          <section class="md:w-2/3 w-full">
+            <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" aria-controls="waffles-desc">
+              Description
+              <span class="chevron transition-transform">
+                ▾
+              </span>
+            </button>
+            <section id="waffles-desc" class="hidden pt-2">
+              <p>
+                Waffles are a popular breakfast (and sometimes dessert) dish made from a batter that is cooked between two patterned plates, giving them their signature grid-like surface. They are beloved for their crisp exterior and fluffy interior, and their versatility makes them a favorite worldwide. They can also be served with maple syrup, berries or whipped cream.
+              </p>
+              <ul class="list-disc list-inside mt-2 space-y-1">
+                <li>
+                  Texture: Crispy on the outside, soft and airy inside.
+                </li>
+                <li>
+                  Flavor: Mildly sweet, buttery, and rich, often enhanced with toppings.
+                </li>
+                <li>
+                  Appearance: Square or round with deep pockets that hold syrup, fruit, or other toppings.
+                </li>
+              </ul>
+            </section>
+            <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between
             w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false"
             aria-controls="waffles-ingredients">
-        Ingredients
-        <span class="chevron transition-transform">▾</span>
-      </button>
-      <ul id="waffles-ingredients" class="hidden list-disc list-inside pt-2 space-y-1">
-        <li>1 cup flour</li>
-        <li>2 tbsp sugar</li>
-        <li>1 tsp baking powder</li>
-        <li>1/4 tsp salt</li>
-        <li>1 egg</li>
-        <li>1 cup milk</li>
-        <li>2 tbsp melted butter</li>
-      </ul>
-
-      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between
+              Ingredients
+              <span class="chevron transition-transform">
+                ▾
+              </span>
+            </button>
+            <ul id="waffles-ingredients" class="hidden list-disc list-inside pt-2 space-y-1">
+              <li>
+                1 cup flour
+              </li>
+              <li>
+                2 tbsp sugar
+              </li>
+              <li>
+                1 tsp baking powder
+              </li>
+              <li>
+                1/4 tsp salt
+              </li>
+              <li>
+                1 egg
+              </li>
+              <li>
+                1 cup milk
+              </li>
+              <li>
+                2 tbsp melted butter
+              </li>
+            </ul>
+            <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between
             w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false"
             aria-controls="waffles-steps">
-        Instructions
-        <span class="chevron transition-transform">▾</span>
-      </button>
-      <ol id="waffles-steps" data-complete-target="waffles-complete" class="hidden list-decimal
+              Instructions
+              <span class="chevron transition-transform">
+                ▾
+              </span>
+            </button>
+            <ol id="waffles-steps" data-complete-target="waffles-complete" class="hidden list-decimal
             marker:font-bold pt-2 pl-6 space-y-1">
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Mix flour, sugar, baking powder, and salt.</label></li>
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Whisk eggs, milk, and melted butter.</label></li>
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Combine wet and dry ingredients.</label></li>
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Cook in a preheated waffle iron.</label></li>
-      </ol>
-      <p id="waffles-complete" class="hidden text-green-600 font-bold mt-2" aria-live="polite">Completed!</p>
-    </div>
-  </div>
-</article>
-
-<section class="flex justify-start mt-2 mb-6">
-  <a href="lunch.html" class="inline-flex ml-auto items-center gap-2 bg-red-800 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-lg transition">
-    Next: Lunch
-    <span aria-hidden="true" class="text-2xl leading-none">→</span>
-  </a>
-</section>
-
-</main>
-
-<footer class="bg-stone-900 text-white px-6 sm:px-10 py-12">
-  <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-10">
-    <div>
-      <h2 class="text-2xl font-serif font-bold mb-5 flex items-center gap-3">🍴 Simply Savory</h2>
-      <p class="text-gray-300 leading-relaxed max-w-sm">
-        Quick, easy recipes for young adults cooking for themselves, one plate at a time.
-      </p>
-      <div class="flex gap-4 mt-6">
-        <a href="#" aria-label="Facebook" class="border border-gray-500 rounded-full w-10 h-10
-        flex items-center justify-center hover:bg-white hover:text-black transition">f</a>
-        <a href="#" aria-label="Instagram" class="border border-gray-500 rounded-full w-10 h-10
-        flex items-center justify-center hover:bg-white hover:text-black transition">ig</a>
-        <a href="#" aria-label="Pinterest" class="border border-gray-500 rounded-full w-10 h-10
-        flex items-center justify-center hover:bg-white hover:text-black transition">p</a>
-      </div>
-    </div>
-    <div>
-      <h3 class="text-yellow-500 font-bold tracking-widest mb-5">RECIPES</h3>
-      <ul class="space-y-4 text-gray-300">
-        <li><a href="breakfast.html" class="hover:text-white">Breakfast</a></li>
-        <li><a href="lunch.html" class="hover:text-white">Lunch</a></li>
-        <li><a href="dinner.html" class="hover:text-white">Dinner</a></li>
-        <li><a href="dessert.html" class="hover:text-white">Desserts</a></li>
-        <li><a href="snacks.html" class="hover:text-white">Snacks</a></li>
-      </ul>
-    </div>
-    <div>
-      <h3 class="text-yellow-500 font-bold tracking-widest mb-5">SITE</h3>
-      <ul class="space-y-4 text-gray-300">
-        <li><a href="about.html" class="hover:text-white">About Us</a></li>
-        <li><a href="mealplan.html" class="hover:text-white">Meal Planning</a></li>
-        <li><a href="contact.html" class="hover:text-white">Contact / Submit a Recipe</a></li>
-      </ul>
-    </div>
-  </div>
-</footer>
-
-<script src="../assets/js/script.js" defer></script>
-
-</body>
+              <li>
+                <label class="inline-flex items-start gap-2 cursor-pointer">
+                  <input type="checkbox" class="mt-1">
+                  Mix flour, sugar, baking powder, and salt.
+                </label>
+              </li>
+              <li>
+                <label class="inline-flex items-start gap-2 cursor-pointer">
+                  <input type="checkbox" class="mt-1">
+                  Whisk eggs, milk, and melted butter.
+                </label>
+              </li>
+              <li>
+                <label class="inline-flex items-start gap-2 cursor-pointer">
+                  <input type="checkbox" class="mt-1">
+                  Combine wet and dry ingredients.
+                </label>
+              </li>
+              <li>
+                <label class="inline-flex items-start gap-2 cursor-pointer">
+                  <input type="checkbox" class="mt-1">
+                  Cook in a preheated waffle iron.
+                </label>
+              </li>
+            </ol>
+            <p id="waffles-complete" class="hidden text-green-600 font-bold mt-2" aria-live="polite">
+              Completed!
+            </p>
+          </section>
+        </section>
+      </article>
+      <section class="flex justify-start mt-2 mb-6">
+        <a href="lunch.html" class="inline-flex ml-auto items-center gap-2 bg-red-800 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-lg transition">
+          Next: Lunch
+          <span aria-hidden="true" class="text-2xl leading-none">
+            →
+          </span>
+        </a>
+      </section>
+    </main>
+    <footer class="bg-stone-900 text-white px-6 sm:px-10 py-12">
+      <section class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-10">
+        <nav>
+          <h2 class="text-2xl font-serif font-bold mb-5 flex items-center gap-3">
+            🍴 Simply Savory
+          </h2>
+          <p class="text-gray-300 leading-relaxed max-w-sm">
+            Quick, easy recipes for young adults cooking for themselves, one plate at a time.
+          </p>
+          <section class="flex gap-4 mt-6">
+            <a href="#" aria-label="Facebook" class="border border-gray-500 rounded-full w-10 h-10
+        flex items-center justify-center hover:bg-white hover:text-black transition">
+              f
+            </a>
+            <a href="#" aria-label="Instagram" class="border border-gray-500 rounded-full w-10 h-10
+        flex items-center justify-center hover:bg-white hover:text-black transition">
+              ig
+            </a>
+            <a href="#" aria-label="Pinterest" class="border border-gray-500 rounded-full w-10 h-10
+        flex items-center justify-center hover:bg-white hover:text-black transition">
+              p
+            </a>
+          </section>
+        </nav>
+        <section>
+          <h3 class="text-yellow-500 font-bold tracking-widest mb-5">
+            RECIPES
+          </h3>
+          <ul class="space-y-4 text-gray-300">
+            <li>
+              <a href="breakfast.html" class="hover:text-white">
+                Breakfast
+              </a>
+            </li>
+            <li>
+              <a href="lunch.html" class="hover:text-white">
+                Lunch
+              </a>
+            </li>
+            <li>
+              <a href="dinner.html" class="hover:text-white">
+                Dinner
+              </a>
+            </li>
+            <li>
+              <a href="dessert.html" class="hover:text-white">
+                Desserts
+              </a>
+            </li>
+            <li>
+              <a href="snacks.html" class="hover:text-white">
+                Snacks
+              </a>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3 class="text-yellow-500 font-bold tracking-widest mb-5">
+            SITE
+          </h3>
+          <ul class="space-y-4 text-gray-300">
+            <li>
+              <a href="about.html" class="hover:text-white">
+                About Us
+              </a>
+            </li>
+            <li>
+              <a href="mealplan.html" class="hover:text-white">
+                Meal Planning
+              </a>
+            </li>
+            <li>
+              <a href="contact.html" class="hover:text-white">
+                Contact / Submit a Recipe
+              </a>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </footer>
+    <script src="../assets/js/script.js" defer>
+    </script>
+  </body>
 </html>
-
-
-
-
