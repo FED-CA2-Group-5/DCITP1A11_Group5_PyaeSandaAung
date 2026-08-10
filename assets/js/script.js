@@ -27,13 +27,55 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  /* ---------- Mobile hamburger toggle ---------- */
+var hamburgerBtn = document.getElementById('hamburgerBtn');
+var primaryNav = document.getElementById('primaryNav');
+
+function closeMobileNav() {
+  primaryNav.classList.add('hidden');
+  hamburgerBtn.setAttribute('aria-expanded', 'false');
+}
+
+hamburgerBtn.addEventListener('click', function (e) {
+  e.stopPropagation();
+  var isOpen = !primaryNav.classList.contains('hidden');
+  if (isOpen) {
+    closeMobileNav();
+    closeAllDropdowns();
+  } else {
+    primaryNav.classList.remove('hidden');
+    hamburgerBtn.setAttribute('aria-expanded', 'true');
+  }
+});
+
+// Close mobile nav on outside click (only matters below lg)
+document.addEventListener('click', function (e) {
+  if (window.innerWidth < 1024 &&
+      !primaryNav.contains(e.target) &&
+      !hamburgerBtn.contains(e.target)) {
+    closeMobileNav();
+  }
+});
+
+// Reset nav state if the window is resized across the breakpoint
+window.addEventListener('resize', function () {
+  if (window.innerWidth >= 1024) {
+    primaryNav.classList.remove('hidden');
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+  } else {
+    primaryNav.classList.add('hidden');
+  }
+});
+
   // One shared outside-click handler for every dropdown (the duplicate
   // window.onclick assignments in the old script silently overwrote
   // each other, so only the last dropdown ever closed on outside click).
-  document.addEventListener('click', closeAllDropdowns);
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closeAllDropdowns();
-  });
+  if (e.key === 'Escape') {
+    closeAllDropdowns();
+    closeMobileNav();
+  }
+});
 
   /* ---------- Description / Ingredients / Instructions toggles ---------- */
   document.querySelectorAll('.toggle-btn').forEach(function (btn) {
