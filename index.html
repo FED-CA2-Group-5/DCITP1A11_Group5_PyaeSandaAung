@@ -23,7 +23,7 @@
     </button>
 
     <nav id="primaryNav" aria-label="Primary" class="hidden lg:flex lg:ml-auto gap-8 absolute lg:static top-full left-0 w-full lg:w-auto bg-red-800 lg:bg-transparent px-6 lg:px-0 pb-4 lg:pb-0 shadow-lg lg:shadow-none">
-      <section class="dropdown absolute">
+      <section class="dropdown relative">
         <button type="button" class="dropdown-btn cursor-pointer hover:bg-red-700 px-4 lg:px-12 py-3 rounded-lg transition text-lg w-full lg:w-auto flex justify-between lg:inline-block" aria-haspopup="true" aria-expanded="false" aria-controls="MenuDropdown">
           Menu
           <span class="chevron transition-transform">▾</span>
@@ -69,7 +69,7 @@
           Browse Recipes
           <span class="chevron transition-transform">▾</span>
         </button>
-        <ul id="RecipeDropdown" class="dropdown-menu hidden static lg:absolute lg:right-0 lg:mt-2 mt-1 w-full lg:w-48 bg-white rounded-xl shadow-xl overflow-hidden text-stone-800">
+        <ul id="RecipeDropdown" class="dropdown-menu absolute z-50 hidden lg:absolute lg:right-0 lg:mt-2 mt-1 w-full lg:w-48 bg-white rounded-xl shadow-xl overflow-hidden text-stone-800">
           <li><a href="./pages/breakfast.html" class="block px-4 py-3 hover:bg-orange-100" aria-current="page">Breakfast</a></li>
           <li><a href="./pages/lunch.html" class="block px-4 py-3 hover:bg-orange-100">Lunch</a></li>
           <li><a href="./pages/dinner.html" class="block px-4 py-3 hover:bg-orange-100">Dinner</a></li>
