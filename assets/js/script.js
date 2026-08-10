@@ -36,6 +36,15 @@ function closeMobileNav() {
   hamburgerBtn.setAttribute('aria-expanded', 'false');
 }
 
+function syncNavForViewport() {
+  if (window.innerWidth >= 1024) {
+    primaryNav.classList.remove('hidden');
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+  } else {
+    primaryNav.classList.add('hidden');
+  }
+}
+
 hamburgerBtn.addEventListener('click', function (e) {
   e.stopPropagation();
   var isOpen = !primaryNav.classList.contains('hidden');
@@ -48,16 +57,19 @@ hamburgerBtn.addEventListener('click', function (e) {
   }
 });
 
-// Close mobile nav on outside click (only matters below lg)
 document.addEventListener('click', function (e) {
   closeAllDropdowns();
-
   if (window.innerWidth < 1024 &&
       !primaryNav.contains(e.target) &&
       !hamburgerBtn.contains(e.target)) {
     closeMobileNav();
   }
 });
+
+window.addEventListener('resize', syncNavForViewport);
+
+// Run once immediately on load
+syncNavForViewport();
 
 // Reset nav state if the window is resized across the breakpoint
 window.addEventListener('resize', function () {
