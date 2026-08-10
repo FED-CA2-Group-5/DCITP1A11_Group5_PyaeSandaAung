@@ -234,7 +234,7 @@ if (!email.value.includes("@")) {
                 } 
         });
 
-}
+  }
 
 
 
@@ -637,4 +637,3 @@ const observer = new IntersectionObserver(function (entries) {
 cards.forEach(function (card) {
     observer.observe(card);
 });
-
