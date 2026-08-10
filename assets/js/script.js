@@ -50,6 +50,8 @@ hamburgerBtn.addEventListener('click', function (e) {
 
 // Close mobile nav on outside click (only matters below lg)
 document.addEventListener('click', function (e) {
+  closeAllDropdowns();
+
   if (window.innerWidth < 1024 &&
       !primaryNav.contains(e.target) &&
       !hamburgerBtn.contains(e.target)) {
@@ -70,10 +72,12 @@ window.addEventListener('resize', function () {
   // One shared outside-click handler for every dropdown (the duplicate
   // window.onclick assignments in the old script silently overwrote
   // each other, so only the last dropdown ever closed on outside click).
-  document.addEventListener('click', closeAllDropdowns);
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closeAllDropdowns();
-  });
+  if (e.key === 'Escape') {
+    closeAllDropdowns();
+    closeMobileNav();
+  }
+});
 
   /* ---------- Description / Ingredients / Instructions toggles ---------- */
   document.querySelectorAll('.toggle-btn').forEach(function (btn) {
