@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  /* ---------- Mobile hamburger toggle ---------- */
+/* ---------- Mobile hamburger toggle ---------- */
 var hamburgerBtn = document.getElementById('hamburgerBtn');
 var primaryNav = document.getElementById('primaryNav');
 
@@ -70,10 +70,12 @@ window.addEventListener('resize', function () {
   // One shared outside-click handler for every dropdown (the duplicate
   // window.onclick assignments in the old script silently overwrote
   // each other, so only the last dropdown ever closed on outside click).
-  document.addEventListener('click', closeAllDropdowns);
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closeAllDropdowns();
-  });
+  if (e.key === 'Escape') {
+    closeAllDropdowns();
+    closeMobileNav();
+  }
+});
 
   /* ---------- Description / Ingredients / Instructions toggles ---------- */
   document.querySelectorAll('.toggle-btn').forEach(function (btn) {
