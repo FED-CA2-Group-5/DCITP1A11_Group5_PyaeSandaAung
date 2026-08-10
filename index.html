@@ -8,7 +8,43 @@
     
 </head>
 <body class="bg-orange-50 text-stone-800">
-  <header class="flex items-center bg-red-800 text-white sticky top-0 z-50 shadow-lg px-6 py-3">
+    <header class="flex items-center bg-red-800 text-white sticky top-0 z-50 shadow-lg px-6 py-3">
+  <div class="w-36">
+    <a href="index.html">
+      <img src="./assets/images/Logo.png" alt="Simply Savory Logo" class="rounded-lg">
+    </a>
+  </div>
+  <nav aria-label="Primary" class="flex ml-auto gap-8">
+    <div class="dropdown relative">
+      <button type="button" class="dropdown-btn menubtn cursor-pointer hover:bg-red-700 px-12 py-3 rounded-lg transition text-lg" 
+      aria-haspopup="true" aria-expanded="false" aria-controls="MenuDropdown">
+        Menu
+      <span class="chevron transition-transform">▾</span>
+      </button>
+      
+      <ul id="MenuDropdown" class="dropdown-menu hidden absolute right-0 mt-2 bg-white rounded-xl shadow-xl w-40 overflow-hidden text-stone-800">
+        <li><a href="index.html" class="block px-4 py-3 hover:bg-orange-100">Home</a></li>
+        <li><a href="./pages/about.html" class="block px-4 py-3 hover:bg-orange-100">About Us</a></li>
+        <li><a href="./pages/contact.html" class="block px-4 py-3 hover:bg-orange-100">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="dropdown relative">
+      <button type="button" class="dropdown-btn recipebtn cursor-pointer hover:bg-red-700 px-12 py-3 rounded-lg transition text-lg" aria-haspopup="true" aria-expanded="false" aria-controls="RecipeDropdown">
+        Recipes
+            <span class="chevron transition-transform">▾</span>
+      </button>
+      <ul id="RecipeDropdown" class="dropdown-menu hidden absolute right-0 mt-2 bg-white rounded-xl shadow-xl w-48 overflow-hidden text-stone-800">
+        <li><a href="./pages/breakfast.html" class="block px-4 py-3 hover:bg-orange-100" aria-current="page">Breakfast</a></li>
+        <li><a href="./pages/lunch.html" class="block px-4 py-3 hover:bg-orange-100">Lunch</a></li>
+        <li><a href="./pages/dinner.html" class="block px-4 py-3 hover:bg-orange-100">Dinner</a></li>
+        <li><a href="./pages/dessert.html" class="block px-4 py-3 hover:bg-orange-100">Dessert</a></li>
+        <li><a href="./pages/snacks.html" class="block px-4 py-3 hover:bg-orange-100">Snacks</a></li>
+        <li><a href="./pages/mealplan.html" class="block px-4 py-3 hover:bg-orange-100">Meal Planning Tips</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+  
   <section class="w-36">
     <a href="index.html">
       <img src="./assets/images/Logo.png" alt="Simply Savory Logo" class="rounded-lg">
