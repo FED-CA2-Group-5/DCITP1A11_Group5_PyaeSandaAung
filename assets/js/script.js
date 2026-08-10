@@ -1,3 +1,13 @@
+document.addEventListener('DOMContentLoaded', function () {
+  setupDropdowns();
+  setupToggles();
+  setupStepChecklists();
+  setupRecipeForm();
+  setupLikeButtons();
+  showRecipeOfTheWeek();
+});
+
+
 //new function of fropdown menu and description, ingredients and instructions
 document.addEventListener('DOMContentLoaded', function () {
 
