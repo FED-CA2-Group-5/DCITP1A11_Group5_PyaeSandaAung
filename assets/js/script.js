@@ -494,7 +494,6 @@ function render() {
 
 
     // Update the text showing the user's progress.
-    // Example: "3 of 6 tips checked off"
     progressLabel.textContent =
         doneCount + ' of ' + cards.length + ' tips checked off';
 
