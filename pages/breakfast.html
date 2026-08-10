@@ -9,41 +9,49 @@
 </head>
 
 <body class="bg-orange-50 text-stone-800">
+  <header class="flex items-center bg-red-800 text-white sticky top-0 z-50 shadow-lg px-6 py-3">
+    <section class="w-36">
+      <a href="index.html">
+        <img src="../assets/images/Logo.png" alt="Simply Savory Logo" class="rounded-lg">
+      </a>
+    </section>
+    
+    <!-- Hamburger, shown only below lg -->
+    <button type="button" id="hamburgerBtn" class="lg:hidden ml-auto p-2 rounded-lg hover:bg-red-700 transition" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primaryNav">
+      <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
 
-<header class="flex items-center bg-red-800 text-white sticky top-0 z-50 shadow-lg px-3 py-2 sm:px-6 sm:py-3">
-  <div class="w-20 sm:w-28 md:w-36">
-    <a href="../index.html">
-      <img src="../assets/images/Logo.png" alt="Simply Savory Logo" class="rounded-lg">
-    </a>
-  </div>
-  <nav aria-label="Primary" class="flex ml-auto gap-2 sm:gap-4 md:gap-8">
-    <div class="dropdown relative">
-      <button type="button" class="dropdown-btn menubtn cursor-pointer hover:bg-red-700 px-3 py-2 text-sm sm:px-6 sm:py-2.5 sm:text-base md:px-12 md:py-3 md:text-lg rounded-lg transition" aria-haspopup="true" aria-expanded="false" aria-controls="MenuDropdown">
-        Menu
-        <span class="chevron transition-transform">▾</span>
-      </button>
-      <ul id="MenuDropdown" class="dropdown-menu hidden absolute right-0 mt-2 bg-white rounded-xl shadow-xl w-40 overflow-hidden text-stone-800">
-        <li><a href="../index.html" class="block px-4 py-3 hover:bg-orange-100">Home</a></li>
-        <li><a href="about.html" class="block px-4 py-3 hover:bg-orange-100">About Us</a></li>
-        <li><a href="contact.html" class="block px-4 py-3 hover:bg-orange-100">Contact Us</a></li>
-      </ul>
-    </div>
-    <div class="dropdown relative">
-      <button type="button" class="dropdown-btn recipebtn cursor-pointer hover:bg-red-700 px-3 py-2 text-sm sm:px-6 sm:py-2.5 sm:text-base md:px-12 md:py-3 md:text-lg rounded-lg transition" aria-haspopup="true" aria-expanded="false" aria-controls="RecipeDropdown">
-        Recipes
-        <span class="chevron transition-transform">▾</span>
-      </button>
-      <ul id="RecipeDropdown" class="dropdown-menu hidden absolute right-0 mt-2 bg-white rounded-xl shadow-xl w-48 overflow-hidden text-stone-800">
-        <li><a href="breakfast.html" class="block px-4 py-3 hover:bg-orange-100" aria-current="page">Breakfast</a></li>
-        <li><a href="lunch.html" class="block px-4 py-3 hover:bg-orange-100">Lunch</a></li>
-        <li><a href="dinner.html" class="block px-4 py-3 hover:bg-orange-100">Dinner</a></li>
-        <li><a href="dessert.html" class="block px-4 py-3 hover:bg-orange-100">Dessert</a></li>
-        <li><a href="snacks.html" class="block px-4 py-3 hover:bg-orange-100">Snacks</a></li>
-        <li><a href="mealplan.html" class="block px-4 py-3 hover:bg-orange-100">Meal Planning Tips</a></li>
-      </ul>
-    </div>
-  </nav>
-</header>
+    <nav id="primaryNav" aria-label="Primary" class="hidden lg:flex lg:ml-auto gap-8 absolute lg:static top-full left-0 w-full lg:w-auto bg-red-800 lg:bg-transparent px-6 lg:px-0 pb-4 lg:pb-0 shadow-lg lg:shadow-none">
+      <section class="dropdown relative">
+        <button type="button" class="dropdown-btn cursor-pointer hover:bg-red-700 px-4 lg:px-12 py-3 rounded-lg transition text-lg w-full lg:w-auto flex justify-between lg:inline-block" aria-haspopup="true" aria-expanded="false" aria-controls="MenuDropdown">
+          Menu
+          <span class="chevron transition-transform">▾</span>
+        </button>
+        <ul id="MenuDropdown" class="dropdown-menu hidden static lg:absolute lg:right-0 lg:mt-2 mt-1 w-full lg:w-40 bg-white rounded-xl shadow-xl overflow-hidden text-stone-800">
+          <li><a href="../index.html" class="block px-4 py-3 hover:bg-orange-100">Home</a></li>
+          <li><a href="about.html" class="block px-4 py-3 hover:bg-orange-100">About Us</a></li>
+          <li><a href="contact.html" class="block px-4 py-3 hover:bg-orange-100">Contact Us</a></li>
+        </ul>
+      </section>
+      
+      <section class="dropdown relative">
+        <button type="button" class="dropdown-btn cursor-pointer hover:bg-red-700 px-4 lg:px-12 py-3 rounded-lg transition text-lg w-full lg:w-auto flex justify-between lg:inline-block" aria-haspopup="true" aria-expanded="false" aria-controls="RecipeDropdown">
+          Recipes
+          <span class="chevron transition-transform">▾</span>
+        </button>
+        <ul id="RecipeDropdown" class="dropdown-menu hidden static lg:absolute lg:right-0 lg:mt-2 mt-1 w-full lg:w-48 bg-white rounded-xl shadow-xl overflow-hidden text-stone-800">
+          <li><a href="breakfast.html" class="block px-4 py-3 hover:bg-orange-100" aria-current="page">Breakfast</a></li>
+          <li><a href="lunch.html" class="block px-4 py-3 hover:bg-orange-100">Lunch</a></li>
+          <li><a href="dinner.html" class="block px-4 py-3 hover:bg-orange-100">Dinner</a></li>
+          <li><a href="dessert.html" class="block px-4 py-3 hover:bg-orange-100">Dessert</a></li>
+          <li><a href="snacks.html" class="block px-4 py-3 hover:bg-orange-100">Snacks</a></li>
+          <li><a href="mealplan.html" class="block px-4 py-3 hover:bg-orange-100">Meal Planning Tips</a></li>
+        </ul>
+      </section>
+    </nav>
+  </header>
 
 <main class="max-w-6xl mx-auto lg:w-3/4 md:w-full sm:w-full p-6">
 <h1 class="text-3xl sm:text-4xl font-bold text-red-600 mb-3">Breakfast Recipes</h1>
