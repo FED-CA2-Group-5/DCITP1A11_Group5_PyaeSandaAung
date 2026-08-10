@@ -26,48 +26,95 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /* ---------- 1. Header dropdown menus (Menu / Recipes) ---------- */
 
-function setupDropdowns() {
-  var dropdowns = document.querySelectorAll('.dropdown');
+var dropdowns = document.querySelectorAll('.dropdown');
 
+function closeAllDropdowns() {
   dropdowns.forEach(function (dropdown) {
-    var button = dropdown.querySelector('.dropdown-btn');
-    var menu = dropdown.querySelector('.dropdown-menu');
-    if (!button || !menu) return;
-
-    button.addEventListener('click', function (event) {
-      event.stopPropagation(); // don't let this same click close the menu again below
-      var wasOpen = !menu.classList.contains('hidden');
-      closeAllDropdowns(dropdowns);
-      if (!wasOpen) openDropdown(button, menu);
-    });
-  });
-
-  // Clicking anywhere else on the page, or pressing Escape, closes them.
-  document.addEventListener('click', function () {
-    closeAllDropdowns(dropdowns);
-  });
-  document.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape') closeAllDropdowns(dropdowns);
-  });
-}
-
-function openDropdown(button, menu) {
-  menu.classList.remove('hidden');
-  button.setAttribute('aria-expanded', 'true');
-  var arrow = button.querySelector('.chevron');
-  if (arrow) arrow.classList.add('rotate-180');
-}
-
-function closeAllDropdowns(dropdowns) {
-  dropdowns.forEach(function (dropdown) {
-    var button = dropdown.querySelector('.dropdown-btn');
+    var btn = dropdown.querySelector('.dropdown-btn');
     var menu = dropdown.querySelector('.dropdown-menu');
     if (menu) menu.classList.add('hidden');
-    if (button) button.setAttribute('aria-expanded', 'false');
-    var arrow = button && button.querySelector('.chevron');
-    if (arrow) arrow.classList.remove('rotate-180');
+    if (btn) btn.setAttribute('aria-expanded', 'false');
   });
 }
+
+dropdowns.forEach(function (dropdown) {
+  var btn = dropdown.querySelector('.dropdown-btn');
+  var menu = dropdown.querySelector('.dropdown-menu');
+  if (!btn || !menu) return;
+
+  btn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    var isOpen = !menu.classList.contains('hidden');
+    closeAllDropdowns();          // close any other open dropdown first
+    menu.classList.toggle('hidden', isOpen);
+    btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+  });
+});
+
+/* ---------- Mobile hamburger toggle ---------- */
+
+var hamburgerBtn = document.getElementById('hamburgerBtn');
+var primaryNav = document.getElementById('primaryNav');
+
+function closeMobileNav() {
+  primaryNav.classList.add('hidden');
+  hamburgerBtn.setAttribute('aria-expanded', 'false');
+}
+
+function syncNavForViewport() {
+  if (window.innerWidth >= 1024) {
+    primaryNav.classList.remove('hidden');
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+  } else {
+    primaryNav.classList.add('hidden');
+  }
+}
+
+hamburgerBtn.addEventListener('click', function (e) {
+  e.stopPropagation();
+  var isOpen = !primaryNav.classList.contains('hidden');
+  if (isOpen) {
+    closeMobileNav();
+    closeAllDropdowns();
+  } else {
+    primaryNav.classList.remove('hidden');
+    hamburgerBtn.setAttribute('aria-expanded', 'true');
+  }
+});
+
+document.addEventListener('click', function (e) {
+  closeAllDropdowns();
+  if (window.innerWidth < 1024 &&
+      !primaryNav.contains(e.target) &&
+      !hamburgerBtn.contains(e.target)) {
+    closeMobileNav();
+  }
+});
+
+window.addEventListener('resize', syncNavForViewport);
+
+// Run once immediately on load
+syncNavForViewport();
+
+// Reset nav state if the window is resized across the breakpoint
+window.addEventListener('resize', function () {
+  if (window.innerWidth >= 1024) {
+    primaryNav.classList.remove('hidden');
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+  } else {
+    primaryNav.classList.add('hidden');
+  }
+});
+
+// One shared outside-click handler for every dropdown (the duplicate
+// window.onclick assignments in the old script silently overwrote
+// each other, so only the last dropdown ever closed on outside click).
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
+    closeAllDropdowns();
+    closeMobileNav();
+  }
+});
 
 
 /* ---------- 2. Recipe card toggles ---------- */
