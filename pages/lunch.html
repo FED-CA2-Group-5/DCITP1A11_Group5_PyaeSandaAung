@@ -18,7 +18,10 @@
   </div>
   <nav aria-label="Primary" class="flex ml-auto gap-8">
     <div class="dropdown relative">
-      <button type="button" class="dropdown-btn menubtn cursor-pointer hover:bg-red-700 px-12 py-3 rounded-lg transition text-lg" aria-haspopup="true" aria-expanded="false" aria-controls="MenuDropdown">Menu</button>
+      <button type="button" class="dropdown-btn menubtn cursor-pointer hover:bg-red-700 px-12 py-3 rounded-lg transition text-lg" aria-haspopup="true" aria-expanded="false" aria-controls="MenuDropdown">
+        Menu
+      <span class="chevron transition-transform">▾</span>
+      </button>
       <ul id="MenuDropdown" class="dropdown-menu hidden absolute right-0 mt-2 bg-white rounded-xl shadow-xl w-40 overflow-hidden text-stone-800">
         <li><a href="../index.html" class="block px-4 py-3 hover:bg-orange-100">Home</a></li>
         <li><a href="about.html" class="block px-4 py-3 hover:bg-orange-100">About Us</a></li>
@@ -26,7 +29,10 @@
       </ul>
     </div>
     <div class="dropdown relative">
-      <button type="button" class="dropdown-btn recipebtn cursor-pointer hover:bg-red-700 px-12 py-3 rounded-lg transition text-lg" aria-haspopup="true" aria-expanded="false" aria-controls="RecipeDropdown">Recipes</button>
+      <button type="button" class="dropdown-btn recipebtn cursor-pointer hover:bg-red-700 px-12 py-3 rounded-lg transition text-lg" aria-haspopup="true" aria-expanded="false" aria-controls="RecipeDropdown">
+        Recipes
+      <span class="chevron transition-transform">▾</span>
+      </button>
       <ul id="RecipeDropdown" class="dropdown-menu hidden absolute right-0 mt-2 bg-white rounded-xl shadow-xl w-48 overflow-hidden text-stone-800">
         <li><a href="breakfast.html" class="block px-4 py-3 hover:bg-orange-100" aria-current="page">Breakfast</a></li>
         <li><a href="lunch.html" class="block px-4 py-3 hover:bg-orange-100">Lunch</a></li>
@@ -38,17 +44,22 @@
     </div>
   </nav>
 </header>
-
 <main class="max-w-6xl mx-auto lg:w-3/4 md:w-full sm:w-full p-6">
 <h1 class="text-4xl font-bold text-red-600 mb-3">Lunch Recipes</h1>
 
 <!-- Chicken Ceasar Wrap -->
-<article class="bg-white rounded-2xl shadow-lg p-8 mb-6">
-  <h2 class="text-3xl mb-3">Chicken Caesar Wrap</h2>
+<article id="chicken-caesar-wrap" class="bg-white rounded-2xl shadow-lg p-8 mb-6 scroll-mt-24">
+  <div class="flex items-center justify-between gap-3 mb-3">
+    <h2 class="text-3xl">Chicken Caesar Wrap</h2>
+    <button type="button" class="like-btn cursor-pointer text-3xl leading-none text-stone-300 hover:text-red-400 transition"
+            data-recipe-id="chicken-caesar-wrap" data-recipe-title="Chicken Caesar Wrap" data-recipe-page="./pages/lunch.html#chicken-caesar-wrap" data-recipe-image="./assets/images/wrap.png"
+            data-recipe-desc="A handheld Caesar salad with grilled chicken, romaine, Caesar dressing, and Parmesan in a soft tortilla."
+            aria-pressed="false" aria-label="Like Chicken Caesar Wrap">♥</button>
+  </div>
   <div class="flex flex-col md:flex-row gap-6">
     <figure class="md:w-1/3 w-full">
       <img src="../assets/images/wrap.png" alt="wrap" 
-            class="w-full rounded-lg h-64 object-cover" loading="lazy">
+            class="w-full rounded-lg object-cover" loading="lazy">
       <figcaption class="text-sm text-stone-500 mt-1">Savoury Chicken Caesar Wrap.</figcaption>
     </figure>
     <div class="md:w-2/3 w-full">
@@ -109,12 +120,18 @@
 </article>
 
 <!-- Chicken and Sweet Corn Soup with Noodles -->
-<article class="bg-white rounded-2xl shadow-lg p-8 mb-6">
-  <h2 class="text-3xl mb-3">Chicken and Sweet Corn Soup with Noodles</h2>
+<article id="chicken-sweet-corn-soup" class="bg-white rounded-2xl shadow-lg p-8 mb-6 scroll-mt-24">
+  <div class="flex items-center justify-between gap-3 mb-3">
+    <h2 class="text-3xl">Chicken and Sweet Corn Soup with Noodles</h2>
+    <button type="button" class="like-btn cursor-pointer text-3xl leading-none text-stone-300 hover:text-red-400 transition"
+            data-recipe-id="chicken-sweet-corn-soup" data-recipe-title="Chicken and Sweet Corn Soup with Noodles" data-recipe-page="./pages/lunch.html#chicken-sweet-corn-soup" data-recipe-image="./assets/images/Chicken and Sweet Corn Soup with Noodles.png"
+            data-recipe-desc="A warm, comforting soup with tender chicken, sweet corn, and noodles in a savory golden broth."
+            aria-pressed="false" aria-label="Like Chicken and Sweet Corn Soup with Noodles">♥</button>
+  </div>
   <div class="flex flex-col md:flex-row gap-6">
     <figure class="md:w-1/3 w-full">
       <img src="../assets/images/Chicken and Sweet Corn Soup with Noodles.png" alt="chicken and sweet corn" 
-                class="w-full rounded-lg h-64 object-cover" loading="lazy">
+                class="w-full rounded-lg object-cover" loading="lazy">
       <figcaption class="text-sm text-stone-500 mt-1">Warm Chicken and Sweet Corn Soup with Noodles</figcaption>
     </figure>
     <div class="md:w-2/3 w-full">
@@ -177,11 +194,17 @@
 </article>
 
 <!-- Carbonara-->
-<article class="bg-white rounded-2xl shadow-lg p-8 mb-6">
-  <h2 class="text-3xl mb-3">Carbonara</h2>
+<article id="carbonara" class="bg-white rounded-2xl shadow-lg p-8 mb-6 scroll-mt-24">
+  <div class="flex items-center justify-between gap-3 mb-3">
+    <h2 class="text-3xl">Carbonara</h2>
+    <button type="button" class="like-btn cursor-pointer text-3xl leading-none text-stone-300 hover:text-red-400 transition"
+            data-recipe-id="carbonara" data-recipe-title="Carbonara" data-recipe-page="./pages/lunch.html#carbonara" data-recipe-image="./assets/images/carbonara.png"
+            data-recipe-desc="A rich Italian pasta dish with spaghetti, eggs, cured pork, Pecorino Romano, and black pepper."
+            aria-pressed="false" aria-label="Like Carbonara">♥</button>
+  </div>
   <div class="flex flex-col md:flex-row gap-6">
     <figure class="md:w-1/3 w-full">
-      <img src="../assets/images/carbonara.png" alt="Creamy Carbonara" class="w-full rounded-lg h-64 object-cover" loading="lazy">
+      <img src="../assets/images/carbonara.png" alt="Creamy Carbonara" class="w-full rounded-lg object-cover" loading="lazy">
       <figcaption class="text-sm text-stone-500 mt-1">Creamy Carbonara</figcaption>
     </figure>
     <div class="md:w-2/3 w-full">
@@ -240,6 +263,12 @@
     </div>
   </div>
 </article>
+<div class="flex justify-end mt-2 mb-6">
+  <a href="dinner.html" class="inline-flex items-center gap-2 bg-red-800 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-lg transition">
+    Next: Dinner
+    <span aria-hidden="true" class="text-2xl leading-none">→</span>
+  </a>
+</div>
 
 </main>
 
@@ -283,6 +312,7 @@
 <script src="../assets/js/script.js"></script>
 
 </body>
-</html>>
+</html>
+
 
 
