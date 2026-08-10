@@ -27,6 +27,28 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  document.addEventListener('DOMContentLoaded', () => {
+      // 1. Mobile Hamburger Menu Toggle Logic
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const hamburgerIcon = document.getElementById('hamburger-icon');
+      const closeIcon = document.getElementById('close-icon');
+
+      mobileMenuBtn.addEventListener('click', () => {
+        const isMenuOpen = !mobileMenu.classList.contains('hidden');
+        
+        if (isMenuOpen) {
+          mobileMenu.classList.add('hidden');
+          hamburgerIcon.classList.remove('hidden');
+          closeIcon.classList.add('hidden');
+        } else {
+          mobileMenu.classList.remove('hidden');
+          hamburgerIcon.classList.add('hidden');
+          closeIcon.classList.remove('hidden');
+        }
+      })
+    });
+
   // One shared outside-click handler for every dropdown (the duplicate
   // window.onclick assignments in the old script silently overwrote
   // each other, so only the last dropdown ever closed on outside click).
