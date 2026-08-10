@@ -207,12 +207,18 @@ if (!email.value.includes("@")) {
             } else { 
               document.getElementById("feedbackErrorMessage2").classList.value = "hidden text-red-600"; 
               email.classList.remove("border-stone-300", "border-red-600"); 
-              email.classList.add("border-green-600"); } 
+              email.classList.add("border-green-600"); 
+            } 
+
               // Check Rating 
               if (rating === null) { 
                 document.getElementById("feedbackErrorMessage3").classList.value = "show text-red-600 m-4"; 
                 valid = false; 
-              } else { document.getElementById("feedbackErrorMessage3").classList.value = "hidden text-red-600"; } 
+              } else { 
+                document.getElementById("feedbackErrorMessage3").classList.value = "hidden text-red-600"; 
+
+              } 
+
               // Check Message 
               if (message.value.length < 10) { 
                 document.getElementById("feedbackErrorMessage4").classList.value = "show text-red-600 m-4"; 
@@ -226,8 +232,9 @@ if (!email.value.includes("@")) {
                 if (valid) { document.getElementById("feedbackSuccess").classList.value = "show text-green-600 m-4"; 
 
                 } 
-         })
-         };
+        });
+
+}
 
 
 
@@ -630,5 +637,4 @@ const observer = new IntersectionObserver(function (entries) {
 cards.forEach(function (card) {
     observer.observe(card);
 });
-
 
