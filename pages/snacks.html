@@ -18,7 +18,10 @@
   </div>
   <nav aria-label="Primary" class="flex ml-auto gap-8">
     <div class="dropdown relative">
-      <button type="button" class="dropdown-btn menubtn cursor-pointer hover:bg-red-700 px-12 py-3 rounded-lg transition text-lg" aria-haspopup="true" aria-expanded="false" aria-controls="MenuDropdown">Menu</button>
+      <button type="button" class="dropdown-btn menubtn cursor-pointer hover:bg-red-700 px-12 py-3 rounded-lg transition text-lg" aria-haspopup="true" aria-expanded="false" aria-controls="MenuDropdown">
+        Menu
+      <span class="chevron transition-transform">▾</span>
+      </button>
       <ul id="MenuDropdown" class="dropdown-menu hidden absolute right-0 mt-2 bg-white rounded-xl shadow-xl w-40 overflow-hidden text-stone-800">
         <li><a href="../index.html" class="block px-4 py-3 hover:bg-orange-100">Home</a></li>
         <li><a href="about.html" class="block px-4 py-3 hover:bg-orange-100">About Us</a></li>
@@ -26,7 +29,10 @@
       </ul>
     </div>
     <div class="dropdown relative">
-      <button type="button" class="dropdown-btn recipebtn cursor-pointer hover:bg-red-700 px-12 py-3 rounded-lg transition text-lg" aria-haspopup="true" aria-expanded="false" aria-controls="RecipeDropdown">Recipes</button>
+      <button type="button" class="dropdown-btn recipebtn cursor-pointer hover:bg-red-700 px-12 py-3 rounded-lg transition text-lg" aria-haspopup="true" aria-expanded="false" aria-controls="RecipeDropdown">
+        Recipes
+        <span class="chevron transition-transform">▾</span>
+      </button>
       <ul id="RecipeDropdown" class="dropdown-menu hidden absolute right-0 mt-2 bg-white rounded-xl shadow-xl w-48 overflow-hidden text-stone-800">
         <li><a href="breakfast.html" class="block px-4 py-3 hover:bg-orange-100" aria-current="page">Breakfast</a></li>
         <li><a href="lunch.html" class="block px-4 py-3 hover:bg-orange-100">Lunch</a></li>
@@ -43,12 +49,18 @@
 <h1 class="text-4xl font-bold text-red-600 mb-3">Healthy Snack Recipes</h1>
 
 <!-- Honey Oat Granola Bars -->
-<article class="bg-white rounded-2xl shadow-lg p-8 mb-6">
-  <h2 class="text-3xl mb-3"></h2>
+<article id="honey-oat-granola-bars" class="bg-white rounded-2xl shadow-lg p-8 mb-6 scroll-mt-24">
+  <div class="flex items-center justify-between gap-3 mb-3">
+    <h2 class="text-3xl">Honey Oat Granola Bars</h2>
+    <button type="button" class="like-btn cursor-pointer text-3xl leading-none text-stone-300 hover:text-red-400 transition"
+            data-recipe-id="honey-oat-granola-bars" data-recipe-title="Honey Oat Granola Bars" data-recipe-page="./pages/snacks.html#honey-oat-granola-bars" data-recipe-image="./assets/images/honeyoatgranolabars.jpg"
+            data-recipe-desc="Chewy, wholesome bars made from rolled oats, honey, nuts, and dried fruit."
+            aria-pressed="false" aria-label="Like Honey Oat Granola Bars">♥</button>
+  </div>
   <div class="flex flex-col md:flex-row gap-6">
     <figure class="md:w-1/3 w-full">
-      <img src="../assets/images/Honey Oat Granola Bars.png" alt="Honey Oat Granola Bars" 
-            class="w-full rounded-lg h-64 object-cover" loading="lazy">
+      <img src="../assets/images/honeyoatgranolabars.jpg" alt="Honey Oat Granola Bars" 
+            class="w-full rounded-lg object-cover" loading="lazy">
       <figcaption class="text-sm text-stone-500 mt-1">Honey Oat Granola Bars</figcaption>
     </figure>
     <div class="md:w-2/3 w-full">
@@ -110,12 +122,18 @@
 </article>
 
 <!-- Air Fryer Sweet Potato Fries -->
-<article class="bg-white rounded-2xl shadow-lg p-8 mb-6">
-  <h2 class="text-3xl mb-3">Air Fryer Sweet Potato Fries</h2>
+<article id="air-fryer-sweet-potato-fries" class="bg-white rounded-2xl shadow-lg p-8 mb-6 scroll-mt-24">
+  <div class="flex items-center justify-between gap-3 mb-3">
+    <h2 class="text-3xl">Air Fryer Sweet Potato Fries</h2>
+    <button type="button" class="like-btn cursor-pointer text-3xl leading-none text-stone-300 hover:text-red-400 transition"
+            data-recipe-id="air-fryer-sweet-potato-fries" data-recipe-title="Air Fryer Sweet Potato Fries" data-recipe-page="./pages/snacks.html#air-fryer-sweet-potato-fries" data-recipe-image="./assets/images/airfryersweetpotatofries.jpg"
+            data-recipe-desc="Crispy air-fried sweet potato fries, a healthier twist on classic fries."
+            aria-pressed="false" aria-label="Like Air Fryer Sweet Potato Fries">♥</button>
+  </div>
   <div class="flex flex-col md:flex-row gap-6">
     <figure class="md:w-1/3 w-full">
-      <img src="../assets/images/sweet potato.png" alt="Air Fryer Sweet Potato Fries" 
-                class="w-full rounded-lg h-64 object-cover" loading="lazy">
+      <img src="../assets/images/airfryersweetpotatofries.jpg" alt="Air Fryer Sweet Potato Fries" 
+                class="w-full rounded-lg object-cover" loading="lazy">
       <figcaption class="text-sm text-stone-500 mt-1">Air Fryer Sweet Potato Fries</figcaption>
     </figure>
     <div class="md:w-2/3 w-full">
@@ -173,11 +191,17 @@
 </article>
 
 <!-- Lime Honey Fruit Salad -->
-<article class="bg-white rounded-2xl shadow-lg p-8 mb-6">
-  <h2 class="text-3xl mb-3">Lime Honey Fruit Salad</h2>
+<article id="lime-honey-fruit-salad" class="bg-white rounded-2xl shadow-lg p-8 mb-6 scroll-mt-24">
+  <div class="flex items-center justify-between gap-3 mb-3">
+    <h2 class="text-3xl">Lime Honey Fruit Salad</h2>
+    <button type="button" class="like-btn cursor-pointer text-3xl leading-none text-stone-300 hover:text-red-400 transition"
+            data-recipe-id="lime-honey-fruit-salad" data-recipe-title="Lime Honey Fruit Salad" data-recipe-page="./pages/snacks.html#lime-honey-fruit-salad" data-recipe-image="./assets/images/carbonara.jpg"
+            data-recipe-desc="A refreshing mix of fresh fruits tossed in a light lime and honey dressing."
+            aria-pressed="false" aria-label="Like Lime Honey Fruit Salad">♥</button>
+  </div>
   <div class="flex flex-col md:flex-row gap-6">
     <figure class="md:w-1/3 w-full">
-      <img src="../assets/images/Lime Honey Fruit Salad.png" alt="Lime Honey Fruit Salad" class="w-full rounded-lg h-64 object-cover" loading="lazy">
+      <img src="../assets/images/carbonara.jpg" alt="Lime Honey Fruit Salad" class="w-full rounded-lg object-cover" loading="lazy">
       <figcaption class="text-sm text-stone-500 mt-1">Lime Honey Fruit Salad</figcaption>
     </figure>
     <div class="md:w-2/3 w-full">
@@ -233,6 +257,13 @@
   </div>
 </article>
 
+  <div class="flex justify-end mt-2 mb-6">
+  <a href="meal_planning_tips.html" class="inline-flex items-center gap-2 bg-red-800 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-lg transition">
+    Next: Meal Planning Tips
+    <span aria-hidden="true" class="text-2xl leading-none">→</span>
+  </a>
+</div>
+
 </main>
 
 <footer class="bg-stone-900 text-white px-6 sm:px-10 py-12">
@@ -276,3 +307,4 @@
 
 </body>
 </html>
+
