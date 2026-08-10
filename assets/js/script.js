@@ -301,6 +301,85 @@ function readRecipeOfTheWeek() {
     return null;
   }
 }
+const STORAGE_KEY = 'mealplan-progress';
+const cards = document.querySelectorAll('.tip-card');
+const progressLabel = document.getElementById('progressLabel');
+const progressFill = document.getElementById('progressFill');
+
+function loadState() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
+  catch (e) { return {}; }
+}
+function saveState(state) {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (e) {}
+}
+
+function render() {
+  const state = loadState();
+  let doneCount = 0;
+  cards.forEach(card => {
+    const step = card.dataset.step;
+    const isDone = !!state[step];
+    if (isDone) doneCount++;
+
+    const toggle = card.querySelector('.done-toggle');
+    const check = card.querySelector('.check-icon');
+    const title = card.querySelector('.tip-title');
+
+    toggle.classList.toggle('bg-green-700', isDone);
+    toggle.classList.toggle('border-green-700', isDone);
+    check.classList.toggle('opacity-0', !isDone);
+    check.classList.toggle('scale-50', !isDone);
+    check.classList.toggle('opacity-100', isDone);
+    check.classList.toggle('scale-100', isDone);
+    title.classList.toggle('line-through', isDone);
+    title.classList.toggle('decoration-green-700', isDone);
+    title.classList.toggle('decoration-2', isDone);
+  });
+  progressLabel.textContent = `${doneCount} of ${cards.length} tips checked off`;
+  progressFill.style.width = (doneCount / cards.length * 100) + '%';
+}
+
+cards.forEach(card => {
+  card.querySelector('.done-toggle').addEventListener('click', () => {
+    const state = loadState();
+    const step = card.dataset.step;
+    state[step] = !state[step];
+    saveState(state);
+    render();
+  });
+
+  const exampleToggle = card.querySelector('.example-toggle');
+  const exampleLabel = exampleToggle.querySelector('span');
+  const chevron = exampleToggle.querySelector('.chevron');
+  const examplePanel = card.querySelector('.example-panel');
+  exampleToggle.addEventListener('click', () => {
+    const isOpen = examplePanel.style.maxHeight && examplePanel.style.maxHeight !== '0px';
+    examplePanel.style.maxHeight = isOpen ? '0px' : examplePanel.scrollHeight + 'px';
+    chevron.classList.toggle('rotate-180', !isOpen);
+    exampleLabel.textContent = isOpen ? 'See an example' : 'Hide example';
+  });
+});
+
+document.getElementById('resetProgress').addEventListener('click', () => {
+  saveState({});
+  render();
+});
+
+render();
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.remove('opacity-0', 'translate-y-6');
+      }, i * 60);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+cards.forEach(card => observer.observe(card));
 
 
 
