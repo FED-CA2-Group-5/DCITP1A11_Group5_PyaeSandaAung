@@ -117,52 +117,108 @@ function setupStepChecklists() {
 
 /* ---------- 4. Recipe submission form ---------- */
 
-function setupRecipeForm() {
-  var form = document.getElementById('submitRecipeForm');
-  if (!form) return;
+ // Recipe Submission Form //
+document.getElementById("btnsubmit").addEventListener("click", function(event) { 
+  event.preventDefault(); var name = document.getElementById("name"); 
+  var email = document.getElementById("email"); var recipe = document.getElementById("recipe"); 
+  var ingredients = document.getElementById("ingredients"); 
+  var steps = document.getElementById("steps"); 
+  var valid = true; // Check Name 
+  if (name.value === "") { 
+  document.getElementById("recipeErrorMessage1").classList.value = "show text-red-600 m-4"; 
+  name.classList.remove("border-stone-300", "border-green-600"); 
+  name.classList.add("border-red-600"); 
+  name.focus(); 
+  valid = false; 
+} else { 
 
-  var successMessage = document.getElementById('form-success');
+  document.getElementById("recipeErrorMessage1").classList.value = "hidden text-red-600"; 
+  name.classList.remove("border-stone-300", "border-red-600"); 
+  name.classList.add("border-green-600"); 
+} 
+// Check Email 
+if (!email.value.includes("@")) { 
+  document.getElementById("recipeErrorMessage2").classList.value = "show text-red-600 m-4";
+   email.classList.remove("border-stone-300", "border-green-600"); 
+   email.classList.add("border-red-600"); email.focus(); valid = false; 
+  } else { 
+    document.getElementById("recipeErrorMessage2").classList.value = "hidden text-red-600"; 
+    email.classList.remove("border-stone-300", "border-red-600"); 
+    email.classList.add("border-green-600"); } 
+    // Check Recipe Name 
+    if (recipe.value === "") { 
+      document.getElementById("recipeErrorMessage3").classList.value = "show text-red-600 m-4"; 
+      recipe.classList.remove("border-stone-300", "border-green-600"); 
+      recipe.classList.add("border-red-600"); recipe.focus(); valid = false; 
+    } else { 
+      document.getElementById("recipeErrorMessage3").classList.value = "hidden text-red-600"; 
+      recipe.classList.remove("border-stone-300", "border-red-600"); 
+      recipe.classList.add("border-green-600"); } 
+      // Check Ingredients 
+      if (ingredients.value === "") { 
+        document.getElementById("recipeErrorMessage4").classList.value = "show text-red-600 m-4"; 
+        ingredients.classList.remove("border-stone-300", "border-green-600"); 
+        ingredients.classList.add("border-red-600"); 
+        ingredients.focus(); valid = false; 
+      } else {
+         document.getElementById("recipeErrorMessage4").classList.value = "hidden text-red-600"; 
+         ingredients.classList.remove("border-stone-300", "border-red-600"); 
+         ingredients.classList.add("border-green-600"); } 
+         // Check Cooking Steps 
+         if (steps.value.length < 10) { document.getElementById("recipeErrorMessage5").classList.value = "show text-red-600 m-4"; 
+          steps.classList.remove("border-stone-300", "border-green-600"); steps.classList.add("border-red-600"); 
+          steps.focus(); valid = false; 
+        } else { 
+            document.getElementById("recipeErrorMessage5").classList.value = "hidden text-red-600"; 
+            steps.classList.remove("border-stone-300", "border-red-600"); steps.classList.add("border-green-600"); } 
+            // Show success message 
+            if (valid) { document.getElementById("recipeSuccess").classList.value = "show text-green-600 m-4"; } 
+          }
+        ); 
+         // Feedback Form //
+         document.getElementById("btnfeedback").addEventListener("click", function(event) { 
+          event.preventDefault(); 
+          var name = document.getElementById("fb-name"); 
+          var email = document.getElementById("fb-email"); 
+          var message = document.getElementById("fb-message"); 
+          var rating = document.querySelector('input[name="rating"]:checked'); 
+          var valid = true; 
+          // Check Name 
+          if (name.value === "") { 
+            document.getElementById("feedbackErrorMessage1").classList.value = "show text-red-600 m-4"; 
+            name.classList.remove("border-stone-300", "border-green-600"); 
+            name.classList.add("border-red-600"); name.focus(); valid = false; 
+          } else { 
+            document.getElementById("feedbackErrorMessage1").classList.value = "hidden text-red-600"; 
+            name.classList.remove("border-stone-300", "border-red-600"); name.classList.add("border-green-600"); } 
+            // Check Email 
+            if (!email.value.includes("@")) { 
+              document.getElementById("feedbackErrorMessage2").classList.value = "show text-red-600 m-4"; 
+              email.classList.remove("border-stone-300", "border-green-600"); 
+              email.classList.add("border-red-600"); email.focus(); valid = false; 
+            } else { 
+              document.getElementById("feedbackErrorMessage2").classList.value = "hidden text-red-600"; 
+              email.classList.remove("border-stone-300", "border-red-600"); 
+              email.classList.add("border-green-600"); } 
+              // Check Rating 
+              if (rating === null) { 
+                document.getElementById("feedbackErrorMessage3").classList.value = "show text-red-600 m-4"; 
+                valid = false; 
+              } else { document.getElementById("feedbackErrorMessage3").classList.value = "hidden text-red-600"; } 
+              // Check Message 
+              if (message.value.length < 10) { 
+                document.getElementById("feedbackErrorMessage4").classList.value = "show text-red-600 m-4"; 
+                message.classList.remove("border-stone-300", "border-green-600"); 
+                message.classList.add("border-red-600"); message.focus(); valid = false; 
+              } else { 
+                document.getElementById("feedbackErrorMessage4").classList.value = "hidden text-red-600"; 
+                message.classList.remove("border-stone-300", "border-red-600"); 
+                message.classList.add("border-green-600"); } 
+                // Show success message 
+                if (valid) { document.getElementById("feedbackSuccess").classList.value = "show text-green-600 m-4"; 
 
-  var rules = [
-    { id: 'name', check: value => value.trim().length >= 3 },
-    { id: 'email', check: value => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) },
-    { id: 'recipe', check: value => value.trim().length >= 2 },
-    { id: 'ingredients', check: hasAtLeastOneLine },
-    { id: 'steps', check: hasAtLeastOneLine },
-  ];
-
-  form.addEventListener('submit', function (event) {
-    event.preventDefault();
-
-    var allFieldsValid = true;
-    rules.forEach(function (rule) {
-      var field = document.getElementById(rule.id);
-      var isValid = rule.check(field.value);
-      showFieldError(field, !isValid);
-      if (!isValid) allFieldsValid = false;
-    });
-
-    if (!allFieldsValid) return;
-
-    form.classList.add('hidden');
-    if (successMessage) {
-      successMessage.classList.remove('hidden');
-      successMessage.setAttribute('tabindex', '-1'); // ensure focusable
-      successMessage.focus();
-    }
-  });
-}
-
-function hasAtLeastOneLine(text) {
-  return text.split('\n').some(line => line.trim().length > 0);
-}
-
-function showFieldError(field, hasError) {
-  var errorMessage = document.getElementById(field.id + '-error');
-  field.classList.toggle('border-red-600', hasError);
-  field.setAttribute('aria-invalid', hasError ? 'true' : 'false');
-  if (errorMessage) errorMessage.classList.toggle('hidden', !hasError);
-}
+                } 
+         });
 
 /* ---------- 5. Like buttons + Recipe of the Week ---------- */
 
