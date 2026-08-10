@@ -117,8 +117,12 @@ function setupStepChecklists() {
 /* ---------- 4. Recipe submission form ---------- */
 
  // Recipe Submission Form 
-document.getElementById("btnsubmit").addEventListener("click", function(event) { 
-  event.preventDefault(); var name = document.getElementById("name"); 
+var btnsubmit = document.getElementById("btnsubmit");
+
+if (btnsubmit) {
+    btnsubmit.addEventListener("click", function(event) {
+  event.preventDefault(); 
+  var name = document.getElementById("name"); 
   var email = document.getElementById("email"); var recipe = document.getElementById("recipe"); 
   var ingredients = document.getElementById("ingredients"); 
   var steps = document.getElementById("steps"); 
@@ -173,9 +177,14 @@ if (!email.value.includes("@")) {
             // Show success message 
             if (valid) { document.getElementById("recipeSuccess").classList.value = "show text-green-600 m-4"; } 
           }
-        ); 
+        )
+      };
          // Feedback Form 
-         document.getElementById("btnfeedback").addEventListener("click", function(event) { 
+         var btnsubmit = document.getElementById("btnsubmit");
+
+      if (btnsubmit) {
+
+      btnsubmit.addEventListener("click", function(event) { 
           event.preventDefault(); 
           var name = document.getElementById("fb-name"); 
           var email = document.getElementById("fb-email"); 
@@ -217,7 +226,10 @@ if (!email.value.includes("@")) {
                 if (valid) { document.getElementById("feedbackSuccess").classList.value = "show text-green-600 m-4"; 
 
                 } 
-         });
+         })
+         };
+
+
 
 /* ---------- 5. Like buttons + Recipe of the Week ---------- */
 
