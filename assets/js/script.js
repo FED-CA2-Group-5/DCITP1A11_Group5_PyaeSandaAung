@@ -176,13 +176,16 @@ if (!email.value.includes("@")) {
             steps.classList.remove("border-stone-300", "border-red-600"); steps.classList.add("border-green-600"); } 
             // Show success message 
             if (valid) { document.getElementById("recipeSuccess").classList.value = "show text-green-600 m-4"; } 
-          }
-        )
-      };
-         // Feedback Form 
-         var btnsubmit = document.getElementById("btnsubmit");
+          
+       });
 
-      if (btnsubmit) {
+}
+         // Feedback Form 
+         var btnfeedback = document.getElementById("btnfeedback");
+
+  if (btnfeedback) {
+
+    btnfeedback.addEventListener("click", function(event) {
 
       btnsubmit.addEventListener("click", function(event) { 
           event.preventDefault(); 
@@ -232,15 +235,16 @@ if (!email.value.includes("@")) {
                 if (valid) { document.getElementById("feedbackSuccess").classList.value = "show text-green-600 m-4"; 
 
                 } 
-        });
+              });
+            })
+          }
 
-  }
 
 
 
 /* ---------- 5. Like buttons + Recipe of the Week ---------- */
 
-var RECIPE_OF_THE_WEEK_KEY = 'ss-recipe-of-the-week';
+  var RECIPE_OF_THE_WEEK_KEY = 'ss-recipe-of-the-week';
 
 function setupLikeButtons() {
   var likeButtons = document.querySelectorAll('.like-btn');
