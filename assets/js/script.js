@@ -129,51 +129,51 @@ if (btnsubmit) {
   var valid = true; // Check Name 
   if (name.value === "") { 
   document.getElementById("recipeErrorMessage1").classList.value = "show text-red-600 m-4"; 
-  name.classList.remove("border-stone-300", "border-green-600"); 
+  name.classList.remove("border-yellow-600", "border-green-600"); 
   name.classList.add("border-red-600"); 
   name.focus(); 
   valid = false; 
 } else { 
 
   document.getElementById("recipeErrorMessage1").classList.value = "hidden text-red-600"; 
-  name.classList.remove("border-stone-300", "border-red-600"); 
+  name.classList.remove("border-yellow-600", "border-red-600"); 
   name.classList.add("border-green-600"); 
 } 
 // Check Email 
 if (!email.value.includes("@")) { 
   document.getElementById("recipeErrorMessage2").classList.value = "show text-red-600 m-4";
-   email.classList.remove("border-stone-300", "border-green-600"); 
+   email.classList.remove("border-yellow-600", "border-green-600"); 
    email.classList.add("border-red-600"); email.focus(); valid = false; 
   } else { 
     document.getElementById("recipeErrorMessage2").classList.value = "hidden text-red-600"; 
-    email.classList.remove("border-stone-300", "border-red-600"); 
+    email.classList.remove("border-yellow-600", "border-red-600"); 
     email.classList.add("border-green-600"); } 
     // Check Recipe Name 
     if (recipe.value === "") { 
       document.getElementById("recipeErrorMessage3").classList.value = "show text-red-600 m-4"; 
-      recipe.classList.remove("border-stone-300", "border-green-600"); 
+      recipe.classList.remove("border-yellow-600", "border-green-600"); 
       recipe.classList.add("border-red-600"); recipe.focus(); valid = false; 
     } else { 
       document.getElementById("recipeErrorMessage3").classList.value = "hidden text-red-600"; 
-      recipe.classList.remove("border-stone-300", "border-red-600"); 
+      recipe.classList.remove("border-yellow-600", "border-red-600"); 
       recipe.classList.add("border-green-600"); } 
       // Check Ingredients 
       if (ingredients.value === "") { 
         document.getElementById("recipeErrorMessage4").classList.value = "show text-red-600 m-4"; 
-        ingredients.classList.remove("border-stone-300", "border-green-600"); 
+        ingredients.classList.remove("border-yellow-600", "border-green-600"); 
         ingredients.classList.add("border-red-600"); 
         ingredients.focus(); valid = false; 
       } else {
          document.getElementById("recipeErrorMessage4").classList.value = "hidden text-red-600"; 
-         ingredients.classList.remove("border-stone-300", "border-red-600"); 
+         ingredients.classList.remove("border-yellow-600", "border-red-600"); 
          ingredients.classList.add("border-green-600"); } 
          // Check Cooking Steps 
          if (steps.value.length < 10) { document.getElementById("recipeErrorMessage5").classList.value = "show text-red-600 m-4"; 
-          steps.classList.remove("border-stone-300", "border-green-600"); steps.classList.add("border-red-600"); 
+          steps.classList.remove("border-yellow-600", "border-green-600"); steps.classList.add("border-red-600"); 
           steps.focus(); valid = false; 
         } else { 
             document.getElementById("recipeErrorMessage5").classList.value = "hidden text-red-600"; 
-            steps.classList.remove("border-stone-300", "border-red-600"); steps.classList.add("border-green-600"); } 
+            steps.classList.remove("border-yellow-600", "border-red-600"); steps.classList.add("border-green-600"); } 
             // Show success message 
             if (valid) { document.getElementById("recipeSuccess").classList.value = "show text-green-600 m-4"; } 
           
@@ -197,19 +197,19 @@ if (!email.value.includes("@")) {
           // Check Name 
           if (name.value === "") { 
             document.getElementById("feedbackErrorMessage1").classList.value = "show text-red-600 m-4"; 
-            name.classList.remove("border-stone-300", "border-green-600"); 
+            name.classList.remove("border-yellow-600", "border-green-600"); 
             name.classList.add("border-red-600"); name.focus(); valid = false; 
           } else { 
             document.getElementById("feedbackErrorMessage1").classList.value = "hidden text-red-600"; 
-            name.classList.remove("border-stone-300", "border-red-600"); name.classList.add("border-green-600"); } 
+            name.classList.remove("border-yellow-600", "border-red-600"); name.classList.add("border-green-600"); } 
             // Check Email 
             if (!email.value.includes("@")) { 
               document.getElementById("feedbackErrorMessage2").classList.value = "show text-red-600 m-4"; 
-              email.classList.remove("border-stone-300", "border-green-600"); 
+              email.classList.remove("border-yellow-600", "border-green-600"); 
               email.classList.add("border-red-600"); email.focus(); valid = false; 
             } else { 
               document.getElementById("feedbackErrorMessage2").classList.value = "hidden text-red-600"; 
-              email.classList.remove("border-stone-300", "border-red-600"); 
+              email.classList.remove("border-yellow-600", "border-red-600"); 
               email.classList.add("border-green-600"); 
             } 
 
@@ -225,11 +225,11 @@ if (!email.value.includes("@")) {
               // Check Message 
               if (message.value.length < 10) { 
                 document.getElementById("feedbackErrorMessage4").classList.value = "show text-red-600 m-4"; 
-                message.classList.remove("border-stone-300", "border-green-600"); 
+                message.classList.remove("border-yellow-600", "border-green-600"); 
                 message.classList.add("border-red-600"); message.focus(); valid = false; 
               } else { 
                 document.getElementById("feedbackErrorMessage4").classList.value = "hidden text-red-600"; 
-                message.classList.remove("border-stone-300", "border-red-600"); 
+                message.classList.remove("border-yellow-600", "border-red-600"); 
                 message.classList.add("border-green-600"); } 
                 // Show success message 
                 if (valid) { document.getElementById("feedbackSuccess").classList.value = "show text-green-600 m-4"; 
