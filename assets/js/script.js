@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   setupToggles();
   setupStepChecklists();
-  setupRecipeForm();
   setupLikeButtons();
   showRecipeOfTheWeek();
 });
