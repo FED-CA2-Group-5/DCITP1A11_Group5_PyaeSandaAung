@@ -54,206 +54,189 @@
       </section>
     </nav>
   </header>
+  
+  <main>
  
-<main>
- 
-<!-- Hero -->
-<section class="max-w-5xl mx-auto px-6 pt-14 pb-10 text-center">
-    <h1 class="[font-family:'Fraunces',serif] text-5xl md:text-6xl font-bold text-stone-900">Let's Get in Touch</h1>
-</section>
- 
-<!-- Two cards -->
-<section class="max-w-6xl mx-auto px-6 pb-20 grid gap-10 lg:grid-cols-2 items-start">
- 
-    <!-- Recipe submission card -->
-    <form id="submitRecipeForm"
-        class="bg-[#fffdf8] bg-[repeating-linear-gradient(#fffdf8,#fffdf8_27px,#fbe3c4_27px,#fbe3c4_28px)]
-            border-2 border-red-800/70 rounded-sm shadow-lg p-8 -rotate-1
-            hover:rotate-0 hover:-translate-y-0.5 hover:shadow-[0_18px_30px_-12px_rgba(153,27,27,0.25)]
-            transition-transform transition-shadow duration-300 relative">
-        <span class="absolute -top-3 left-8 w-5 h-5 rounded-full bg-red-700
-            shadow-[0_2px_4px_rgba(0,0,0,0.3),inset_0_1px_2px_rgba(255,255,255,0.4)]"></span>
-        <fieldset>
-            <legend class="[font-family:'Fraunces',serif] text-2xl font-bold text-red-800 mb-1">Share a Recipe</legend>
- 
-            <p class="mb-5">
-                <label for="name" class="block text-sm font-semibold text-stone-700 mb-1">Name</label>
-                <input type="text" name="name" minlength="1" maxlength="20" id="name"
-                    class="border border-stone-300 rounded-md p-2 bg-white/80 w-full focus:outline-none focus:ring-2 focus:ring-red-700">
-                <div id="recipeErrorMessage1" class="hidden text-red-600"> - Name is required </div>
-            </p>
- 
-            <p class="mb-5">
-                <label for="email" class="block text-sm font-semibold text-stone-700 mb-1">Email</label>
-                <input type="email" name="email" minlength="1" maxlength="100" id="email"
-                    class="border border-stone-300 rounded-md p-2 bg-white/80 w-full focus:outline-none focus:ring-2 focus:ring-red-700">
-                <div id="recipeErrorMessage2" class="hidden text-red-600"> - Email needs @ </div>
-            </p>
- 
-            <p class="mb-5">
-                <label for="recipe" class="block text-sm font-semibold text-stone-700 mb-1">Recipe Name</label>
-                <input type="text" id="recipe" name="recipe"
-                    class="border border-stone-300 rounded-md p-2 bg-white/80 w-full focus:outline-none focus:ring-2 focus:ring-red-700">
-                <div id="recipeErrorMessage3" class="hidden text-red-600"> - Recipe name is required </div>
-            </p>
- 
-            <p class="mb-5">
-                <label for="ingredients" class="block text-sm font-semibold text-stone-700 mb-1">Ingredients</label>
-                <textarea id="ingredients" name="ingredients" rows="4"
-                    class="border border-stone-300 rounded-md p-2 bg-white/80 w-full focus:outline-none focus:ring-2 focus:ring-red-700"></textarea>
-                <div id="recipeErrorMessage4" class="hidden text-red-600"> - Ingredients are required </div>
-            </p>
- 
-            <p class="mb-6">
-                <label for="steps" class="block text-sm font-semibold text-stone-700 mb-1">Cooking Steps</label>
-                <textarea minlength="10" id="steps" name="steps" rows="4"
-                    class="border border-stone-300 rounded-md p-2 bg-white/80 w-full focus:outline-none focus:ring-2 focus:ring-red-700"></textarea>
-                <div id="recipeErrorMessage5" class="hidden text-red-600"> - Cooking steps must be at least 10 characters </div>
-            </p>
- 
-            <button type="submit" id="btnsubmit"
-                class="w-full border border-yellow-600 rounded-lg bg-yellow-500 hover:bg-yellow-600 transition
-                    cursor-pointer font-semibold text-stone-900 py-2.5">
-                Submit Recipe
-            </button>
-        </fieldset>
-    </form>
- 
-    <!-- Feedback card -->
-    <form id="feedbackForm"
-        class="bg-[#fffdf8] bg-[repeating-linear-gradient(#fffdf8,#fffdf8_27px,#fbe3c4_27px,#fbe3c4_28px)]
-            border-2 border-red-800/70 rounded-sm shadow-lg p-8 rotate-1
-            hover:rotate-0 hover:-translate-y-0.5 hover:shadow-[0_18px_30px_-12px_rgba(153,27,27,0.25)]
-            transition-transform transition-shadow duration-300 relative">
-        <span class="absolute -top-3 left-8 w-5 h-5 rounded-full bg-red-700
-            shadow-[0_2px_4px_rgba(0,0,0,0.3),inset_0_1px_2px_rgba(255,255,255,0.4)]"></span>
-        <fieldset>
-            <legend class="[font-family:'Fraunces',serif] text-2xl font-bold text-red-800 mb-1">Send Feedback</legend>
- 
-            <p class="mb-5">
-                <label for="fb-name" class="block text-sm font-semibold text-stone-700 mb-1">Name</label>
-                <input type="text" name="fb-name" maxlength="20" id="fb-name"
-                    class="border border-stone-300 rounded-md p-2 bg-white/80 w-full focus:outline-none focus:ring-2 focus:ring-red-700">
-                <div id="feedbackErrorMessage1" class="hidden text-red-600"> - Name is required </div>
-            </p>
- 
-            <p class="mb-5">
-                <label for="fb-email" class="block text-sm font-semibold text-stone-700 mb-1">Email</label>
-                <input type="email" name="fb-email" maxlength="100" id="fb-email"
-                    class="border border-stone-300 rounded-md p-2 bg-white/80 w-full focus:outline-none focus:ring-2 focus:ring-red-700">
-                    <div id="feedbackErrorMessage2" class="hidden text-red-600"> - Email needs @ </div>
-            </p>
- 
-            <p class="mb-5">
-                <label for="fb-topic" class="block text-sm font-semibold text-stone-700 mb-1">What's this about?</label>
-                <select id="fb-topic" name="fb-topic"
-                    class="border border-stone-300 rounded-md p-2 bg-white/80 w-full focus:outline-none focus:ring-2 focus:ring-red-700">
-                    <option>General feedback</option>
-                    <option>Website bug</option>
-                    <option>Recipe question</option>
-                    <option>Something else</option>
-                </select>
-            </p>
- 
-            <p class="mb-5">
-                <label class="block text-sm font-semibold text-stone-700 mb-1">How's the site treating you?</label>
-                <span class="flex flex-row-reverse justify-end gap-0.5">
-                    <input type="radio" id="star5" name="rating" value="5" class="peer hidden">
-                    <label for="star5" title="5 stars"
-                        class="peer text-3xl leading-none cursor-pointer text-stone-300 peer-checked:text-yellow-500 peer-hover:text-yellow-500 hover:text-yellow-500 transition-colors">★</label>
- 
-                    <input type="radio" id="star4" name="rating" value="4" class="peer hidden">
-                    <label for="star4" title="4 stars"
-                        class="peer text-3xl leading-none cursor-pointer text-stone-300 peer-checked:text-yellow-500 peer-hover:text-yellow-500 hover:text-yellow-500 transition-colors">★</label>
- 
-                    <input type="radio" id="star3" name="rating" value="3" class="peer hidden">
-                    <label for="star3" title="3 stars"
-                        class="peer text-3xl leading-none cursor-pointer text-stone-300 peer-checked:text-yellow-500 peer-hover:text-yellow-500 hover:text-yellow-500 transition-colors">★</label>
- 
-                    <input type="radio" id="star2" name="rating" value="2" class="peer hidden">
-                    <label for="star2" title="2 stars"
-                        class="peer text-3xl leading-none cursor-pointer text-stone-300 peer-checked:text-yellow-500 peer-hover:text-yellow-500 hover:text-yellow-500 transition-colors">★</label>
- 
-                    <input type="radio" id="star1" name="rating" value="1" class="peer hidden">
-                    <label for="star1" title="1 star"
-                        class="peer text-3xl leading-none cursor-pointer text-stone-300 peer-checked:text-yellow-500 peer-hover:text-yellow-500 hover:text-yellow-500 transition-colors">★</label>
-                </span>
-                <div id="feedbackErrorMessage3" class="hidden text-red-600"> - Please select a rating </div>
-            </p>
- 
-            <p class="mb-6">
-                <label for="fb-message" class="block text-sm font-semibold text-stone-700 mb-1">Message</label>
-                <textarea minlength="10" id="fb-message" name="fb-message" rows="5"
-                    class="border border-stone-300 rounded-md p-2 bg-white/80 w-full focus:outline-none focus:ring-2 focus:ring-red-700"></textarea>
-                    <div id="feedbackErrorMessage4" class="hidden text-red-600"> - Message must be at least 10 characters </div>
-            </p>
- 
-            <button type="submit" id="btnfeedback"
-                class="w-full border border-red-900 rounded-lg bg-red-800 hover:bg-red-900 transition
-                    cursor-pointer font-semibold text-white py-2.5">
-                Send Feedback
-            </button>
-        </fieldset>
-    </form>
+    <!-- Hero -->
+    <section class="max-w-5xl mx-auto px-6 pt-14 pb-10 text-center">
+        <h1 class="[font-family:'Fraunces',serif] text-5xl md:text-6xl font-bold text-stone-900">Let's Get in Touch</h1>
+    </section>
     
+    <!-- Two cards -->
+    <section class="max-w-6xl mx-auto px-6 pb-20 grid gap-10 lg:grid-cols-2 items-start">
     
- 
-</section>
- 
-</main>
- 
-<footer class="bg-stone-900 text-white px-10 py-12">
-        <section class="max-w-6xl mx-auto grid grid-cols-3 gap-10">
-            <!-- Brand -->
-            <article>
-                <h2 class="text-2xl font-serif font-bold mb-5 flex items-center gap-3">🍴 Simply Savory</h2>
-                <p class="text-gray-300 leading-relaxed max-w-sm">
-                    Quick, easy recipes for young adults cooking for themselves, one plate at a time.
+        <!-- Recipe submission card -->
+        <form id="submitRecipeForm"
+            class="bg-[#fffdf8] bg-[repeating-linear-gradient(#fffdf8,#fffdf8_27px,#fbe3c4_27px,#fbe3c4_28px)]
+                border-2 border-red-800/70 rounded-sm shadow-lg p-8 -rotate-1
+                hover:rotate-0 hover:-translate-y-0.5 hover:shadow-[0_18px_30px_-12px_rgba(153,27,27,0.25)]
+                transition-transform transition-shadow duration-300 relative">
+            <span class="absolute -top-3 left-8 w-5 h-5 rounded-full bg-red-700
+                shadow-[0_2px_4px_rgba(0,0,0,0.3),inset_0_1px_2px_rgba(255,255,255,0.4)]"></span>
+            <fieldset>
+                <legend class="[font-family:'Fraunces',serif] text-2xl font-bold text-red-800 mb-1">Share a Recipe</legend>
+    
+                <p class="mb-5">
+                    <label for="name" class="block text-sm font-semibold text-stone-700 mb-1">Name</label>
+                    <input type="text" name="name" minlength="1" maxlength="20" id="name"
+                        class="border border-stone-300 rounded-md p-2 bg-white/80 w-full focus:outline-none focus:ring-2 focus:ring-red-700">
+                    <div id="recipeErrorMessage1" class="hidden text-red-600"> - Name is required </div>
                 </p>
-                <section class="flex gap-4 mt-6">
-                    <a href="#" class="border border-gray-500 rounded-full w-10 h-10 flex items-center justify-center hover:bg-white hover:text-black transition">f</a>
-                    <a href="#" class="border border-gray-500 rounded-full w-10 h-10 flex items-center justify-center hover:bg-white hover:text-black transition">ig</a>
-                    <a href="#" class="border border-gray-500 rounded-full w-10 h-10 flex inside justify-center items-center hover:bg-white hover:text-black transition">p</a>
-                </section>
-            </article>
-            <!-- Recipes -->
-            <article>
-                <h3 class="text-yellow-500 font-bold tracking-widest mb-5">RECIPES</h3>
-                <ul class="space-y-4 text-gray-300">
-                    <li>
-                        <a href="breakfast.html" class="hover:text-white">Breakfast</a>
-                    </li>
-                    <li>
-                        <a href="lunch.html" class="hover:text-white">Lunch</a>
-                    </li>
-                    <li>
-                        <a href="dinner.html" class="hover:text-white">Dinner</a>
-                    </li>
-                    <li>
-                        <a href="dessert.html" class="hover:text-white">Desserts</a>
-                    </li>
-                    <li>
-                        <a href="snacks.html" class="hover:text-white">Snacks</a>
-                    </li>
-                </ul>
-            </article>
-            <!-- Site -->
-            <article>
-                <h3 class="text-yellow-500 font-bold tracking-widest mb-5">SITE</h3>
-                <ul class="space-y-4 text-gray-300">
-                    <li>
-                        <a href="about.html" class="hover:text-white">About Us</a>
-                    </li>
-                    <li>
-                        <a href="mealplan.html" class="hover:text-white">Meal Planning</a>
-                    </li>
-                    <li>
-                        <a href="contact.html" class="hover:text-white">Contact / Submit a Recipe</a>
-                    </li>
-                </ul>
-            </article>
-        </section>
-    </footer>
-<script src="../assets/js/script.js"></script>
+    
+                <p class="mb-5">
+                    <label for="email" class="block text-sm font-semibold text-stone-700 mb-1">Email</label>
+                    <input type="email" name="email" minlength="1" maxlength="100" id="email"
+                        class="border border-stone-300 rounded-md p-2 bg-white/80 w-full focus:outline-none focus:ring-2 focus:ring-red-700">
+                    <div id="recipeErrorMessage2" class="hidden text-red-600"> - Email needs @ </div>
+                </p>
+    
+                <p class="mb-5">
+                    <label for="recipe" class="block text-sm font-semibold text-stone-700 mb-1">Recipe Name</label>
+                    <input type="text" id="recipe" name="recipe"
+                        class="border border-stone-300 rounded-md p-2 bg-white/80 w-full focus:outline-none focus:ring-2 focus:ring-red-700">
+                    <div id="recipeErrorMessage3" class="hidden text-red-600"> - Recipe name is required </div>
+                </p>
+    
+                <p class="mb-5">
+                    <label for="ingredients" class="block text-sm font-semibold text-stone-700 mb-1">Ingredients</label>
+                    <textarea id="ingredients" name="ingredients" rows="4"
+                        class="border border-stone-300 rounded-md p-2 bg-white/80 w-full focus:outline-none focus:ring-2 focus:ring-red-700"></textarea>
+                    <div id="recipeErrorMessage4" class="hidden text-red-600"> - Ingredients are required </div>
+                </p>
+    
+                <p class="mb-6">
+                    <label for="steps" class="block text-sm font-semibold text-stone-700 mb-1">Cooking Steps</label>
+                    <textarea minlength="10" id="steps" name="steps" rows="4"
+                        class="border border-stone-300 rounded-md p-2 bg-white/80 w-full focus:outline-none focus:ring-2 focus:ring-red-700"></textarea>
+                    <div id="recipeErrorMessage5" class="hidden text-red-600"> - Cooking steps must be at least 10 characters </div>
+                </p>
+    
+                <button type="submit" id="btnsubmit"
+                    class="w-full border border-yellow-600 rounded-lg bg-yellow-500 hover:bg-yellow-600 transition
+                        cursor-pointer font-semibold text-stone-900 py-2.5">
+                    Submit Recipe
+                </button>
+            </fieldset>
+        </form>
+    
+        <!-- Feedback card -->
+        <form id="feedbackForm"
+            class="bg-[#fffdf8] bg-[repeating-linear-gradient(#fffdf8,#fffdf8_27px,#fbe3c4_27px,#fbe3c4_28px)]
+                border-2 border-red-800/70 rounded-sm shadow-lg p-8 rotate-1
+                hover:rotate-0 hover:-translate-y-0.5 hover:shadow-[0_18px_30px_-12px_rgba(153,27,27,0.25)]
+                transition-transform transition-shadow duration-300 relative">
+            <span class="absolute -top-3 left-8 w-5 h-5 rounded-full bg-red-700
+                shadow-[0_2px_4px_rgba(0,0,0,0.3),inset_0_1px_2px_rgba(255,255,255,0.4)]"></span>
+            <fieldset>
+                <legend class="[font-family:'Fraunces',serif] text-2xl font-bold text-red-800 mb-1">Send Feedback</legend>
+    
+                <p class="mb-5">
+                    <label for="fb-name" class="block text-sm font-semibold text-stone-700 mb-1">Name</label>
+                    <input type="text" name="fb-name" maxlength="20" id="fb-name"
+                        class="border border-stone-300 rounded-md p-2 bg-white/80 w-full focus:outline-none focus:ring-2 focus:ring-red-700">
+                    <div id="feedbackErrorMessage1" class="hidden text-red-600"> - Name is required </div>
+                </p>
+    
+                <p class="mb-5">
+                    <label for="fb-email" class="block text-sm font-semibold text-stone-700 mb-1">Email</label>
+                    <input type="email" name="fb-email" maxlength="100" id="fb-email"
+                        class="border border-stone-300 rounded-md p-2 bg-white/80 w-full focus:outline-none focus:ring-2 focus:ring-red-700">
+                        <div id="feedbackErrorMessage2" class="hidden text-red-600"> - Email needs @ </div>
+                </p>
+    
+                <p class="mb-5">
+                    <label for="fb-topic" class="block text-sm font-semibold text-stone-700 mb-1">What's this about?</label>
+                    <select id="fb-topic" name="fb-topic"
+                        class="border border-stone-300 rounded-md p-2 bg-white/80 w-full focus:outline-none focus:ring-2 focus:ring-red-700">
+                        <option>General feedback</option>
+                        <option>Website bug</option>
+                        <option>Recipe question</option>
+                        <option>Something else</option>
+                    </select>
+                </p>
+    
+                <p class="mb-5">
+                    <label class="block text-sm font-semibold text-stone-700 mb-1">How's the site treating you?</label>
+                    <span class="flex flex-row-reverse justify-end gap-0.5">
+                        <input type="radio" id="star5" name="rating" value="5" class="peer hidden">
+                        <label for="star5" title="5 stars"
+                            class="peer text-3xl leading-none cursor-pointer text-stone-300 peer-checked:text-yellow-500 peer-hover:text-yellow-500 hover:text-yellow-500 transition-colors">★</label>
+    
+                        <input type="radio" id="star4" name="rating" value="4" class="peer hidden">
+                        <label for="star4" title="4 stars"
+                            class="peer text-3xl leading-none cursor-pointer text-stone-300 peer-checked:text-yellow-500 peer-hover:text-yellow-500 hover:text-yellow-500 transition-colors">★</label>
+    
+                        <input type="radio" id="star3" name="rating" value="3" class="peer hidden">
+                        <label for="star3" title="3 stars"
+                            class="peer text-3xl leading-none cursor-pointer text-stone-300 peer-checked:text-yellow-500 peer-hover:text-yellow-500 hover:text-yellow-500 transition-colors">★</label>
+    
+                        <input type="radio" id="star2" name="rating" value="2" class="peer hidden">
+                        <label for="star2" title="2 stars"
+                            class="peer text-3xl leading-none cursor-pointer text-stone-300 peer-checked:text-yellow-500 peer-hover:text-yellow-500 hover:text-yellow-500 transition-colors">★</label>
+    
+                        <input type="radio" id="star1" name="rating" value="1" class="peer hidden">
+                        <label for="star1" title="1 star"
+                            class="peer text-3xl leading-none cursor-pointer text-stone-300 peer-checked:text-yellow-500 peer-hover:text-yellow-500 hover:text-yellow-500 transition-colors">★</label>
+                    </span>
+                    <div id="feedbackErrorMessage3" class="hidden text-red-600"> - Please select a rating </div>
+                </p>
+    
+                <p class="mb-6">
+                    <label for="fb-message" class="block text-sm font-semibold text-stone-700 mb-1">Message</label>
+                    <textarea minlength="10" id="fb-message" name="fb-message" rows="5"
+                        class="border border-stone-300 rounded-md p-2 bg-white/80 w-full focus:outline-none focus:ring-2 focus:ring-red-700"></textarea>
+                        <div id="feedbackErrorMessage4" class="hidden text-red-600"> - Message must be at least 10 characters </div>
+                </p>
+    
+                <button type="submit" id="btnfeedback"
+                    class="w-full border border-red-900 rounded-lg bg-red-800 hover:bg-red-900 transition
+                        cursor-pointer font-semibold text-white py-2.5">
+                    Send Feedback
+                </button>
+            </fieldset>
+        </form>
+
+    </section>
+    
+  </main>
+
+  <footer class="bg-stone-900 text-white px-6 md:px-10 py-10 md:py-12">
+    <nav class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-10">
+      <section>
+        <h2 class="text-2xl font-serif font-bold mb-5 flex items-center gap-3">🍴 Simply Savory</h2>
+        <p class="text-gray-300 leading-relaxed max-w-sm">
+          Quick, easy recipes for young adults cooking for themselves, one plate at a time.
+        </p>
+        <article class="flex gap-4 mt-6">
+          <a href="#" aria-label="Facebook" class="border border-gray-500 rounded-full w-10 h-10 flex items-center justify-center hover:bg-white hover:text-black transition">f</a>
+          <a href="#" aria-label="Instagram" class="border border-gray-500 rounded-full w-10 h-10 flex items-center justify-center hover:bg-white hover:text-black transition">ig</a>
+          <a href="#" aria-label="Pinterest" class="border border-gray-500 rounded-full w-10 h-10 flex items-center justify-center hover:bg-white hover:text-black transition">p</a>
+        </article>
+      </section>
+
+      <section>
+        <h3 class="text-yellow-500 font-bold tracking-widest mb-5">RECIPES</h3>
+        <ul class="space-y-4 text-gray-300">
+          <li><a href="breakfast.html" class="hover:text-white">Breakfast</a></li>
+          <li><a href="lunch.html" class="hover:text-white">Lunch</a></li>
+          <li><a href="dinner.html" class="hover:text-white">Dinner</a></li>
+          <li><a href="dessert.html" class="hover:text-white">Desserts</a></li>
+          <li><a href="snacks.html" class="hover:text-white">Snacks</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h3 class="text-yellow-500 font-bold tracking-widest mb-5">SITE</h3>
+        <ul class="space-y-4 text-gray-300">
+          <li><a href="about.html" class="hover:text-white">About Us</a></li>
+          <li><a href="mealplan.html" class="hover:text-white">Meal Planning</a></li>
+          <li><a href="contact.html" class="hover:text-white">Contact / Submit a Recipe</a></li>
+        </ul>
+      </section>
+    </nav>
+  </footer>
+  
+  <script src="../assets/js/script.js"></script>
+  
 </body>
 </html>

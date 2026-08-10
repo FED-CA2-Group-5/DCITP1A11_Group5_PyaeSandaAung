@@ -53,276 +53,274 @@
     </nav>
   </header>
 
-<main class="max-w-6xl mx-auto lg:w-3/4 md:w-full sm:w-full p-6">
-<h1 class="text-4xl font-bold text-red-600 mb-3">Lunch Recipes</h1>
+  <main class="max-w-6xl mx-auto lg:w-3/4 md:w-full sm:w-full p-6">
+    <h1 class="text-4xl font-bold text-red-800 mb-3">Lunch Recipes</h1>
 
-<!-- Chicken Ceasar Wrap -->
-<article id="chicken-caesar-wrap" class="bg-white rounded-2xl shadow-lg p-8 mb-6 scroll-mt-24">
-  <div class="flex items-center justify-between gap-3 mb-3">
-    <h2 class="text-3xl">Chicken Caesar Wrap</h2>
-    <button type="button" class="like-btn cursor-pointer text-3xl leading-none text-stone-300 hover:text-red-400 transition"
-            data-recipe-id="chicken-caesar-wrap" data-recipe-title="Chicken Caesar Wrap" data-recipe-page="./pages/lunch.html#chicken-caesar-wrap" data-recipe-image="./assets/images/wrap.png"
-            data-recipe-desc="A handheld Caesar salad with grilled chicken, romaine, Caesar dressing, and Parmesan in a soft tortilla."
-            aria-pressed="false" aria-label="Like Chicken Caesar Wrap">♥</button>
-  </div>
-  <div class="flex flex-col md:flex-row gap-6">
-    <figure class="md:w-1/3 w-full">
-      <img src="../assets/images/wrap.png" alt="wrap" 
-            class="w-full rounded-lg h-64 object-cover" loading="lazy">
-      <figcaption class="text-sm text-stone-500 mt-1">Savoury Chicken Caesar Wrap.</figcaption>
-    </figure>
-    <div class="md:w-2/3 w-full">
-      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between 
-                w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
-                aria-controls="wrap-desc">
-        Description
-        <span class="chevron transition-transform">▾</span>
-      </button>
-        <div id="wrap-desc" class="hidden py-2">
-          <p>A chicken Caesar wrap is a handheld version of the Caesar salad, combining grilled chicken, 
-            crisp romaine lettuce, creamy Caesar dressing, and Parmesan cheese inside a soft tortilla.
-            It's a portable, flavorful, and satisfying meal that blends richness with freshness.
-          </p>
-          <ul class="list-disc list-inside mt-2 space-y-1">
-            <li><strong>Texture:</strong> Soft tortilla, tender chicken, crunchy lettuce, creamy dressing, and sometimes crispy croutons.</li>
-            <li><strong>Color:</strong> Golden tortilla, white chicken with brown edges, bright green lettuce, pale ivory dressing, and light yellow Parmesan.</li>
-            <li><strong>Flavor:</strong> Savory chicken base, creamy garlicky dressing, fresh lettuce brightness, and salty nutty Parmesan, all balanced in one bite.</li>
-          </ul>
-          
-        </div>
-
-      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between 
-            w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
-            aria-controls="wrap-ingredients">
-        Ingredients
-        <span class="chevron transition-transform">▾</span>
-      </button>
-      <ul id="wrap-ingredients" class="hidden list-disc list-inside pt-2 space-y-1">
-        <li>1 tortilla wrap</li>
-        <li>1 cup grilled chicken, sliced</li>
-        <li>1 cup romaine lettuce</li>
-        <li>2 tbsp Caesar dressing</li>
-        <li>2 tbsp grated Parmesan cheese</li>
-      </ul>
-
-      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between w-full 
-        text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
-        aria-controls="wrap-steps">
-        Instructions
-        <span class="chevron transition-transform">▾</span>
-      </button>
-      <ol id="wrap-steps" data-complete-target="wrap-complete" class="hidden list-decimal 
-                marker:font-bold pt-2 pl-6 space-y-1">
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Cook the chicken until fully done, then slice it into thin strips.</label></li>
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Wash and dry the lettuce before cutting it into bite-sized pieces.</label></li>
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Combine chicken, lettuce, Parmesan, and Caesar dressing.</label></li>
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Mix everything until evenly coated.</label></li>
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Lay a tortilla flat on a clean surface.</label></li>
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Place the chicken mixture in the centre.</label></li>
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Fold in the sides and roll tightly.</label></li>
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Slice the wrap in half if desired.</label></li>
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Serve immediately or wrap for later.</label></li>
-    </ol>
-      <p id="wrap-complete" class="hidden text-green-600 font-bold mt-2" aria-live="polite">Completed!</p>
-    </div>
-  </div>
-</article>
-
-<!-- Chicken and Sweet Corn Soup with Noodles -->
-<article id="chicken-sweet-corn-soup" class="bg-white rounded-2xl shadow-lg p-8 mb-6 scroll-mt-24">
-  <div class="flex items-center justify-between gap-3 mb-3">
-    <h2 class="text-3xl">Chicken and Sweet Corn Soup with Noodles</h2>
-    <button type="button" class="like-btn cursor-pointer text-3xl leading-none text-stone-300 hover:text-red-400 transition"
-            data-recipe-id="chicken-sweet-corn-soup" data-recipe-title="Chicken and Sweet Corn Soup with Noodles" data-recipe-page="./pages/lunch.html#chicken-sweet-corn-soup" data-recipe-image="./assets/images/Chicken and Sweet Corn Soup with Noodles.png"
-            data-recipe-desc="A warm, comforting soup with tender chicken, sweet corn, and noodles in a savory golden broth."
-            aria-pressed="false" aria-label="Like Chicken and Sweet Corn Soup with Noodles">♥</button>
-  </div>
-  <div class="flex flex-col md:flex-row gap-6">
-    <figure class="md:w-1/3 w-full">
-      <img src="../assets/images/Chicken and Sweet Corn Soup with Noodles.png" alt="chicken and sweet corn" 
+    <!-- Chicken Ceasar Wrap -->
+    <section id="chicken-caesar-wrap" class="bg-white rounded-2xl shadow-lg p-8 mb-6 scroll-mt-24">
+      <article class="flex items-center justify-between gap-3 mb-3">
+        <h2 class="text-3xl">Chicken Caesar Wrap</h2>
+        <button type="button" class="like-btn cursor-pointer text-3xl leading-none text-stone-300 hover:text-red-400 transition"
+                data-recipe-id="chicken-caesar-wrap" data-recipe-title="Chicken Caesar Wrap" data-recipe-page="./pages/lunch.html#chicken-caesar-wrap" data-recipe-image="./assets/images/wrap.png"
+                data-recipe-desc="A handheld Caesar salad with grilled chicken, romaine, Caesar dressing, and Parmesan in a soft tortilla."
+                aria-pressed="false" aria-label="Like Chicken Caesar Wrap">♥</button>
+      </article>
+      <section class="flex flex-col md:flex-row gap-6">
+        <figure class="md:w-1/3 w-full">
+          <img src="../assets/images/wrap.png" alt="wrap" 
                 class="w-full rounded-lg h-64 object-cover" loading="lazy">
-      <figcaption class="text-sm text-stone-500 mt-1">Warm Chicken and Sweet Corn Soup with Noodles</figcaption>
-    </figure>
-    <div class="md:w-2/3 w-full">
-      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between 
+          <figcaption class="text-sm text-stone-500 mt-1">Savoury Chicken Caesar Wrap.</figcaption>
+        </figure>
+        <article class="md:w-2/3 w-full">
+          <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between 
+                    w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
+                    aria-controls="wrap-desc">
+            Description
+            <span class="chevron transition-transform">▾</span>
+          </button>
+            <article id="wrap-desc" class="hidden py-2">
+              <p>A chicken Caesar wrap is a handheld version of the Caesar salad, combining grilled chicken, 
+                crisp romaine lettuce, creamy Caesar dressing, and Parmesan cheese inside a soft tortilla.
+                It's a portable, flavorful, and satisfying meal that blends richness with freshness.
+              </p>
+              <ul class="list-disc list-inside mt-2 space-y-1">
+                <li><strong>Texture:</strong> Soft tortilla, tender chicken, crunchy lettuce, creamy dressing, and sometimes crispy croutons.</li>
+                <li><strong>Color:</strong> Golden tortilla, white chicken with brown edges, bright green lettuce, pale ivory dressing, and light yellow Parmesan.</li>
+                <li><strong>Flavor:</strong> Savory chicken base, creamy garlicky dressing, fresh lettuce brightness, and salty nutty Parmesan, all balanced in one bite.</li>
+              </ul>
+              
+            </article>
+
+          <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between 
                 w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
-                aria-controls="soup-desc">
-        Description
-        <span class="chevron transition-transform">▾</span>
-      </button>
-        
-        <div id="soup-desc" class="hidden pt-2">
-          <p>Chicken and sweet corn soup with noodles is a warm, comforting dish made from 
-            tender chicken pieces, sweet corn kernels, and soft noodles simmered in a savory golden broth.
-            It's a wholesome, filling soup that blends sweetness and savoriness in a cozy, nourishing bowl.
-          </p>
-          <ul class="list-disc list-inside mt-2 space-y-1">
-            <li><strong>Texture:</strong> Smooth broth, juicy chicken, sweet pops of corn, and hearty noodles.</li>
-            <li><strong>Color:</strong>  Pale golden soup with bright yellow corn, white chicken, and creamy noodles.</li>
-            <li><strong>Flavor:</strong> Savory chicken base balanced by corn’s natural sweetness, with fresh herbs often added for brightness.</li>
+                aria-controls="wrap-ingredients">
+            Ingredients
+            <span class="chevron transition-transform">▾</span>
+          </button>
+          <ul id="wrap-ingredients" class="hidden list-disc list-inside pt-2 space-y-1">
+            <li>1 tortilla wrap</li>
+            <li>1 cup grilled chicken, sliced</li>
+            <li>1 cup romaine lettuce</li>
+            <li>2 tbsp Caesar dressing</li>
+            <li>2 tbsp grated Parmesan cheese</li>
           </ul>
-        </div>
-       
-      
 
-      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between
-                 w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
-                 aria-controls="soup-ingredients">
-        Ingredients
-        <span class="chevron transition-transform">▾</span>
-      </button>
-      <ul id="soup-ingredients" class="hidden list-disc list-inside pt-2 space-y-1">
-        <li>4 cups chicken stock</li>
-        <li>1 cup cooked chicken, shredded</li>
-        <li>1 cup sweet corn kernels</li>
-        <li>2 eggs, beaten</li>
-        <li>100g noodles</li>
-        <li>Salt and pepper to taste</li>
-        <li>1 tbsp soy sauce (optional)</li>
-        <li>Spring onions for garnish</li>
-      </ul>
+          <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between w-full 
+            text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
+            aria-controls="wrap-steps">
+            Instructions
+            <span class="chevron transition-transform">▾</span>
+          </button>
+          <ol id="wrap-steps" data-complete-target="wrap-complete" class="hidden list-decimal 
+                    marker:font-bold pt-2 pl-6 space-y-1">
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Cook the chicken until fully done, then slice it into thin strips.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Wash and dry the lettuce before cutting it into bite-sized pieces.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Combine chicken, lettuce, Parmesan, and Caesar dressing.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Mix everything until evenly coated.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Lay a tortilla flat on a clean surface.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Place the chicken mixture in the centre.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Fold in the sides and roll tightly.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Slice the wrap in half if desired.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Serve immediately or wrap for later.</label></li>
+        </ol>
+          <p id="wrap-complete" class="hidden text-green-600 font-bold mt-2" aria-live="polite">Completed!</p>
+        </article>
+      </section>
+    </section>
 
-      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between w-full text-left 
-      font-bold border-b border-stone-200 py-2" aria-expanded="false" aria-controls="soup-steps">
-        Instructions
-        <span class="chevron transition-transform">▾</span>
-      </button>
-      <ol id="soup-steps" data-complete-target="toast-complete" class="hidden list-decimal marker:font-bold pt-2 pl-6 space-y-1">
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Bring chicken stock to a gentle boil.</label></li>
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Add chicken pieces and cook fully.</label></li>
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Add sweet corn and simmer.</label></li>
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Stir in beaten eggs slowly.</label></li>
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Add noodles and cook until tender.</label></li>
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Season with salt, pepper, soy sauce.</label></li>
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Adjust seasoning before serving.</label></li>
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Garnish with spring onions.</label></li>
-      </ol>
-      <p id="soup-complete" class="hidden text-green-600 font-bold mt-2" aria-live="polite">Completed!</p>
-    </div>
-  </div>
-</article>
+    <!-- Chicken and Sweet Corn Soup with Noodles -->
+    <section id="chicken-sweet-corn-soup" class="bg-white rounded-2xl shadow-lg p-8 mb-6 scroll-mt-24">
+      <article class="flex items-center justify-between gap-3 mb-3">
+        <h2 class="text-3xl">Chicken and Sweet Corn Soup with Noodles</h2>
+        <button type="button" class="like-btn cursor-pointer text-3xl leading-none text-stone-300 hover:text-red-400 transition"
+                data-recipe-id="chicken-sweet-corn-soup" data-recipe-title="Chicken and Sweet Corn Soup with Noodles" data-recipe-page="./pages/lunch.html#chicken-sweet-corn-soup" data-recipe-image="./assets/images/Chicken and Sweet Corn Soup with Noodles.png"
+                data-recipe-desc="A warm, comforting soup with tender chicken, sweet corn, and noodles in a savory golden broth."
+                aria-pressed="false" aria-label="Like Chicken and Sweet Corn Soup with Noodles">♥</button>
+      </article>
+      <section class="flex flex-col md:flex-row gap-6">
+        <figure class="md:w-1/3 w-full">
+          <img src="../assets/images/Chicken and Sweet Corn Soup with Noodles.png" alt="chicken and sweet corn" 
+                    class="w-full rounded-lg h-64 object-cover" loading="lazy">
+          <figcaption class="text-sm text-stone-500 mt-1">Warm Chicken and Sweet Corn Soup with Noodles</figcaption>
+        </figure>
+        <article class="md:w-2/3 w-full">
+          <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between 
+                    w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
+                    aria-controls="soup-desc">
+            Description
+            <span class="chevron transition-transform">▾</span>
+          </button>
+            
+            <article id="soup-desc" class="hidden pt-2">
+              <p>Chicken and sweet corn soup with noodles is a warm, comforting dish made from 
+                tender chicken pieces, sweet corn kernels, and soft noodles simmered in a savory golden broth.
+                It's a wholesome, filling soup that blends sweetness and savoriness in a cozy, nourishing bowl.
+              </p>
+              <ul class="list-disc list-inside mt-2 space-y-1">
+                <li><strong>Texture:</strong> Smooth broth, juicy chicken, sweet pops of corn, and hearty noodles.</li>
+                <li><strong>Color:</strong>  Pale golden soup with bright yellow corn, white chicken, and creamy noodles.</li>
+                <li><strong>Flavor:</strong> Savory chicken base balanced by corn’s natural sweetness, with fresh herbs often added for brightness.</li>
+              </ul>
+            </article>
+          
+          
 
-<!-- Carbonara-->
-<article id="carbonara" class="bg-white rounded-2xl shadow-lg p-8 mb-6 scroll-mt-24">
-  <div class="flex items-center justify-between gap-3 mb-3">
-    <h2 class="text-3xl">Carbonara</h2>
-    <button type="button" class="like-btn cursor-pointer text-3xl leading-none text-stone-300 hover:text-red-400 transition"
-            data-recipe-id="carbonara" data-recipe-title="Carbonara" data-recipe-page="./pages/lunch.html#carbonara" data-recipe-image="./assets/images/carbonara.png"
-            data-recipe-desc="A rich Italian pasta dish with spaghetti, eggs, cured pork, Pecorino Romano, and black pepper."
-            aria-pressed="false" aria-label="Like Carbonara">♥</button>
-  </div>
-  <div class="flex flex-col md:flex-row gap-6">
-    <figure class="md:w-1/3 w-full">
-      <img src="../assets/images/carbonara.png" alt="Creamy Carbonara" class="w-full rounded-lg h-64 object-cover" loading="lazy">
-      <figcaption class="text-sm text-stone-500 mt-1">Creamy Carbonara</figcaption>
-    </figure>
-    <div class="md:w-2/3 w-full">
-      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between w-full 
-      text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
-      aria-controls="carbonara-desc">
-        Description
-        <span class="chevron transition-transform">▾</span>
-      </button>
-        <div id="carbonara-desc" class="hidden pt-2">
-          <p>Carbonara is a rich and comforting Italian pasta dish traditionally made with 
-            spaghetti, eggs, cured pork (like guanciale or pancetta), Pecorino Romano cheese, and black pepper.
-          It's a simple yet indulgent dish, celebrated for its balance of creaminess and bold, savory notes.
-          </p>
-          <ul class="list-disc list-inside mt-2 space-y-1">
-            <li><strong>Texture:</strong>  Silky, creamy sauce that clings to the pasta, with chewy bites of pork and a slight grain from grated cheese.</li>
-            <li><strong>Color:</strong>  Golden pasta coated in pale yellow sauce, speckled with crispy brown pork pieces and black pepper.</li>
-            <li><strong>Flavor:</strong> Savory and smoky from the pork, nutty and salty from the cheese, with a creamy egg-based richness balanced by the sharpness of pepper</li>
+          <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between
+                    w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
+                    aria-controls="soup-ingredients">
+            Ingredients
+            <span class="chevron transition-transform">▾</span>
+          </button>
+          <ul id="soup-ingredients" class="hidden list-disc list-inside pt-2 space-y-1">
+            <li>4 cups chicken stock</li>
+            <li>1 cup cooked chicken, shredded</li>
+            <li>1 cup sweet corn kernels</li>
+            <li>2 eggs, beaten</li>
+            <li>100g noodles</li>
+            <li>Salt and pepper to taste</li>
+            <li>1 tbsp soy sauce (optional)</li>
+            <li>Spring onions for garnish</li>
           </ul>
-        </div>
 
-      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between
-            w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
-            aria-controls="carbonara-ingredients">
-        Ingredients
-        <span class="chevron transition-transform">▾</span>
-      </button>
-      <ul id="carbonara-ingredients" class="hidden list-disc list-inside pt-2 space-y-1">
-        <li>200g spaghetti</li>
-        <li>100g pancetta or bacon</li>
-        <li>2 large eggs</li>
-        <li>1/2 cup grated Parmesan cheese</li>
-        <li>1/2 tsp black pepper</li>
-        <li>Salt to taste</li>
-      </ul>
+          <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between w-full text-left 
+          font-bold border-b border-stone-200 py-2" aria-expanded="false" aria-controls="soup-steps">
+            Instructions
+            <span class="chevron transition-transform">▾</span>
+          </button>
+          <ol id="soup-steps" data-complete-target="toast-complete" class="hidden list-decimal marker:font-bold pt-2 pl-6 space-y-1">
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Bring chicken stock to a gentle boil.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Add chicken pieces and cook fully.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Add sweet corn and simmer.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Stir in beaten eggs slowly.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Add noodles and cook until tender.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Season with salt, pepper, soy sauce.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Adjust seasoning before serving.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Garnish with spring onions.</label></li>
+          </ol>
+          <p id="soup-complete" class="hidden text-green-600 font-bold mt-2" aria-live="polite">Completed!</p>
+        </article>
+      </section>
+    </section>
 
-      <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between
-            w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
-            aria-controls="carbonara-steps">
-        Instructions
-        <span class="chevron transition-transform">▾</span>
-      </button>
-      <ol id="carbonara-steps" data-complete-target="carbonara-complete" class="hidden list-decimal 
-            marker:font-bold pt-2 pl-6 space-y-1">
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Cook pasta until al dente.</label></li>
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Fry bacon until crispy.</label></li>
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Whisk eggs, Parmesan, and pepper.</label></li>
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Reserve pasta water before draining.</label></li>
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Add pasta to bacon pan.</label></li>
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Remove pan from heat, add egg mix.</label></li>
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Toss pasta quickly for creamy sauce.</label></li>
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Add pasta water if needed.</label></li>
-        <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Serve with extra Parmesan and pepper.</label></li>
-      </ol>
-      <p id="carbonara-complete" class="hidden text-green-600 font-bold mt-2" aria-live="polite">Completed!</p>
-    </div>
-  </div>
-</article>
-<section class="flex justify-start mt-2 mb-6">
-  <a href="breakfast.html" class="inline-flex mr-auto items-center gap-2 bg-red-800 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-lg transition">
-    <span aria-hidden="true" class="text-2xl leading-none">←</span>
-    Previous: Breakfast
-  </a>
-  <a href="dinner.html" class="inline-flex ml-auto items-center gap-2 bg-red-800 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-lg transition">
-    Next: Dinner
-    <span aria-hidden="true" class="text-2xl leading-none">→</span>
-  </a>
-</section>
+    <!-- Carbonara-->
+    <section id="carbonara" class="bg-white rounded-2xl shadow-lg p-8 mb-6 scroll-mt-24">
+      <article class="flex items-center justify-between gap-3 mb-3">
+        <h2 class="text-3xl">Carbonara</h2>
+        <button type="button" class="like-btn cursor-pointer text-3xl leading-none text-stone-300 hover:text-red-400 transition"
+                data-recipe-id="carbonara" data-recipe-title="Carbonara" data-recipe-page="./pages/lunch.html#carbonara" data-recipe-image="./assets/images/carbonara.png"
+                data-recipe-desc="A rich Italian pasta dish with spaghetti, eggs, cured pork, Pecorino Romano, and black pepper."
+                aria-pressed="false" aria-label="Like Carbonara">♥</button>
+      </article>
+      <section class="flex flex-col md:flex-row gap-6">
+        <figure class="md:w-1/3 w-full">
+          <img src="../assets/images/carbonara.png" alt="Creamy Carbonara" class="w-full rounded-lg h-64 object-cover" loading="lazy">
+          <figcaption class="text-sm text-stone-500 mt-1">Creamy Carbonara</figcaption>
+        </figure>
+        <article class="md:w-2/3 w-full">
+          <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between w-full 
+          text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
+          aria-controls="carbonara-desc">
+            Description
+            <span class="chevron transition-transform">▾</span>
+          </button>
+            <article id="carbonara-desc" class="hidden pt-2">
+              <p>Carbonara is a rich and comforting Italian pasta dish traditionally made with 
+                spaghetti, eggs, cured pork (like guanciale or pancetta), Pecorino Romano cheese, and black pepper.
+              It's a simple yet indulgent dish, celebrated for its balance of creaminess and bold, savory notes.
+              </p>
+              <ul class="list-disc list-inside mt-2 space-y-1">
+                <li><strong>Texture:</strong>  Silky, creamy sauce that clings to the pasta, with chewy bites of pork and a slight grain from grated cheese.</li>
+                <li><strong>Color:</strong>  Golden pasta coated in pale yellow sauce, speckled with crispy brown pork pieces and black pepper.</li>
+                <li><strong>Flavor:</strong> Savory and smoky from the pork, nutty and salty from the cheese, with a creamy egg-based richness balanced by the sharpness of pepper</li>
+              </ul>
+            </article>
 
-</main>
+          <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between
+                w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
+                aria-controls="carbonara-ingredients">
+            Ingredients
+            <span class="chevron transition-transform">▾</span>
+          </button>
+          <ul id="carbonara-ingredients" class="hidden list-disc list-inside pt-2 space-y-1">
+            <li>200g spaghetti</li>
+            <li>100g pancetta or bacon</li>
+            <li>2 large eggs</li>
+            <li>1/2 cup grated Parmesan cheese</li>
+            <li>1/2 tsp black pepper</li>
+            <li>Salt to taste</li>
+          </ul>
 
-<footer class="bg-stone-900 text-white px-6 sm:px-10 py-12">
-  <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-10">
-    <div>
-      <h2 class="text-2xl font-serif font-bold mb-5 flex items-center gap-3">🍴 Simply Savory</h2>
-      <p class="text-gray-300 leading-relaxed max-w-sm">
-        Quick, easy recipes for young adults cooking for themselves, one plate at a time.
-      </p>
-      <div class="flex gap-4 mt-6">
-        <a href="#" aria-label="Facebook" class="border border-gray-500 rounded-full w-10 h-10 
-        flex items-center justify-center hover:bg-white hover:text-black transition">f</a>
-        <a href="#" aria-label="Instagram" class="border border-gray-500 rounded-full w-10 h-10 
-        flex items-center justify-center hover:bg-white hover:text-black transition">ig</a>
-        <a href="#" aria-label="Pinterest" class="border border-gray-500 rounded-full w-10 h-10 
-        flex items-center justify-center hover:bg-white hover:text-black transition">p</a>
-      </div>
-    </div>
-    <div>
-      <h3 class="text-yellow-500 font-bold tracking-widest mb-5">RECIPES</h3>
-      <ul class="space-y-4 text-gray-300">
-        <li><a href="breakfast.html" class="hover:text-white">Breakfast</a></li>
-        <li><a href="lunch.html" class="hover:text-white">Lunch</a></li>
-        <li><a href="dinner.html" class="hover:text-white">Dinner</a></li>
-        <li><a href="dessert.html" class="hover:text-white">Desserts</a></li>
-        <li><a href="snacks.html" class="hover:text-white">Snacks</a></li>
-      </ul>
-    </div>
-    <div>
-      <h3 class="text-yellow-500 font-bold tracking-widest mb-5">SITE</h3>
-      <ul class="space-y-4 text-gray-300">
-        <li><a href="about.html" class="hover:text-white">About Us</a></li>
-        <li><a href="mealplan.html" class="hover:text-white">Meal Planning</a></li>
-        <li><a href="contact.html" class="hover:text-white">Contact / Submit a Recipe</a></li>
-      </ul>
-    </div>
-  </div>
-</footer>
+          <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between
+                w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
+                aria-controls="carbonara-steps">
+            Instructions
+            <span class="chevron transition-transform">▾</span>
+          </button>
+          <ol id="carbonara-steps" data-complete-target="carbonara-complete" class="hidden list-decimal 
+                marker:font-bold pt-2 pl-6 space-y-1">
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Cook pasta until al dente.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Fry bacon until crispy.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Whisk eggs, Parmesan, and pepper.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Reserve pasta water before draining.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Add pasta to bacon pan.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Remove pan from heat, add egg mix.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Toss pasta quickly for creamy sauce.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Add pasta water if needed.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Serve with extra Parmesan and pepper.</label></li>
+          </ol>
+          <p id="carbonara-complete" class="hidden text-green-600 font-bold mt-2" aria-live="polite">Completed!</p>
+        </article>
+      </section>
+    </section>
+    <section class="flex justify-start mt-2 mb-6">
+      <a href="breakfast.html" class="inline-flex mr-auto items-center gap-2 bg-red-800 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-lg transition">
+        <span aria-hidden="true" class="text-2xl leading-none">←</span>
+        Previous: Breakfast
+      </a>
+      <a href="dinner.html" class="inline-flex ml-auto items-center gap-2 bg-red-800 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-lg transition">
+        Next: Dinner
+        <span aria-hidden="true" class="text-2xl leading-none">→</span>
+      </a>
+    </section>
+  </main>
 
-<script src="../assets/js/script.js"></script>
+  <footer class="bg-stone-900 text-white px-6 md:px-10 py-10 md:py-12">
+    <nav class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-10">
+      <section>
+        <h2 class="text-2xl font-serif font-bold mb-5 flex items-center gap-3">🍴 Simply Savory</h2>
+        <p class="text-gray-300 leading-relaxed max-w-sm">
+          Quick, easy recipes for young adults cooking for themselves, one plate at a time.
+        </p>
+        <article class="flex gap-4 mt-6">
+          <a href="#" aria-label="Facebook" class="border border-gray-500 rounded-full w-10 h-10 flex items-center justify-center hover:bg-white hover:text-black transition">f</a>
+          <a href="#" aria-label="Instagram" class="border border-gray-500 rounded-full w-10 h-10 flex items-center justify-center hover:bg-white hover:text-black transition">ig</a>
+          <a href="#" aria-label="Pinterest" class="border border-gray-500 rounded-full w-10 h-10 flex items-center justify-center hover:bg-white hover:text-black transition">p</a>
+        </article>
+      </section>
+
+      <section>
+        <h3 class="text-yellow-500 font-bold tracking-widest mb-5">RECIPES</h3>
+        <ul class="space-y-4 text-gray-300">
+          <li><a href="breakfast.html" class="hover:text-white">Breakfast</a></li>
+          <li><a href="lunch.html" class="hover:text-white">Lunch</a></li>
+          <li><a href="dinner.html" class="hover:text-white">Dinner</a></li>
+          <li><a href="dessert.html" class="hover:text-white">Desserts</a></li>
+          <li><a href="snacks.html" class="hover:text-white">Snacks</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h3 class="text-yellow-500 font-bold tracking-widest mb-5">SITE</h3>
+        <ul class="space-y-4 text-gray-300">
+          <li><a href="about.html" class="hover:text-white">About Us</a></li>
+          <li><a href="mealplan.html" class="hover:text-white">Meal Planning</a></li>
+          <li><a href="contact.html" class="hover:text-white">Contact / Submit a Recipe</a></li>
+        </ul>
+      </section>
+    </nav>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
 
 </body>
 </html>
