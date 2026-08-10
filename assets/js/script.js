@@ -116,7 +116,7 @@ function setupStepChecklists() {
 
 /* ---------- 4. Recipe submission form ---------- */
 
- // Recipe Submission Form //
+ // Recipe Submission Form 
 document.getElementById("btnsubmit").addEventListener("click", function(event) { 
   event.preventDefault(); var name = document.getElementById("name"); 
   var email = document.getElementById("email"); var recipe = document.getElementById("recipe"); 
@@ -174,7 +174,7 @@ if (!email.value.includes("@")) {
             if (valid) { document.getElementById("recipeSuccess").classList.value = "show text-green-600 m-4"; } 
           }
         ); 
-         // Feedback Form //
+         // Feedback Form 
          document.getElementById("btnfeedback").addEventListener("click", function(event) { 
           event.preventDefault(); 
           var name = document.getElementById("fb-name"); 
