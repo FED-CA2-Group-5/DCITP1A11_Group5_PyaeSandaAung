@@ -1,0 +1,9 @@
+.dropdown {}
+
+/* Show the dropdown menu*/
+.hidden { display: none; }
+.show {display:block;}
+
+h2, h3 { color: #b58900; } /* pale yellow accent */
+
+

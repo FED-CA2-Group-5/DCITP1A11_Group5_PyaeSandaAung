@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simply Savory</title>
+  <link rel="stylesheet" href="./assets/css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-orange-50 text-stone-800">
+
+  <header class="flex items-center bg-red-800 text-white sticky top-0 z-50 shadow-lg px-6 py-3">
+    <section class="w-36">
+      <a href="index.html">
+        <img src="./assets/images/Logo.png" alt="Simply Savory Logo" class="rounded-lg">
+      </a>
+    </section>
+
+    <!-- Hamburger, shown only below lg -->
+    <button type="button" id="hamburgerBtn" class="lg:hidden ml-auto p-2 rounded-lg hover:bg-red-700 transition" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primaryNav">
+      <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+    <nav id="primaryNav" aria-label="Primary" class="hidden lg:flex lg:ml-auto gap-8 absolute lg:static top-4/5 right-0 w-1/3 rounded-lg lg:w-auto bg-red-800 lg:bg-transparent px-6 lg:px-0 pb-4 lg:pb-0 shadow-lg lg:shadow-none">
+      <section class="dropdown relative">
+        <button type="button" class="dropdown-btn cursor-pointer hover:bg-red-700 px-4 lg:px-12 py-3 rounded-lg transition text-lg w-full lg:w-auto flex justify-between lg:inline-block" aria-haspopup="true" aria-expanded="false" aria-controls="MenuDropdown">
+          Menu
+          <span class="chevron transition-transform">▾</span>
+        </button>
+        <ul id="MenuDropdown" class="dropdown-menu hidden static lg:absolute lg:right-0 lg:mt-2 mt-1 w-full lg:w-40 bg-white rounded-xl shadow-xl overflow-hidden text-stone-800">
+          <li><a href="index.html" class="block px-4 py-1 lg:py-3 hover:bg-orange-100 text-md lg:text-lg">Home</a></li>
+          <li><a href="./pages/about.html" class="block px-4 py-1 lg:py-3 hover:bg-orange-100 text-md lg:text-lg">About Us</a></li>
+          <li><a href="./pages/contact.html" class="block px-4 py-1 lg:py-3 hover:bg-orange-100 text-md lg:text-lg">Contact Us</a></li>
+        </ul>
+      </section>
+
+      <section class="dropdown relative">
+        <button type="button" class="dropdown-btn cursor-pointer hover:bg-red-700 px-4 lg:px-12 py-3 rounded-lg transition text-lg w-full lg:w-auto flex justify-between lg:inline-block" aria-haspopup="true" aria-expanded="false" aria-controls="RecipeDropdown">
+          Recipes
+          <span class="chevron transition-transform">▾</span>
+        </button>
+        <ul id="RecipeDropdown" class="dropdown-menu hidden static lg:absolute lg:right-0 lg:mt-2 mt-1 w-full lg:w-48 bg-white rounded-xl shadow-xl overflow-hidden text-stone-800">
+          <li><a href="./pages/breakfast.html" class="block px-4 py-1 lg:py-3 hover:bg-orange-100 text-md lg:text-lg" aria-current="page">Breakfast</a></li>
+          <li><a href="./pages/lunch.html" class="block px-4 py-1 lg:py-3 hover:bg-orange-100 text-md lg:text-lg">Lunch</a></li>
+          <li><a href="./pages/dinner.html" class="block px-4 py-1 lg:py-3 hover:bg-orange-100 text-md lg:text-lg">Dinner</a></li>
+          <li><a href="./pages/dessert.html" class="block px-4 py-1 lg:py-3 hover:bg-orange-100 text-md lg:text-lg">Dessert</a></li>
+          <li><a href="./pages/snacks.html" class="block px-4 py-1 lg:py-3 hover:bg-orange-100 text-md lg:text-lg">Snacks</a></li>
+          <li><a href="./pages/mealplan.html" class="block px-4 py-1 lg:py-3 hover:bg-orange-100 text-md lg:text-lg">Meal Planning Tips</a></li>
+        </ul>
+      </section>
+    </nav>
+  </header>
+
+  <main class="w-full lg:w-3/4 mx-auto p-6">
+
+    <!-- Hero -->
+    <section class="max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center px-6 md:px-8 pt-10 md:pt-16 lg:pt-20 pb-16 md:pb-24">
+      <article>
+        <p class="text-red-800 font-bold tracking-widest text-xs mb-4">RECIPES FOR REAL LIFE</p>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
+          Cook Something Delicious Without the <span class="text-red-800">Hassle.</span>
+        </h1>
+        <p class="text-stone-600 text-base max-w-md mb-8">
+          Simply Savory helps young adults prepare delicious meals with easy-to-follow recipes. Whether you're making breakfast, lunch, dinner, desserts or snacks, cooking has never been simpler.
+        </p>
+        <nav class="flex gap-4 flex-wrap" aria-label="Hero calls to action">
+          <section class="dropdown relative">
+            <button type="button" class="dropdown-btn inline-block px-8 py-4 rounded-full font-semibold text-sm bg-red-800 text-white hover:bg-red-900 hover:-translate-y-0.5 transition-all shadow-md" aria-haspopup="true" aria-expanded="false" aria-controls="HeroRecipeDropdown">
+              Recipes
+              <span class="chevron transition-transform">▾</span>
+            </button>
+            <ul id="HeroRecipeDropdown" class="dropdown-menu absolute z-50 hidden lg:right-0 lg:mt-2 mt-1 w-full lg:w-48 bg-white rounded-xl shadow-xl overflow-hidden text-stone-800">
+              <li><a href="./pages/breakfast.html" class="block px-4 py-3 hover:bg-orange-100" aria-current="page">Breakfast</a></li>
+              <li><a href="./pages/lunch.html" class="block px-4 py-3 hover:bg-orange-100">Lunch</a></li>
+              <li><a href="./pages/dinner.html" class="block px-4 py-3 hover:bg-orange-100">Dinner</a></li>
+              <li><a href="./pages/dessert.html" class="block px-4 py-3 hover:bg-orange-100">Dessert</a></li>
+              <li><a href="./pages/snacks.html" class="block px-4 py-3 hover:bg-orange-100">Snacks</a></li>
+            </ul>
+          </section>
+          <a href="./pages/about.html" class="inline-block px-8 py-4 rounded-full font-semibold text-sm border-2 border-stone-900 text-stone-900 hover:bg-stone-900 hover:text-amber-50 transition-all">Learn More</a>
+        </nav>
+      </article>
+
+      <figure class="bg-white rounded-2xl aspect-square overflow-hidden shadow-2xl m-0">
+        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=900&q=80" alt="Delicious home cooked meal" class="w-full h-full object-cover">
+      </figure>
+    </section>
+
+    <section id="recipe-of-the-week" class="bg-white max-w-6xl rounded-2xl shadow-lg px-6 md:px-8 pb-8 md:pb-10 mb-10">
+      <article class="px-6 py-6 md:px-10 md:py-4">
+        <h2 class="text-3xl md:text-3xl font-bold text-red-600 mb-4">Recipe of the Week</h2>
+
+        <p class="rotw-empty text-stone-500">
+          No favorite yet. Tap the ♥ on any recipe page to feature it here.
+        </p>
+
+        <article class="rotw-content hidden flex flex-col md:flex-row gap-6 items-start">
+          <figure class="w-full md:w-1/3 m-0">
+            <img class="rotw-image hidden w-full rounded-lg object-cover" src="placeholder.jpg" alt="placeholder">
+          </figure>
+          <article class="w-full md:w-2/3">
+            <h3 class="rotw-title text-2xl font-bold mb-2"></h3>
+            <p class="rotw-desc text-stone-600 mb-5"></p>
+            <a href="recipes/breakfast.html" class="rotw-link cursor-pointer inline-flex items-center gap-2 bg-red-800 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-lg transition">
+              View Recipe
+              <span aria-hidden="true" class="text-2xl leading-none">→</span>
+            </a>
+          </article>
+        </article>
+      </article>
+    </section>
+
+
+    <!-- Why Choose Simply Savory -->
+    <section class="max-w-6xl px-6 md:px-8 pb-20 md:pb-28 text-center">
+      <h2 class="text-2xl md:text-3xl lg:text-4xl font-extrabold mb-3">Why Choose Simply Savory?</h2>
+      <p class="text-stone-600 max-w-xl mx-auto mb-10 md:mb-12 lg:mb-14">
+        We keep cooking simple, affordable, and approachable — no fancy equipment or years of experience required.
+      </p>
+
+      <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-7">
+        <article class="bg-white border border-stone-200 rounded-2xl p-8 text-left hover:-translate-y-1 hover:border-red-800 hover:shadow-xl transition-all">
+          <span class="w-10 h-10 rounded-full bg-red-800 text-white flex items-center justify-center font-bold text-sm mb-5" aria-hidden="true">1</span>
+          <h3 class="text-lg font-bold mb-2">Easy Recipes</h3>
+          <p class="text-stone-600 text-sm">Straightforward recipes that don't require fancy techniques or hours in the kitchen.</p>
+        </article>
+
+        <article class="bg-white border border-stone-200 rounded-2xl p-8 text-left hover:-translate-y-1 hover:border-red-800 hover:shadow-xl transition-all">
+          <span class="w-10 h-10 rounded-full bg-red-800 text-white flex items-center justify-center font-bold text-sm mb-5" aria-hidden="true">2</span>
+          <h3 class="text-lg font-bold mb-2">Affordable Ingredients</h3>
+          <p class="text-stone-600 text-sm">Every recipe is built around ingredients you can find without breaking the bank.</p>
+        </article>
+
+        <article class="bg-white border border-stone-200 rounded-2xl p-8 text-left hover:-translate-y-1 hover:border-red-800 hover:shadow-xl transition-all">
+          <span class="w-10 h-10 rounded-full bg-red-800 text-white flex items-center justify-center font-bold text-sm mb-5" aria-hidden="true">3</span>
+          <h3 class="text-lg font-bold mb-2">Step-by-Step Instructions</h3>
+          <p class="text-stone-600 text-sm">Clear, numbered steps so you always know exactly what to do next.</p>
+        </article>
+
+        <article class="bg-white border border-stone-200 rounded-2xl p-8 text-left hover:-translate-y-1 hover:border-red-800 hover:shadow-xl transition-all">
+          <span class="w-10 h-10 rounded-full bg-red-800 text-white flex items-center justify-center font-bold text-sm mb-5" aria-hidden="true">4</span>
+          <h3 class="text-lg font-bold mb-2">Perfect for Beginners</h3>
+          <p class="text-stone-600 text-sm">No prior cooking experience needed — just follow along and enjoy the results.</p>
+        </article>
+      </section>
+    </section>
+
+  </main>
+
+  <footer class="bg-stone-900 text-white px-6 md:px-10 py-10 md:py-12">
+    <nav class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-10">
+      <section>
+        <h2 class="text-2xl font-serif font-bold mb-5 flex items-center gap-3">🍴 Simply Savory</h2>
+        <p class="text-gray-300 leading-relaxed max-w-sm">
+          Quick, easy recipes for young adults cooking for themselves, one plate at a time.
+        </p>
+        <article class="flex gap-4 mt-6">
+          <a href="#" aria-label="Facebook" class="border border-gray-500 rounded-full w-10 h-10 flex items-center justify-center hover:bg-white hover:text-black transition">f</a>
+          <a href="#" aria-label="Instagram" class="border border-gray-500 rounded-full w-10 h-10 flex items-center justify-center hover:bg-white hover:text-black transition">ig</a>
+          <a href="#" aria-label="Pinterest" class="border border-gray-500 rounded-full w-10 h-10 flex items-center justify-center hover:bg-white hover:text-black transition">p</a>
+        </article>
+      </section>
+
+      <section>
+        <h3 class="text-yellow-500 font-bold tracking-widest mb-5">RECIPES</h3>
+        <ul class="space-y-4 text-gray-300">
+          <li><a href="./pages/breakfast.html" class="hover:text-white">Breakfast</a></li>
+          <li><a href="./pages/lunch.html" class="hover:text-white">Lunch</a></li>
+          <li><a href="./pages/dinner.html" class="hover:text-white">Dinner</a></li>
+          <li><a href="./pages/dessert.html" class="hover:text-white">Desserts</a></li>
+          <li><a href="./pages/snacks.html" class="hover:text-white">Snacks</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h3 class="text-yellow-500 font-bold tracking-widest mb-5">SITE</h3>
+        <ul class="space-y-4 text-gray-300">
+          <li><a href="./pages/about.html" class="hover:text-white">About Us</a></li>
+          <li><a href="./pages/mealplan.html" class="hover:text-white">Meal Planning</a></li>
+          <li><a href="./pages/contact.html" class="hover:text-white">Contact / Submit a Recipe</a></li>
+        </ul>
+      </section>
+    </nav>
+  </footer>
+
+  <script src="./assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Healthy Snacks Recipes</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+   
+</head>
+
+<body class="bg-orange-50 text-stone-800">
+  <header class="flex items-center bg-red-800 text-white sticky top-0 z-50 shadow-lg px-6 py-3">
+    <section class="w-36">
+      <a href="../index.html">
+        <img src="../assets/images/Logo.png" alt="Simply Savory Logo" class="rounded-lg">
+      </a>
+    </section>
+
+    <!-- Hamburger, shown only below lg -->
+    <button type="button" id="hamburgerBtn" class="lg:hidden ml-auto p-2 rounded-lg hover:bg-red-700 transition" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primaryNav">
+      <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+    <nav id="primaryNav" aria-label="Primary" class="hidden lg:flex lg:ml-auto gap-8 absolute lg:static top-4/5 right-0 w-1/3 rounded-lg lg:w-auto bg-red-800 lg:bg-transparent px-6 lg:px-0 pb-4 lg:pb-0 shadow-lg lg:shadow-none">
+      <section class="dropdown relative">
+        <button type="button" class="dropdown-btn cursor-pointer hover:bg-red-700 px-4 lg:px-12 py-3 rounded-lg transition text-lg w-full lg:w-auto flex justify-between lg:inline-block" aria-haspopup="true" aria-expanded="false" aria-controls="MenuDropdown">
+          Menu
+          <span class="chevron transition-transform">▾</span>
+        </button>
+        <ul id="MenuDropdown" class="dropdown-menu hidden static lg:absolute lg:right-0 lg:mt-2 mt-1 w-full lg:w-40 bg-white rounded-xl shadow-xl overflow-hidden text-stone-800">
+          <li><a href="../index.html" class="block px-4 py-1 lg:py-3 hover:bg-orange-100 text-md lg:text-lg">Home</a></li>
+          <li><a href="about.html" class="block px-4 py-1 lg:py-3 hover:bg-orange-100 text-md lg:text-lg">About Us</a></li>
+          <li><a href="contact.html" class="block px-4 py-1 lg:py-3 hover:bg-orange-100 text-md lg:text-lg">Contact Us</a></li>
+        </ul>
+      </section>
+
+      <section class="dropdown relative">
+        <button type="button" class="dropdown-btn cursor-pointer hover:bg-red-700 px-4 lg:px-12 py-3 rounded-lg transition text-lg w-full lg:w-auto flex justify-between lg:inline-block" aria-haspopup="true" aria-expanded="false" aria-controls="RecipeDropdown">
+          Recipes
+          <span class="chevron transition-transform">▾</span>
+        </button>
+        <ul id="RecipeDropdown" class="dropdown-menu hidden static lg:absolute lg:right-0 lg:mt-2 mt-1 w-full lg:w-48 bg-white rounded-xl shadow-xl overflow-hidden text-stone-800">
+          <li><a href="breakfast.html" class="block px-4 py-1 lg:py-3 hover:bg-orange-100 text-md lg:text-lg" aria-current="page">Breakfast</a></li>
+          <li><a href="lunch.html" class="block px-4 py-1 lg:py-3 hover:bg-orange-100 text-md lg:text-lg">Lunch</a></li>
+          <li><a href="dinner.html" class="block px-4 py-1 lg:py-3 hover:bg-orange-100 text-md lg:text-lg">Dinner</a></li>
+          <li><a href="dessert.html" class="block px-4 py-1 lg:py-3 hover:bg-orange-100 text-md lg:text-lg">Dessert</a></li>
+          <li><a href="snacks.html" class="block px-4 py-1 lg:py-3 hover:bg-orange-100 text-md lg:text-lg">Snacks</a></li>
+          <li><a href="mealplan.html" class="block px-4 py-1 lg:py-3 hover:bg-orange-100 text-md lg:text-lg">Meal Planning Tips</a></li>
+        </ul>
+      </section>
+    </nav>
+  </header>
+
+  <main class="max-w-6xl mx-auto lg:w-3/4 md:w-full sm:w-full p-6">
+    <h1 class="text-4xl font-bold text-red-800 mb-3">Healthy Snack Recipes</h1>
+
+    <!-- Honey Oat Granola Bars -->
+    <section id="honey-oat-granola-bars" class="bg-white rounded-2xl shadow-lg p-8 mb-6 scroll-mt-24">
+      <article class="flex items-center justify-between gap-3 mb-3">
+        <h2 class="text-3xl">Honey Oat Granola Bars</h2>
+        <button type="button" class="like-btn cursor-pointer text-3xl leading-none text-stone-300 hover:text-red-400 transition"
+                data-recipe-id="honey-oat-granola-bars" data-recipe-title="Honey Oat Granola Bars" data-recipe-page="./pages/snacks.html#honey-oat-granola-bars" data-recipe-image="./assets/images/Honey Oat Granola Bars.png"
+                data-recipe-desc="Chewy, wholesome bars made from rolled oats, honey, nuts, and dried fruit."
+                aria-pressed="false" aria-label="Like Honey Oat Granola Bars">♥</button>
+      </article>
+      <section class="flex flex-col md:flex-row gap-6">
+        <figure class="md:w-1/3 w-full">
+          <img src="../assets/images/Granola_Bars.png" alt="Honey Oat Granola Bars" 
+                class="w-full rounded-lg h-64 object-cover" loading="lazy">
+          <figcaption class="text-sm text-stone-500 mt-1">Honey Oat Granola Bars</figcaption>
+        </figure>
+        <article class="md:w-2/3 w-full">
+          <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between 
+                    w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
+                    aria-controls="granola-desc">
+            Description
+            <span class="chevron transition-transform">▾</span>
+          </button>
+          
+            <article id="granola-desc" class="hidden pt-2">
+              <p>Honey oat granola bars are chewy, wholesome snacks made from rolled oats 
+                bound together with honey and often mixed with nuts, seeds, or dried fruit.
+              They're a nutritious, portable treat that combines sweetness with hearty grains for lasting energy.
+              </p>
+              <ul class="list-disc list-inside mt-2 space-y-1">
+                <li><strong>Texture:</strong>  Firm yet chewy, with occasional crunch from add-ins.</li>
+                <li><strong>Color:</strong>  Golden brown from baked oats and honey.</li>
+                <li><strong>Flavor:</strong> Naturally sweet with nutty, toasty notes, balanced by the richness of honey.</li>
+              </ul>
+            </article>
+          
+
+          <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between 
+                w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
+                aria-controls="granola-ingredients">
+            Ingredients
+            <span class="chevron transition-transform">▾</span>
+          </button>
+          <ul id="granola-ingredients" class="hidden list-disc list-inside pt-2 space-y-1">
+            <li>2 cups rolled oats</li>
+            <li>1/2 cup honey</li>
+            <li>1/2 cup chopped nuts (almonds or walnuts)</li>
+            <li>1/4 cup dried fruit (raisins or cranberries)</li>
+            <li>1/4 cup brown sugar</li>
+            <li>1/4 cup butter or coconut oil</li>
+            <li>1 tsp vanilla extract</li>
+            <li>Pinch of salt</li>
+          </ul>
+
+          <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between w-full 
+          text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
+          aria-controls="granola-steps">
+            Instructions
+            <span class="chevron transition-transform">▾</span>
+          </button>
+          <ol id="granola-steps" data-complete-target="granola-complete" class="hidden list-decimal marker:font-bold pt-2 pl-6 space-y-1">
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Mix the oats, honey, and other ingredients in a bowl.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Press the mixture evenly into a lined baking pan.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Bake until lightly golden.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Allow the granola to cool completely.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Cut into bars or squares.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Store in an airtight container and enjoy.</label></li>
+          </ol>
+          <p id="granola-complete" class="hidden text-green-600 font-bold mt-2" aria-live="polite">Completed!</p>
+        </article>
+      </section>
+    </section>
+
+    <!-- Air Fryer Sweet Potato Fries -->
+    <section id="air-fryer-sweet-potato-fries" class="bg-white rounded-2xl shadow-lg p-8 mb-6 scroll-mt-24">
+      <article class="flex items-center justify-between gap-3 mb-3">
+        <h2 class="text-3xl">Air Fryer Sweet Potato Fries</h2>
+        <button type="button" class="like-btn cursor-pointer text-3xl leading-none text-stone-300 hover:text-red-400 transition"
+                data-recipe-id="air-fryer-sweet-potato-fries" data-recipe-title="Air Fryer Sweet Potato Fries" data-recipe-page="./pages/snacks.html#air-fryer-sweet-potato-fries" data-recipe-image="./assets/images/sweet potato.png"
+                data-recipe-desc="Crispy air-fried sweet potato fries, a healthier twist on classic fries."
+                aria-pressed="false" aria-label="Like Air Fryer Sweet Potato Fries">♥</button>
+      </article>
+      <section class="flex flex-col md:flex-row gap-6">
+        <figure class="md:w-1/3 w-full">
+          <img src="../assets/images/sweet_potato.png" alt="Air Fryer Sweet Potato Fries" 
+                    class="w-full rounded-lg h-64 object-cover" loading="lazy">
+          <figcaption class="text-sm text-stone-500 mt-1">Air Fryer Sweet Potato Fries</figcaption>
+        </figure>
+        <article class="md:w-2/3 w-full">
+          <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between 
+                    w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
+                    aria-controls="fries-desc">
+            Description
+            <span class="chevron transition-transform">▾</span>
+          </button>
+            <article id="fries-desc" class="hidden pt-2">
+              <p>Air fryer sweet potato fries are a healthier twist on classic fries, 
+                made by cooking sliced sweet potatoes in an air fryer until crisp.
+              They're a quick, nutritious snack or side dish that balances crunch with wholesome sweetness.
+              </p>
+              <ul class="list-disc list-inside mt-2 space-y-1">
+                <li><strong>Texture:</strong>  Crispy on the outside, tender inside.</li>
+                <li><strong>Color:</strong>  Vibrant orange with golden-brown edges.</li>
+                <li><strong>Flavor:</strong>  Naturally sweet with a hint of earthiness, often enhanced by light seasoning.</li>
+              </ul>
+            </article>
+          
+          
+
+          <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between
+                    w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
+                    aria-controls="fries-ingredients">
+            Ingredients
+            <span class="chevron transition-transform">▾</span>
+          </button>
+          <ul id="fries-ingredients" class="hidden list-disc list-inside pt-2 space-y-1">
+            <li>2 medium sweet potatoes</li>
+            <li>2 tbsp olive oil</li>
+            <li>1 tsp paprika</li>
+            <li>1/2 tsp garlic powder</li>
+            <li>Salt and pepper to taste</li>
+          </ul>
+
+          <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between w-full text-left 
+            font-bold border-b border-stone-200 py-2" aria-expanded="false" 
+            aria-controls="fries-steps">
+            Instructions
+            <span class="chevron transition-transform">▾</span>
+          </button>
+          <ol id="fries-steps" data-complete-target="fries-complete" class="hidden list-decimal marker:font-bold pt-2 pl-6 space-y-1">   
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Peel and cut the sweet potatoes into thin strips.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Toss the fries with oil and seasonings.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Preheat the air fryer if needed.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Arrange the fries in a single layer in the basket.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Air-fry until golden and crispy, shaking the basket halfway through.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Serve hot with your favourite dipping sauce.</label></li>
+          </ol>
+          <p id="fries-complete" class="hidden text-green-600 font-bold mt-2" aria-live="polite">Completed!</p>
+        </article>
+      </section>
+    </section>
+
+    <!-- Lime Honey Fruit Salad -->
+    <section id="lime-honey-fruit-salad" class="bg-white rounded-2xl shadow-lg p-8 mb-6 scroll-mt-24">
+      <article class="flex items-center justify-between gap-3 mb-3">
+        <h2 class="text-3xl">Lime Honey Fruit Salad</h2>
+        <button type="button" class="like-btn cursor-pointer text-3xl leading-none text-stone-300 hover:text-red-400 transition"
+                data-recipe-id="lime-honey-fruit-salad" data-recipe-title="Lime Honey Fruit Salad" data-recipe-page="./pages/snacks.html#lime-honey-fruit-salad" data-recipe-image="./assets/images/Lime Honey Fruit Salad.png"
+                data-recipe-desc="A refreshing mix of fresh fruits tossed in a light lime and honey dressing."
+                aria-pressed="false" aria-label="Like Lime Honey Fruit Salad">♥</button>
+      </article>
+      <section class="flex flex-col md:flex-row gap-6">
+        <figure class="md:w-1/3 w-full">
+          <img src="../assets/images/Fruit_Salad.png" alt="Lime Honey Fruit Salad" class="w-full rounded-lg h-64 object-cover" loading="lazy">
+          <figcaption class="text-sm text-stone-500 mt-1">Lime Honey Fruit Salad</figcaption>
+        </figure>
+        <article class="md:w-2/3 w-full">
+          <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between w-full 
+          text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
+          aria-controls="salad-desc">
+            Description
+            <span class="chevron transition-transform">▾</span>
+          </button>
+            <article id="salad-desc" class="hidden pt-2">
+              <p>Lime honey fruit salad is a refreshing mix of assorted fresh fruits 
+                tossed with a light dressing made from lime juice and honey.
+              It's a zesty, energizing dish that highlights the natural sweetness of fruit with a citrusy twist.
+              </p>
+              <ul class="list-disc list-inside mt-2 space-y-1">
+                <li><strong>Texture:</strong>  Juicy, crisp fruits with a smooth glaze.</li>
+                <li><strong>Color:</strong>  Bright and vibrant, showcasing a rainbow of fruit tones.</li>
+                <li><strong>Flavor:</strong>  Sweet from honey, tangy from lime, and naturally fruity.</li>
+              </ul>
+            </article>
+
+          <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between
+                w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
+                aria-controls="salad-ingredients">
+            Ingredients
+            <span class="chevron transition-transform">▾</span>
+          </button>
+          <ul id="salad-ingredients" class="hidden list-disc list-inside pt-2 space-y-1">
+            <li>2 cups mixed fresh fruits (melon, berries, grapes, kiwi)</li>
+            <li>2 tbsp honey</li>
+            <li>1 tbsp lime juice</li>
+            <li>1 tsp lime zest</li>
+            <li>Optional: fresh mint leaves for garnish</li>
+          </ul>
+
+          <button type="button" class="toggle-btn cursor-pointer flex items-center justify-between
+                w-full text-left font-bold border-b border-stone-200 py-2" aria-expanded="false" 
+                aria-controls="salad-steps">
+            Instructions
+            <span class="chevron transition-transform">▾</span>
+          </button>
+          <ol id="salad-steps" data-complete-target="salad-complete" class="hidden list-decimal 
+                marker:font-bold pt-2 pl-6 space-y-1">
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Wash and prepare the fresh fruits.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Cut the fruits into bite-sized pieces.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Whisk together the honey and lime juice.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Pour the dressing over the fruit.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Gently toss until the fruit is evenly coated.</label></li>
+            <li><label class="inline-flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-1">Chill before serving for the best flavour.</label></li>
+          </ol>
+          <p id="salad-complete" class="hidden text-green-600 font-bold mt-2" aria-live="polite">Completed!</p>
+        </article>
+      </section>
+    </section>
+    <section class="flex justify-start mt-2 mb-6">
+      <a href="dessert.html" class="inline-flex mr-auto items-center gap-2 bg-red-800 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-lg transition">
+        <span aria-hidden="true" class="text-2xl leading-none">←</span>
+        Previous: Dessert
+      </a>
+      <a href="mealplan.html" class="inline-flex ml-auto items-center gap-2 bg-red-800 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-lg transition">
+        Next: Meal Planning Tips
+        <span aria-hidden="true" class="text-2xl leading-none">→</span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="bg-stone-900 text-white px-6 md:px-10 py-10 md:py-12">
+    <nav class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-10">
+      <section>
+        <h2 class="text-2xl font-serif font-bold mb-5 flex items-center gap-3">🍴 Simply Savory</h2>
+        <p class="text-gray-300 leading-relaxed max-w-sm">
+          Quick, easy recipes for young adults cooking for themselves, one plate at a time.
+        </p>
+        <article class="flex gap-4 mt-6">
+          <a href="#" aria-label="Facebook" class="border border-gray-500 rounded-full w-10 h-10 flex items-center justify-center hover:bg-white hover:text-black transition">f</a>
+          <a href="#" aria-label="Instagram" class="border border-gray-500 rounded-full w-10 h-10 flex items-center justify-center hover:bg-white hover:text-black transition">ig</a>
+          <a href="#" aria-label="Pinterest" class="border border-gray-500 rounded-full w-10 h-10 flex items-center justify-center hover:bg-white hover:text-black transition">p</a>
+        </article>
+      </section>
+
+      <section>
+        <h3 class="text-yellow-500 font-bold tracking-widest mb-5">RECIPES</h3>
+        <ul class="space-y-4 text-gray-300">
+          <li><a href="breakfast.html" class="hover:text-white">Breakfast</a></li>
+          <li><a href="lunch.html" class="hover:text-white">Lunch</a></li>
+          <li><a href="dinner.html" class="hover:text-white">Dinner</a></li>
+          <li><a href="dessert.html" class="hover:text-white">Desserts</a></li>
+          <li><a href="snacks.html" class="hover:text-white">Snacks</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h3 class="text-yellow-500 font-bold tracking-widest mb-5">SITE</h3>
+        <ul class="space-y-4 text-gray-300">
+          <li><a href="about.html" class="hover:text-white">About Us</a></li>
+          <li><a href="mealplan.html" class="hover:text-white">Meal Planning</a></li>
+          <li><a href="contact.html" class="hover:text-white">Contact / Submit a Recipe</a></li>
+        </ul>
+      </section>
+    </nav>
+    <p class="text-left text-sm text-gray-400 mt-8">
+      Image Credits:
+      <a href="https://unsplash.com/photos/a-bunch-of-granola-bars-sitting-on-top-of-a-table-rht9GU6M89o" target="_blank" class="underline hover:text-white">
+        Granola Bars
+      </a>,
+      <a href="https://unsplash.com/photos/sliced-carrots-on-gray-surface-x1EjnCuwHDI" target="_blank" class="underline hover:text-white">
+        Sweet Potato Fries
+      </a>,
+      <a href="https://unsplash.com/photos/a-white-plate-topped-with-fruit-and-whipped-cream-W178MnzVaYQ" target="_blank" class="underline hover:text-white">
+        Salad
+      </a>
+    </p>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+
+</body>
+</html>
+
+
